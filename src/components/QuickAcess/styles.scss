@@ -1,0 +1,49 @@
+.quick-acess {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 2rem;
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+    .active-button {
+        border-top: 2px solid var(--color-primary-pink);
+    }
+
+    .button-box {
+        background-color: var(--color-menu);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+
+
+        &:hover {
+            background-color: var(--color-menu-hover);
+        }
+
+        span {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            p {
+                text-transform: uppercase;
+            }
+
+            h2 {
+                font-weight: 500;
+            }
+        }
+    }
+}

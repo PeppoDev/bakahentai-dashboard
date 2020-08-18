@@ -1,0 +1,75 @@
+.header-container {
+    color: white;
+
+    .datenow {
+        color: rgb(163, 163, 163);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin: 2rem;
+    }
+
+    hr {
+        margin: 2rem;
+        border: 1px solid #424141;
+    }
+
+    .welcome-banner {
+        display: flex;
+        background: rgb(245, 55, 103);
+        background: linear-gradient(90deg, rgba(245, 55, 103, 1) 0%, rgba(251, 134, 164, 1) 100%);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 9rem;
+
+
+        .banner-text {
+            margin-left: 7%;
+            width: 30rem;
+
+            h2 {
+                font-size: 1.7rem;
+                text-transform: uppercase;
+            }
+
+            p {
+                font-size: 1.3rem;
+                margin-left: calc(7% + 3rem);
+            }
+
+        }
+
+        .group-button {
+            display: flex;
+            flex-direction: row;
+            margin-right: 2rem;
+
+            button {
+                cursor: pointer;
+                font-size: 1.2rem;
+                width: 10rem;
+                color: black;
+                margin: 0 2px;
+                border: 0;
+                border-radius: 2px;
+                text-transform: uppercase;
+                transition: 0.2s ease;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                img {
+                    width: 1.2rem;
+                    margin: 2px;
+                    margin-right: 3px;
+                }
+
+
+                &:hover {
+                    background-color: rgb(190, 190, 190);
+                }
+            }
+        }
+
+    }
+}

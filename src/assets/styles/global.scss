@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap');
+
+:root {
+  font-size: 60%;
+  --color-background: #0b090c;
+  --color-boxes: #1a1a1c;
+  --color-menu: #393939;
+  --color-menu-hover: #2b2a2a;
+  --color-primary-pink: #f53767;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input,
+button,
+body,
+textarea {
+  font: 500 1.6rem 'Source Sans Pro';
+  color: var(--color-text-base);
+}
+
+
+
+@media screen and (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
+}
