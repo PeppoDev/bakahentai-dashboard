@@ -26,6 +26,24 @@
         margin-bottom: 2rem;
     }
 
+    .sub-button {
+        width: 85%;
+        display: flex;
+        text-transform: uppercase;
+        border: 0;
+        font-size: 1.2rem;
+        transition: .2s ease;
+        padding: 0.9rem 0;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-menu);
+        color: white;
+
+        &:hover {
+            background-color: var(--color-menu-hover);
+        }
+
+    }
 
     .section-button {
         width: 100%;
@@ -39,8 +57,14 @@
         padding: 0.9rem 0;
         transition: .2s ease;
         text-decoration: none;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-left: 5%;
+
+        img {
+            width: 2.3rem;
+            margin-right: 3rem;
+        }
 
         &:hover {
             background-color: var(--color-menu-hover);
