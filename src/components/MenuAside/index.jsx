@@ -1,136 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react";  
 //assets
 import photo from "../../assets/images/ditto.png";
 import settingsIcon from "../../assets/icons/settings.svg";
-import arrowIcon from "../../assets/icons/arrow.svg";
-
 //css
 import "./styles.scss";
-//react-redux
-import { useDispatch } from "react-redux";
-import allActions from "../../store/actions";
+//components
+import MenuButton from "../MenuButton";
+import DropDownMenu from "../DropDownMenu";
+import DropDownButton from "../DropDownButton";
 
 function MenuAside() {
-  const dispatch = useDispatch();
-
-  const [showHentaiM, setShowHentaiM] = React.useState(false);
-  const [showEpisodeM, setShowEpisodeM] = React.useState(false);
-
   return (
     <aside className="menu-container">
       <img src={photo} alt="" />
       <h2>Peppa</h2>
       <p>Membro desde 17/08/2020</p>
-      <Link
-        to="/"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("home"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Home
-      </Link>
-      <Link
-        to="/settings"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("settings"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Configurações
-      </Link>
-      <Link
-        to="/faplist"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("faplist"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Lista de Fap
-      </Link>
-      <Link
-        to="/status"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("status"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Status Geral
-      </Link>
-      <Link
-        to="/notifications"
-        className="section-button"
-        onClick={() =>
-          dispatch(allActions.pageActions.changePage("notifications"))
-        }
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Notificações
-      </Link>
-      <Link
-        to="/hentais"
-        className="section-button"
-        onClick={() =>
-          dispatch(
-            allActions.pageActions.changePage("hentais"),
-            setShowHentaiM(showHentaiM ? false : true)
-          )
-        }
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Hentais
-        <img className="icon-aside sub-icon" src={arrowIcon} alt="" />
-      </Link>
 
-      {showHentaiM ? (
-        <>
-          <button className="sub-button">Todos Hentais</button>
-          <button className="sub-button">Cadastrar Hentais</button>
-        </>
-      ) : null}
-      <Link
-        to="/episodes"
-        className="section-button"
-        onClick={() =>
-          dispatch(
-            allActions.pageActions.changePage("episodes"),
-            setShowEpisodeM(showEpisodeM ? false : true)
-          )
-        }
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Episódios
-        <img className="icon-aside sub-icon" src={arrowIcon} alt="" />
-      </Link>
-      {showEpisodeM ? (
-        <>
-          <button className="sub-button">Todos Episódios</button>
-          <button className="sub-button">Cadastrar Episódios</button>
-        </>
-      ) : null}
-      <Link
-        to="/taxonomies"
-        className="section-button"
-        onClick={() =>
-          dispatch(allActions.pageActions.changePage("taxonomies"))
-        }
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Taxonomias
-      </Link>
-      <Link
-        to="/users"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("users"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Usuários
-      </Link>
-      <Link
-        to="/comments"
-        className="section-button"
-        onClick={() => dispatch(allActions.pageActions.changePage("comments"))}
-      >
-        <img className="icon-aside" src={settingsIcon} alt="" />
-        Comentários
-      </Link>
+      <MenuButton to="home" initial icon={settingsIcon} text="Home" />
+      <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
+      <MenuButton to="faplist" icon={settingsIcon} text="Lista de Fap" />
+      <MenuButton to="status" icon={settingsIcon} text="Status Geral " />
+      <MenuButton to="notifications" icon={settingsIcon} text="Notificações" />
+
+      <DropDownMenu text="Hentais" icon={settingsIcon}>
+        <DropDownButton text="Todos Hentais" to="hentais" />
+        <DropDownButton text="Cadastrar Hentais" to="hentais" />
+      </DropDownMenu>
+
+      <DropDownMenu text="Episodes" icon={settingsIcon}>
+        <DropDownButton text="Todos Episódios" to="episodes" />
+        <DropDownButton text="Cadastrar Episódios" to="episodes" />
+      </DropDownMenu>
+
+      <MenuButton to="taxonomies" icon={settingsIcon} text="Taxonomias" />
+
+      <MenuButton to="users" icon={settingsIcon} text="Usuários" />
+
+      <MenuButton to="comments" icon={settingsIcon} text="Comentários" />
     </aside>
   );
 }

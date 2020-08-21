@@ -9,7 +9,6 @@ import "./App.scss";
 //components
 import Bar from "../src/components/Bar";
 import MenuAside from "./components/MenuAside";
-import Header from "./components/Header";
 //react-redux
 import { Provider } from "react-redux";
 import store from "./store/reducers/index";
@@ -23,7 +22,6 @@ function App() {
           <div className="main-container">
             <MenuAside />
             <main className="main-page">
-              <Header />
               <Switch>
                 <Route path="/" exact component={pages.Home} />
                 <Route path="/Settings" exact component={pages.Settings} />

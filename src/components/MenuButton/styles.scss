@@ -1,0 +1,25 @@
+ .section-button {
+     width: 100%;
+     display: flex;
+     text-transform: uppercase;
+     background-color: var(--color-menu);
+     border: 0;
+     color: #fff;
+     margin: 1px 0;
+     font-size: 1.2rem;
+     transition: .2s ease;
+     text-decoration: none;
+     justify-content: flex-start;
+     align-items: center;
+     padding: 0.9rem 5%;
+
+     img {
+         width: 2.3rem;
+         margin-right: 1rem;
+
+     }
+
+     &:hover {
+         background-color: var(--color-menu-hover);
+     }
+ }

@@ -26,63 +26,6 @@
         margin-bottom: 2rem;
     }
 
-    .sub-icon {
 
-        margin-left: 1rem;
-
-
-    }
-
-    .sub-button {
-        width: 100%;
-        display: flex;
-        text-transform: uppercase;
-        background-color: #393939;
-        border: 0;
-        color: #fff;
-        margin: 1px 0;
-        font-size: 1.5rem;
-        transition: .2s ease;
-        text-decoration: none;
-        justify-content: center;
-        align-items: center;
-        padding-left: 5%;
-
-
-        &:hover {
-            background-color: var(--color-menu-hover);
-        }
-
-    }
-
-    .section-button {
-        padding-left: 15%;
-        padding-right: 15%;
-
-        width: 100%;
-        display: flex;
-        text-transform: uppercase;
-        background-color: var(--color-menu);
-        border: 0;
-        color: #fff;
-        margin: 1px 0;
-        font-size: 1.5rem;
-        padding: 0.9rem 0;
-        transition: .2s ease;
-        text-decoration: none;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 10%;
-        padding-right: 10%;
-
-        .icon-aside {
-            width: 2.3rem;
-
-        }
-
-        &:hover {
-            background-color: var(--color-menu-hover);
-        }
-    }
 
 }

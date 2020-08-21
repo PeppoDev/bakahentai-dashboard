@@ -1,11 +1,13 @@
 import React from "react";
 //css
 import "./styles.scss";
+//components
+import Header from "../../components/Header";
 
 function Home() {
   return (
     <section className="page-container home">
-      <h2>Home</h2>
+      <Header />
     </section>
   );
 }
