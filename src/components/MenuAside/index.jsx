@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 //assets
 import photo from "../../assets/images/ditto.png";
 import settingsIcon from "../../assets/icons/settings.svg";
+import arrowIcon from "../../assets/icons/arrow.svg";
 
 //css
 import "./styles.scss";
@@ -75,6 +76,7 @@ function MenuAside() {
       >
         <img className="icon-aside" src={settingsIcon} alt="" />
         Hentais
+        <img className="icon-aside sub-icon" src={arrowIcon} alt="" />
       </Link>
 
       {showHentaiM ? (
@@ -95,6 +97,7 @@ function MenuAside() {
       >
         <img className="icon-aside" src={settingsIcon} alt="" />
         Episódios
+        <img className="icon-aside sub-icon" src={arrowIcon} alt="" />
       </Link>
       {showEpisodeM ? (
         <>
