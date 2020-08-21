@@ -10,7 +10,7 @@
     align-items: center;
     padding-top: 3rem;
 
-    img {
+    &>img {
         width: 5rem;
         border-radius: 50%;
     }
@@ -25,7 +25,5 @@
         color: rgb(160, 160, 160);
         margin-bottom: 2rem;
     }
-
-
 
 }

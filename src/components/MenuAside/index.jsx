@@ -1,4 +1,4 @@
-import React from "react";  
+import React from "react";
 //assets
 import photo from "../../assets/images/ditto.png";
 import settingsIcon from "../../assets/icons/settings.svg";
@@ -23,13 +23,13 @@ function MenuAside() {
       <MenuButton to="notifications" icon={settingsIcon} text="Notificações" />
 
       <DropDownMenu text="Hentais" icon={settingsIcon}>
-        <DropDownButton text="Todos Hentais" to="hentais" />
-        <DropDownButton text="Cadastrar Hentais" to="hentais" />
+        <DropDownButton text="Todos Hentais" to="allhentais" />
+        <DropDownButton text="Cadastrar Hentais" to="registerhentais" />
       </DropDownMenu>
 
-      <DropDownMenu text="Episodes" icon={settingsIcon}>
-        <DropDownButton text="Todos Episódios" to="episodes" />
-        <DropDownButton text="Cadastrar Episódios" to="episodes" />
+      <DropDownMenu text="Episódios" icon={settingsIcon}>
+        <DropDownButton text="Todos Episódios" to="allepisodes" />
+        <DropDownButton text="Cadastrar Episódios" to="registerepisodes" />
       </DropDownMenu>
 
       <MenuButton to="taxonomies" icon={settingsIcon} text="Taxonomias" />

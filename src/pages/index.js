@@ -1,13 +1,17 @@
 import Home from "./Home";
 import Settings from "./Settings";
 import Comments from "./Comments";
-import Episodes from "./Episodes";
+import Episodes from "./RegisterEpisodes";
 import FapList from "./FapList";
-import Hentais from "./Hentais";
+import Hentais from "./RegisterHentais";
 import Notifications from "./Notifications";
 import Status from "./Status";
 import Taxonomies from "./Taxonomies";
 import Users from "./Users";
+import AllEpisodes from "./AllEpisodes";
+import RegisterEpisodes from "./RegisterEpisodes";
+import AllHentais from "./AllHentais";
+import RegisterHentais from "./RegisterHentais";
 
 export {
   Home,
@@ -20,4 +24,8 @@ export {
   Status,
   Taxonomies,
   Users,
+  AllEpisodes,
+  RegisterEpisodes,
+  AllHentais,
+  RegisterHentais,
 };

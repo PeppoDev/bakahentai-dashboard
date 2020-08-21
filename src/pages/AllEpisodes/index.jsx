@@ -2,12 +2,12 @@ import React from "react";
 //css
 import "./styles.scss";
 
-function Episodes() {
+function AllEpisodes() {
   return (
-    <section className="page-container episodes">
+    <section className="page-container all-episodes">
       <h2>Episodes</h2>
     </section>
   );
 }
 
-export default Episodes;
+export default AllEpisodes;

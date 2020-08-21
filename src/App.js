@@ -26,9 +26,22 @@ function App() {
                 <Route path="/" exact component={pages.Home} />
                 <Route path="/Settings" exact component={pages.Settings} />
                 <Route path="/Comments" exact component={pages.Comments} />
-                <Route path="/Episodes" exact component={pages.Episodes} />
                 <Route path="/FapList" exact component={pages.FapList} />
-                <Route path="/Hentais" exact component={pages.Hentais} />
+
+                <Route path="/AllEpisodes" exact component={pages.Episodes} />
+                <Route
+                  path="/RegisterEpisodes"
+                  exact
+                  component={pages.Episodes}
+                />
+
+                <Route path="/AllHentais" exact component={pages.Hentais} />
+                <Route
+                  path="/RegisterHentais"
+                  exact
+                  component={pages.Hentais}
+                />
+
                 <Route
                   path="/Notifications"
                   exact
