@@ -6,6 +6,7 @@ import "./styles.scss";
 import MainInput from "../../components/Input";
 import * as ComboBox from "../../components/ComboBox";
 import RadioButton from "../../components/Radio";
+import TextArea from "../../components/TextArea";
 
 //assets
 import backIcon from "../../assets/icons/back.png";
@@ -40,6 +41,14 @@ function RegisterHentais() {
 
         <MainInput label="Ano Lançado" placeholder="Ex. Algum anime" />
 
+        <article className="radio-form">
+          <p>
+            Censura<span>*</span>:
+          </p>
+          <RadioButton value="false" name="censura" text="Sem Censura" />
+          <RadioButton value="true" name="censura" text="Com Censura" />
+        </article>
+
         <article className="input-n-select">
           <MainInput
             type="search"
@@ -54,12 +63,13 @@ function RegisterHentais() {
           </ComboBox.ComboSelect>
         </article>
 
+        <TextArea text="História" />
         <article className="radio-form">
           <p>
-            Censura<span>*</span>
+            Status<span>*</span>:
           </p>
-          <RadioButton value="false" name="censura" text="Sem Censura" />
-          <RadioButton value="true" name="censura" text="Com Censura" />
+          <RadioButton value="false" name="hentai_status" text="Lançamento" />
+          <RadioButton value="true" name="hentai_status" text="Completo" />
         </article>
       </article>
     </section>
