@@ -2,12 +2,12 @@ import React from "react";
 //css
 import "./styles.scss";
 
-export default function Input({ placeholder, label }) {
+export default function Input({ placeholder, label, type = "text" }) {
   return (
     <article className="group-input">
       <input
         className="main-input"
-        type="text"
+        type={type}
         id={label}
         placeholder={placeholder}
         value={null}

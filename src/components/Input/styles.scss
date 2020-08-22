@@ -1,5 +1,7 @@
 .group-input {
-    max-width: 60%;
+    max-width: 650px;
+    width: 100%;
+    margin-bottom: 1rem;
 
     .main-input {
         background-color: white;
@@ -9,8 +11,9 @@
         height: 4rem;
         padding: 1rem 2rem;
         border: 0;
-        margin-bottom: 1rem;
+        margin: 1rem 1rem 1rem 0rem;
         display: flex;
+
 
 
         &::placeholder {

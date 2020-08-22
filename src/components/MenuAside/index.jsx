@@ -8,7 +8,6 @@ import fappedIcon from "../../assets/icons/fapped.svg";
 import taxonomiesIcon from "../../assets/icons/taxonomias.svg";
 import notificationsIcon from "../../assets/icons/notifications.svg";
 import usersIcon from "../../assets/icons/users.svg";
-
 //css
 import "./styles.scss";
 //components
