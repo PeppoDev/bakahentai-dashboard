@@ -11,6 +11,26 @@
     label {
         color: white;
         text-transform: uppercase;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+}
+
+.radio-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    margin: 4rem 0;
+
+    p {
+        color: white;
+        text-transform: uppercase;
+        margin-right: 2rem;
+        font-size: 1.2rem;
+
+        span {
+            color: var(--color-primary-pink);
+        }
     }
 }
