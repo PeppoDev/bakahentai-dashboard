@@ -1,23 +1,5 @@
 .register-hentais {
 
-    .backicon {
-        transform: scaleX(-1);
-        margin-right: 1rem;
-    }
-
-    .page-title {
-        color: rgb(163, 163, 163);
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        margin: 2rem;
-    }
-
-    hr {
-        margin: 0 2rem 2rem 2rem;
-        border: 1px solid #424141;
-    }
-
-
     .radio-form {
         display: flex;
         flex-direction: row;
@@ -38,13 +20,75 @@
     }
 
     .register-hentais-container {
+        justify-content: space-between;
+        display: grid;
         padding: 0 3rem;
+        grid-template-columns: 3fr 1fr;
+
+
+
+
+        .main-left {}
+
+        .main-right {
+            margin-left: 5rem;
+
+            .button-dragndrop {
+                margin-top: 4px;
+                justify-content: center !important;
+
+                img {
+                    display: none;
+                }
+
+            }
+        }
 
         .input-n-select {
             display: flex;
             flex-direction: row;
             max-width: 650px;
             width: 100%;
+            font-size: 1.2rem !important;
+
+
+
+            // div {
+            //     font-size: 1.2rem;
+            //     text-transform: capitalize;
+            // }
+
+            // &>div {
+            //     width: 100%;
+            //     max-width: 650px;
+            //     height: 4rem;
+            //     margin-bottom: 3rem;
+
+
+
+            //     border: 0 !important;
+
+
+            //     button {
+            //         border: 0 !important;
+
+            //     }
+
+            //     input {
+            //         border: 0 !important;
+            //         text-transform: capitalize;
+            //         font-size: 1.6rem;
+
+            //         &::placeholder {
+            //             text-align: right;
+            //         }
+
+            //         &:focus {
+            //             border: white !important;
+            //         }
+            //     }
+            // }
+
         }
     }
 

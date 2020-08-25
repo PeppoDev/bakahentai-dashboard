@@ -2,9 +2,16 @@ import React from "react";
 //css
 import "./styles.scss";
 
-export default function Input({ placeholder, label, type = "text" }) {
+export default function Input({
+  placeholder,
+  label,
+  type = "text",
+  className,
+}) {
+  const style = className + " group-input";
+
   return (
-    <article className="group-input">
+    <article className={style}>
       <input
         type={type}
         id={label}
