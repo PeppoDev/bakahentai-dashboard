@@ -5,11 +5,13 @@ import "./styles.scss";
 //components
 import MainInput from "../../components/Input";
 import * as ComboBox from "../../components/ComboBox";
-import * as Radio from "../../components/Radio";
+import RadioButton from "../../components/Radio";
 import TextArea from "../../components/TextArea";
+
 import DragNDrop from "../../components/DragNDrop";
 import Button from "../../components/MenuButton";
 import TitlePage from "../../components/TitlePage";
+
 //assets
 import backIcon from "../../assets/icons/back.png";
 
@@ -18,6 +20,7 @@ function RegisterHentais() {
     <section className="page-container register-hentais">
       <TitlePage text="Cadastrar Hentai" />
       <article className="register-hentais-container">
+
         <article className="main-left">
           <MainInput label="Título do Hentai" placeholder="Ex. Algum anime" />
           <MainInput label="Título Original" placeholder="Ex. Algum anime" />

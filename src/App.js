@@ -23,7 +23,7 @@ function App() {
             <MenuAside />
             <main className="main-page">
               <Switch>
-                <Route path="/" exact component={pages.Status} />
+                <Route path="/" exact component={pages.Home} />
                 <Route path="/Settings" exact component={pages.Settings} />
                 <Route path="/Comments" exact component={pages.Comments} />
                 <Route path="/FapList" exact component={pages.FapList} />
@@ -47,6 +47,7 @@ function App() {
                   exact
                   component={pages.Notifications}
                 />
+                <Route path="/Status" exact component={pages.Status} />
                 <Route path="/Taxonomies" exact component={pages.Taxonomies} />
                 <Route path="/Users" exact component={pages.Users} />
               </Switch>

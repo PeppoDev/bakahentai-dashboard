@@ -1,17 +1,23 @@
 .register-hentais {
-    fieldset {
-        opacity: 0;
 
-    }
-
-
-    .group-radio {
+    .radio-form {
         display: flex;
         flex-direction: row;
+        width: 100%;
         max-width: 650px;
+        margin: 4rem 0;
+
+        p {
+            color: white;
+            text-transform: uppercase;
+            margin-right: 4rem;
+            font-size: 1.2rem;
+
+            span {
+                color: var(--color-primary-pink);
+            }
+        }
     }
-
-
 
     .register-hentais-container {
         justify-content: space-between;
@@ -82,10 +88,9 @@
             //         }
             //     }
             // }
+
         }
     }
-
-
 
 
 }

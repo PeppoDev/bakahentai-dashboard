@@ -22,14 +22,10 @@ function MenuAside() {
       <h2>Peppa</h2>
       <p>Membro desde 17/08/2020</p>
 
+      <MenuButton to="home" initial icon={dashboardIcon} text="Home" />
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
       <MenuButton to="faplist" icon={fappedIcon} text="Lista de Fap" />
-      <MenuButton
-        to="status"
-        initial
-        icon={dashboardIcon}
-        text="Status Geral"
-      />
+      <MenuButton to="status" icon={settingsIcon} text="Status Geral" />
       <MenuButton
         to="notifications"
         icon={notificationsIcon}
