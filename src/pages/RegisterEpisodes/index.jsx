@@ -3,7 +3,11 @@ import React from "react";
 import "./styles.scss";
 
 function RegisterEpisodes() {
-  return <section className="page-container register-episodes"></section>;
+  return (
+    <section className="page-container register-episodes">
+      <h2>Episodes</h2>
+    </section>
+  );
 }
 
 export default RegisterEpisodes;

@@ -4,14 +4,15 @@
     margin-bottom: 1.5rem;
 
     input {
-        background-color: #fff;
+        background-color: white;
         text-transform: capitalize;
         border-radius: 4px;
         width: 100%;
         height: 4rem;
-        padding: 0 1rem;
+        padding: 0rem 2rem;
         border: 0;
-        margin: 1rem 1rem .5rem 0;
+        margin: 1rem 1rem 0.5rem 0rem;
+        display: flex;
 
         &::placeholder {
             color: black;
