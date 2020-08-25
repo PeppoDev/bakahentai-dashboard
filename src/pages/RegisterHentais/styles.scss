@@ -1,4 +1,8 @@
 .register-hentais {
+    fieldset {
+        opacity: 0;
+
+    }
 
     .backicon {
         transform: scaleX(-1);
@@ -13,29 +17,17 @@
     }
 
     hr {
-        margin: 0 2rem 2rem 2rem;
-        border: 1px solid #424141;
+        margin: 0 2rem 2rem;
+        border: 0.5px solid #2f2e2e;    
     }
 
-
-    .radio-form {
+    .group-radio {
         display: flex;
         flex-direction: row;
-        width: 100%;
         max-width: 650px;
-        margin: 4rem 0;
-
-        p {
-            color: white;
-            text-transform: uppercase;
-            margin-right: 4rem;
-            font-size: 1.2rem;
-
-            span {
-                color: var(--color-primary-pink);
-            }
-        }
     }
+
+
 
     .register-hentais-container {
         padding: 0 3rem;
@@ -45,8 +37,47 @@
             flex-direction: row;
             max-width: 650px;
             width: 100%;
+            font-size: 1.2rem !important;
+
+            div {
+                font-size: 1.2rem;
+                text-transform: capitalize;
+            }
+
+            &>div {
+                width: 100%;
+                max-width: 650px;
+                height: 4rem;
+                margin-bottom: 3rem;
+
+
+
+                border: 0 !important;
+
+
+                button {
+                    border: 0 !important;
+
+                }
+
+                input {
+                    border: 0 !important;
+                    text-transform: capitalize;
+                    font-size: 1.6rem;
+
+                    &::placeholder {
+                        text-align: right;
+                    }
+
+                    &:focus {
+                        border: white !important;
+                    }
+                }
+            }
         }
     }
+
+
 
 
 }
