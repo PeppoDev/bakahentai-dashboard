@@ -9,19 +9,14 @@ import * as Radio from "../../components/Radio";
 import TextArea from "../../components/TextArea";
 import DragNDrop from "../../components/DragNDrop";
 import Button from "../../components/MenuButton";
+import TitlePage from "../../components/TitlePage";
 //assets
 import backIcon from "../../assets/icons/back.png";
 
 function RegisterHentais() {
   return (
     <section className="page-container register-hentais">
-      <p className="page-title">
-        <Link to="/">
-          <img className="backicon" src={backIcon} alt="" />
-        </Link>
-        Cadastrar Hentais
-      </p>
-      <hr />
+      <TitlePage text="Cadastrar Hentai" />
       <article className="register-hentais-container">
         <article className="main-left">
           <MainInput label="Título do Hentai" placeholder="Ex. Algum anime" />
@@ -90,7 +85,7 @@ function RegisterHentais() {
           </Radio.RadioForm>
         </article>
         <article className="main-right">
-          <DragNDrop />
+          <DragNDrop countGroup />
           <Button
             className="button-dragndrop"
             to="RegisterEpisodes"

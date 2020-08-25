@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone";
 import upIcon from "../../assets/icons/upload.svg";
 import "./styles.scss";
 
-export default function MyDropzone() {
+export default function MyDropzone({ countGroup }) {
   const [groupImages, setGroupImages] = React.useState(0);
   var count = 0;
 
@@ -23,15 +23,18 @@ export default function MyDropzone() {
         <input {...getInputProps()} />
         {isDragActive ? <p>Solte Aqui</p> : <p>Clique ou Arraste Aqui</p>}
       </div>
-      <article className="count-group">
-        <span>6</span>
-        <span>5</span>
-        <span>4</span>
-        <span>3</span>
-        <span>2</span>
-        <span>1</span>
-        <span>+</span>
-      </article>
+
+      {countGroup ? (
+        <article className="count-group">
+          <span>6</span>
+          <span>5</span>
+          <span>4</span>
+          <span>3</span>
+          <span>2</span>
+          <span>1</span>
+          <span>+</span>
+        </article>
+      ) : null}
     </div>
   );
 }
