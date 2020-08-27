@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 //components
 import TitlePage from "../../components/TitlePage";
 import MainInput from "../../components/Input";
-import DragNDrop from "../../components/DragNDrop";
 //css
 import "./styles.scss";
 //assets
@@ -35,9 +34,7 @@ function RegisterEpisodes() {
             placeholder="Ex. Algum anime"
           />
         </article>
-        <article className="main-right">
-          <DragNDrop />
-        </article>
+        <article className="main-right"></article>
       </article>
     </section>
   );

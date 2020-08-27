@@ -1,0 +1,22 @@
+.badge {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: var(--color-primary-pink);
+    border-radius: 2px;
+    margin-right: 1rem;
+    padding: 0 3px;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    img {
+        width: 1.2rem;
+
+    }
+}

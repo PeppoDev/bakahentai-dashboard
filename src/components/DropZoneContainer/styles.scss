@@ -1,0 +1,47 @@
+.dragndrop-container {
+    width: 100%;
+
+
+
+    .dragndrop-main-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        border: 2px dotted grey;
+        margin-bottom: 10px;
+        height: 35rem;
+        width: 30rem;
+
+        img {
+            object-fit: contain;
+            max-width: 30rem;
+        }
+
+    }
+
+    .count-group {
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        span:last-child {
+            background-color: var(--color-primary-pink);
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            background-color: var(--color-menu);
+            margin: 0 3px;
+            width: 3.7rem;
+            height: 3.7rem;
+            border-radius: 2px;
+        }
+    }
+}

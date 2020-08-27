@@ -7,7 +7,6 @@ import hentaisIcon from "../../assets/icons/hentais.png";
 import episodesIcon from "../../assets/icons/episodes.png";
 import usersIcon from "../../assets/icons/users.png";
 import commentsIcon from "../../assets/icons/comments.png";
-
 //react-redux
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../store/actions";

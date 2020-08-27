@@ -8,7 +8,7 @@ import "./styles.scss";
 
 function MenuButton({ icon, text, to, initial, className }) {
   const style = className + " section-button";
-  console.log(style);
+
   const dispatch = useDispatch();
   return (
     <Link

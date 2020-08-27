@@ -3,7 +3,10 @@ import "./styles.scss";
 
 function RadioForm(props) {
   return (
-    <section className="radio-form">
+    <section
+      className="radio-form"
+      onChange={(event) => props.onChange(event.target.value)}
+    >
       <p>
         {props.text}
         <span>*</span>:
@@ -17,7 +20,7 @@ function RadioInput({ value, name, text }) {
   return (
     <article className="radio-container">
       <input type="radio" id={value} name={name} value={value} />
-      <label for={value}>{text}</label>
+      <label htmlFor={value}>{text}</label>
     </article>
   );
 }

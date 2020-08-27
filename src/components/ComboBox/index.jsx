@@ -5,8 +5,18 @@ import "./styles.scss";
 function ComboSelect(props) {
   return (
     <article>
-      <select className="combo-select" name={props.htmlFor} id={props.htmlFor}>
-        <option className="combo-item" value={null} selected>
+      <select
+        className="combo-select"
+        name={props.htmlFor}
+        id={props.htmlFor}
+        mutiple={props.mutiple}
+        onChange={
+          props.mutiple
+            ? (event) => props.onChange(event.target.value)
+            : (event) => props.onChange(event.target.value)
+        }
+      >
+        <option className="combo-item" value={null} defaultValue>
           Selecionar
         </option>
 

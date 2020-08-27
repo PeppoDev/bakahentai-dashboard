@@ -31,10 +31,10 @@
         .main-left {}
 
         .main-right {
-            margin-left: 5rem;
+            margin-left: 0rem;
 
             .button-dragndrop {
-                margin-top: 4px;
+                margin-top: 10px;
                 justify-content: center !important;
 
                 img {
@@ -44,12 +44,35 @@
             }
         }
 
+
+        .register-button {
+            width: 100%;
+            height: 5rem;
+            background-color: var(--color-primary-pink);
+            color: white;
+            border: 0;
+            border-radius: 2px;
+            font-size: 1.3rem;
+        }
+
+        .badge-group {
+            height: 3rem;
+            padding: 0rem 0rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-content: flex-start;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
         .input-n-select {
             display: flex;
             flex-direction: row;
             max-width: 650px;
             width: 100%;
             font-size: 1.2rem !important;
+
 
 
 
