@@ -9,7 +9,7 @@ export default function Input({
   className,
   value,
   onChange,
-  onKeyPress,
+  onKeyPress = () => null,
 }) {
   const style = className + " group-input";
 
