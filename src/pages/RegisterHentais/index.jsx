@@ -28,19 +28,19 @@ function RegisterHentais() {
 
   const studio_json = {
     0: {
-      value: 0,
+      value: "Studio 1",
       text: "Studio 1",
     },
     1: {
-      value: 1,
+      value: "Studio 2",
       text: "Studio 2",
     },
     2: {
-      value: 2,
+      value: "Studio 3",
       text: "Studio 3",
     },
     3: {
-      value: 3,
+      value: "Studio 4",
       text: "Studio 4",
     },
   };
@@ -82,7 +82,6 @@ function RegisterHentais() {
   }
 
   function handleRemoveBadge(key) {
-    console.log(key);
     const newTags = Array.from(tags);
     newTags.splice(key, 1);
     setTags(newTags);

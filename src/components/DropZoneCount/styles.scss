@@ -1,0 +1,43 @@
+.chip-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--color-menu);
+    margin: 0 3px;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 2px;
+}
+
+.file-input {
+    display: none;
+}
+
+.chip-popover {
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-menu);
+
+    border-radius: 0;
+    color: white;
+    padding: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+        font-size: 1.3rem;
+        margin: 0.5rem;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+}
+
+.MuiPaper-root {
+    background-color: var(--color-menu) !important;
+
+}

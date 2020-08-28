@@ -4,23 +4,12 @@ import upIcon from "../../assets/icons/upload.svg";
 
 function DropZone(props) {
   const [selectedFiles, setSelectedFiles] = React.useState([]);
-  const fileInputRef = React.useRef();
 
   React.useEffect(() => {
     if (selectedFiles.length !== 0) {
       props.setFiles((prev) => [...prev, ...selectedFiles]);
     }
   }, [selectedFiles]);
-
-  const removeFile = (name) => {
-    // find the index of the item
-    // remove the item from array
-    const selectedFileIndex = selectedFiles.findIndex((e) => e.name === name);
-    selectedFiles.splice(selectedFileIndex, 1);
-    // update selectedFiles array
-    setSelectedFiles([...selectedFiles]);
-    console.log(selectedFiles);
-  };
 
   const dragOver = (e) => {
     e.preventDefault();
@@ -35,13 +24,13 @@ function DropZone(props) {
   };
 
   const filesSelected = () => {
-    if (fileInputRef.current.files.length) {
-      handleFiles(fileInputRef.current.files);
+    if (props.fileInputRef.current.files.length) {
+      handleFiles(props.fileInputRef.current.files);
     }
   };
 
   const fileInputClicked = () => {
-    fileInputRef.current.click();
+    props.fileInputRef.current.click();
   };
 
   const fileDrop = async (e) => {
@@ -82,7 +71,7 @@ function DropZone(props) {
       >
         <input
           multiple
-          ref={fileInputRef}
+          ref={props.fileInputRef}
           className="file-input"
           type="file"
           onChange={filesSelected}

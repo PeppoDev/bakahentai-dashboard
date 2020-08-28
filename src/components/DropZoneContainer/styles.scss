@@ -21,15 +21,12 @@
 
     }
 
+
     .count-group {
         margin-bottom: 10px;
         width: 100%;
         display: flex;
         justify-content: flex-end;
-
-        span:last-child {
-            background-color: var(--color-primary-pink);
-        }
 
         span {
             display: flex;
@@ -43,5 +40,17 @@
             height: 3.7rem;
             border-radius: 2px;
         }
+
+        .last-span {
+            background-color: var(--color-primary-pink);
+        }
+
+        div {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
     }
+
+
 }
