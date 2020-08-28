@@ -58,11 +58,15 @@ function DropZone(props) {
   const handleFiles = (files) => {
     const newFiles = Object.values(files);
     newFiles.map((file) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = function (e) {
-        setSelectedFiles(selectedFiles.concat(reader.result));
-      };    
+      if (file.type.includes("image")) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+          setSelectedFiles(selectedFiles.concat(reader.result));
+        };
+      } else {
+        console.log("Erro: formato não suportado");
+      }
     });
   };
 

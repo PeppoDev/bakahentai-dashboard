@@ -24,7 +24,7 @@ function RegisterHentais() {
   const [synopsis, setSynopsis] = React.useState("");
   const [status, setStatus] = React.useState(false);
 
-  const [showButton, setShowButton] = React.useState(true);
+  const [showButton, setShowButton] = React.useState(false);
 
   const studio_json = {
     0: {
@@ -67,7 +67,6 @@ function RegisterHentais() {
   const tags_arr = Object.values(tags_json);
 
   function verify() {
-    console.log("passo");
     if (
       title !== "" &&
       original_title !== "" &&
@@ -75,19 +74,34 @@ function RegisterHentais() {
       realeasey !== "" &&
       censorship !== "" &&
       quality !== "" &&
-      tagsTemp !== "" &&
-      tags !== [] &&
-      synopsis !== "" &&
+      tags !== "" &&
       status !== false
     ) {
       setShowButton(true);
-      console.log("asdsad");
     }
   }
 
+  function handleRemoveBadge(key) {
+    console.log(key);
+    const newTags = Array.from(tags);
+    newTags.splice(key, 1);
+    setTags(newTags);
+  }
+  function handleSend() {
+    setTitle("");
+    setOriginal_title("");
+    setStudio("");
+    setRealeasey("");
+    setCensorship("");
+    setQuality("");
+    setTags([]);
+    setTagsTemp("");
+    setSynopsis("");
+    setStatus(true);
+  }
   function handleTags(event) {
     if (event.key === "Enter") {
-      const newtags = tagsTemp.split(",");
+      const newtags = tagsTemp.replace(" ", "").split(",");
       newtags.map((tag) => {
         setTags((prev) => [...prev, tag]);
       });
@@ -100,7 +114,7 @@ function RegisterHentais() {
   }
 
   return (
-    <section className="page-container register-hentais">
+    <section className="page-container register-hentais" onClick={verify}>
       <TitlePage text="Cadastrar Hentai" />
       <article className="register-hentais-container">
         <article className="main-left">
@@ -192,8 +206,13 @@ function RegisterHentais() {
           </article>
 
           <article className="badge-group">
-            {tags.map((tag) => (
-              <Badge text={tag} />
+            {tags.map((tag, index) => (
+              <Badge
+                text={tag}
+                key={index}
+                index={index}
+                onClick={handleRemoveBadge}
+              />
             ))}
           </article>
 
@@ -213,12 +232,14 @@ function RegisterHentais() {
         </article>
         <article className="main-right">
           <DropZoneContainer />
-
-          {showButton ? (
-            <button className="register-button">Cadastrar</button>
-          ) : null}
         </article>
       </article>
+
+      {showButton ? (
+        <button className="register-button" onClick={handleSend}>
+          Cadastrar
+        </button>
+      ) : null}
     </section>
   );
 }

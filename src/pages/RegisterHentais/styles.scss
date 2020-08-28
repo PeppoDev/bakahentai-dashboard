@@ -1,11 +1,36 @@
 .register-hentais {
+    .register-button {
+        width: 100%;
+        width: 15rem;
+        align-self: center;
+        height: 4rem;
+        background-color: var(--color-primary-pink);
+        color: white;
+        border: 0;
+        border-radius: 2px;
+        font-size: 1.3rem;
+        cursor: pointer;
+        animation: appear-button 0.2s ease forwards;
+    }
+
+    @keyframes appear-button {
+        from {
+            opacity: 50%;
+            transform: scale(0.7);
+        }
+
+        to {
+            opacity: 100%;
+            transform: scale(1);
+        }
+    }
 
     .radio-form {
         display: flex;
         flex-direction: row;
         width: 100%;
         max-width: 650px;
-        margin: 4rem 0;
+        margin: 2rem 0;
 
         p {
             color: white;
@@ -45,15 +70,7 @@
         }
 
 
-        .register-button {
-            width: 100%;
-            height: 5rem;
-            background-color: var(--color-primary-pink);
-            color: white;
-            border: 0;
-            border-radius: 2px;
-            font-size: 1.3rem;
-        }
+
 
         .badge-group {
             height: 3rem;
