@@ -4,10 +4,13 @@ import upIcon from "../../assets/icons/upload.svg";
 
 function DropZone(props) {
   const [selectedFiles, setSelectedFiles] = React.useState([]);
+  const fileInputRef = React.useRef();
+
+  const { setFiles, arrlength = 1, limit = 1 } = props;
 
   React.useEffect(() => {
     if (selectedFiles.length !== 0) {
-      props.setFiles((prev) => [...prev, ...selectedFiles]);
+      setFiles((prev) => [...prev, ...selectedFiles]);
     }
   }, [selectedFiles]);
 
@@ -24,13 +27,13 @@ function DropZone(props) {
   };
 
   const filesSelected = () => {
-    if (props.fileInputRef.current.files.length) {
-      handleFiles(props.fileInputRef.current.files);
+    if (fileInputRef.current.files.length) {
+      handleFiles(fileInputRef.current.files);
     }
   };
 
   const fileInputClicked = () => {
-    props.fileInputRef.current.click();
+    fileInputRef.current.click();
   };
 
   const fileDrop = async (e) => {
@@ -47,6 +50,10 @@ function DropZone(props) {
   const handleFiles = (files) => {
     const newFiles = Object.values(files);
     newFiles.map((file) => {
+      // if () {
+      // } else {
+      //   console.log("Erro: excedeu a quantidade válida de imagens");
+      // }
       if (file.type.includes("image")) {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -56,6 +63,7 @@ function DropZone(props) {
       } else {
         console.log("Erro: formato não suportado");
       }
+      return null;
     });
   };
 
@@ -71,7 +79,7 @@ function DropZone(props) {
       >
         <input
           multiple
-          ref={props.fileInputRef}
+          ref={fileInputRef}
           className="file-input"
           type="file"
           onChange={filesSelected}

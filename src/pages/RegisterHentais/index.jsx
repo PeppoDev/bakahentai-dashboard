@@ -103,6 +103,7 @@ function RegisterHentais() {
       const newtags = tagsTemp.replace(" ", "").split(",");
       newtags.map((tag) => {
         setTags((prev) => [...prev, tag]);
+        return null;
       });
       setTagsTemp("");
     }

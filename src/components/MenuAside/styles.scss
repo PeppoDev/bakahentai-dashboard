@@ -3,12 +3,14 @@
     flex-direction: column;
     height: calc(100% - 2px);
     width: 28rem;
-    max-width: 280px;
+    max-width: 230px;
     background-color: var(--color-boxes);
     border-radius: 2px;
-    margin-top: 2px;
+    margin-top: calc(5rem);
     align-items: center;
     padding-top: 3rem;
+    position: fixed;
+
 
     &>img {
         width: 5rem;

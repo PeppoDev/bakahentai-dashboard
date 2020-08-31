@@ -3,7 +3,6 @@ import React from "react";
 import photo from "../../assets/images/ditto.png";
 import settingsIcon from "../../assets/icons/config.svg";
 import commentsIcon from "../../assets/icons/comments.svg";
-import dashboardIcon from "../../assets/icons/dashboard.svg";
 import fappedIcon from "../../assets/icons/fapped.svg";
 import taxonomiesIcon from "../../assets/icons/taxonomias.svg";
 import notificationsIcon from "../../assets/icons/notifications.svg";
@@ -22,10 +21,9 @@ function MenuAside() {
       <h2>Peppa</h2>
       <p>Membro desde 17/08/2020</p>
 
-      <MenuButton to="home" initial icon={dashboardIcon} text="Home" />
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
       <MenuButton to="faplist" icon={fappedIcon} text="Lista de Fap" />
-      <MenuButton to="status" icon={settingsIcon} text="Status Geral" />
+      <MenuButton to="status" initial icon={settingsIcon} text="Status Geral" />
       <MenuButton
         to="notifications"
         icon={notificationsIcon}

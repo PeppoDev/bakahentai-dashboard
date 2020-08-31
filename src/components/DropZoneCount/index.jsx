@@ -11,6 +11,8 @@ export default function DropZoneCount({
   className,
 }) {
   const fileInputRef = React.useRef();
+  const popOverRef = React.useRef();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   function handleOpen(event) {
@@ -65,6 +67,7 @@ export default function DropZoneCount({
       </span>
 
       <Popover
+        ref={popOverRef}
         id={id}
         open={open}
         anchorEl={anchorEl}
