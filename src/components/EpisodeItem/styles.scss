@@ -1,0 +1,92 @@
+.register-episodes-container {
+    padding: 0 3rem;
+
+    &>article {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        grid-column-gap: 12rem;
+        height: 45rem;
+    }
+
+    .input-episodes {
+        margin-bottom: 0rem;
+    }
+
+    .main-left {
+        display: flex;
+        flex-direction: column;
+        height: 25rem;
+        justify-content: space-between;
+        align-content: space-between !important;
+    }
+
+    .main-right {
+        height: 25rem;
+        border: 2px dotted grey;
+
+    }
+
+    .episode-banner {
+        display: flex;
+        height: 4rem;
+        width: 100%;
+        background-color: var(--color-dropdown-button);
+        padding: 0 2rem;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        img {
+            width: 1rem;
+        }
+
+        p {
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            margin-left: 1rem;
+            border-radius: 4px;
+        }
+    }
+
+
+    .animation-img {
+        img {
+            animation: logo-rotation 0.2s forwards ease;
+            width: 1rem;
+        }
+    }
+
+    .animation-img-close {
+        img {
+            animation: logo-rotation-close 0.2s forwards ease;
+            width: 1rem;
+        }
+    }
+
+    @keyframes logo-rotation {
+        from {
+            transform: rotate(0);
+
+        }
+
+        to {
+            transform: rotate(90deg);
+        }
+    }
+
+    @keyframes logo-rotation-close {
+        from {
+            transform: rotate(90deg);
+
+        }
+
+        to {
+            transform: rotate(0);
+        }
+    }
+
+
+
+}
