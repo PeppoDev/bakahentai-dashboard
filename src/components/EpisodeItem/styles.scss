@@ -1,11 +1,16 @@
 .register-episodes-container {
     padding: 0 3rem;
 
-    &>article {
+    &:last-child {
+        margin-bottom: 3rem;
+    }
+
+    .grid-episode-item {
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
         grid-column-gap: 12rem;
-        height: 45rem;
+        margin-bottom: 3rem;
+
     }
 
     .input-episodes {
@@ -34,7 +39,7 @@
         padding: 0 2rem;
         flex-direction: row;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         cursor: pointer;
 
         img {

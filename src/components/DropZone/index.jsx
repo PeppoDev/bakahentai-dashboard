@@ -6,7 +6,7 @@ function DropZone(props) {
   const [selectedFiles, setSelectedFiles] = React.useState([]);
   const fileInputRef = React.useRef();
 
-  const { setFiles, arrlength = 1, limit = 1 } = props;
+  const { setFiles } = props;
 
   React.useEffect(() => {
     if (selectedFiles.length !== 0) {
@@ -50,10 +50,7 @@ function DropZone(props) {
   const handleFiles = (files) => {
     const newFiles = Object.values(files);
     newFiles.map((file) => {
-      // if () {
-      // } else {
-      //   console.log("Erro: excedeu a quantidade válida de imagens");
-      // }
+      console.log(file);
       if (file.type.includes("image")) {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -85,7 +82,7 @@ function DropZone(props) {
           onChange={filesSelected}
         />
         <img src={upIcon} alt="" />
-        Solte ou clique aqui para upar uma imagem
+        {props.text}
       </div>
     </>
   );

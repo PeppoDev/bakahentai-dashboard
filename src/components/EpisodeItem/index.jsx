@@ -2,13 +2,13 @@ import React from "react";
 //components
 import DropZone from "../DropZone";
 import MainInput from "../Input";
-
+import InputVideo from "../InputVideo";
 //css
 import "./styles.scss";
 //assets
 import playIcon from "../../assets/icons/play.svg";
 
-export default function EpisodeItem({ text }) {
+export default function EpisodeItem({ id }) {
   const [showItens, setShowItens] = React.useState(true);
 
   return (
@@ -20,31 +20,34 @@ export default function EpisodeItem({ text }) {
         onClick={() => setShowItens(showItens ? false : true)}
       >
         <img src={playIcon} alt="" />
-        <p>{text}</p>
+        <p>{`Episódio ${id}`}</p>
       </div>
 
       {showItens ? (
         <article>
-          <article className="main-left">
-            <MainInput
-              className="input-episodes"
-              label="Título do Hentai Selecionado"
-              placeholder="Ex. Algum anime"
-            />
-            <MainInput
-              className="input-episodes"
-              label="Número de Episódios"
-              placeholder="Ex. Algum anime"
-            />
-            <MainInput
-              className="input-episodes"
-              label="M3U8"
-              placeholder="Ex. Algum anime"
-            />
+          <article className="grid-episode-item">
+            <article className="main-left">
+              <MainInput
+                className="input-episodes"
+                label="Título do Hentai Selecionado"
+                placeholder="Ex. Algum anime"
+              />
+              <MainInput
+                className="input-episodes"
+                label="Número de Episódios"
+                placeholder="Ex. Algum anime"
+              />
+              <MainInput
+                className="input-episodes"
+                label="M3U8"
+                placeholder="Ex. Algum anime"
+              />
+            </article>
+            <article className="main-right">
+              <DropZone text="Clique ou arraste uma imagem de até 1280x720" />
+            </article>
           </article>
-          <article className="main-right">
-            <DropZone />
-          </article>
+          <InputVideo />
         </article>
       ) : null}
     </article>

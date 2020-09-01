@@ -28,7 +28,12 @@ function DropZoneContainer() {
     <section className="dragndrop-container">
       <article className="dragndrop-main-container">
         {selectedChip === -1 ? (
-          <DropZone setFiles={setFiles} arrlength={files.length} limit={6} />
+          <DropZone
+            text="Clique ou arraste uma imagem"
+            setFiles={setFiles}
+            arrlength={files.length}
+            limit={6}
+          />
         ) : (
           <img src={files[selectedChip]} alt="" />
         )}

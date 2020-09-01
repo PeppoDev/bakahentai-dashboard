@@ -1,0 +1,42 @@
+.input-video-container {
+    background-color: var(--color-menu);
+    padding: 3rem;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    hr {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: rgb(134, 134, 134);
+        font-weight: 600;
+        margin-bottom: 3rem;
+    }
+
+    .name-file {
+        span {
+            cursor: pointer;
+            color: var(--color-primary-pink);
+        }
+    }
+
+    button {
+        background-color: var(--color-primary-pink);
+        border: 0;
+        color: white;
+        height: 5rem;
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: auto;
+            background-color: grey;
+        }
+    }
+
+}
