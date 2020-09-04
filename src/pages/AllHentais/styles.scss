@@ -1,0 +1,14 @@
+.all-hentais {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .hentai-list {
+        grid-auto-flow: row;
+        display: grid;
+        padding-top: 7px;
+        grid-gap: 5px;
+        background-color: var(--color-background);
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}

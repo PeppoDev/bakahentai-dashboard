@@ -1,0 +1,86 @@
+.hentai-item {
+    min-width: 0;
+
+    .image-container {
+        width: 100%;
+
+        background-image: url("../../assets/images/prev2.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        height: 34rem;
+        display: flex;
+        align-items: flex-end;
+
+        &:hover {
+            .button-group {
+                opacity: 1 !important;
+                animation: appear-button-group 0.2s ease forwards;
+
+            }
+        }
+
+        .button-group {
+            opacity: 0 !important;
+
+        }
+
+        button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: rgb(228, 227, 227);
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            text-transform: uppercase;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 12rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            height: 4rem;
+            font-weight: 500;
+            width: auto;
+            padding-left: 1rem;
+
+            padding-right: 1rem;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+
+        }
+
+        &:hover {
+            button {
+                opacity: 1;
+            }
+        }
+
+
+    }
+
+    .info-group {
+        background-color: var(--color-menu);
+        color: rgb(214, 212, 212);
+        height: 6rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        width: 100%;
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+    }
+}
+
+@keyframes appear-button-group {
+    from {
+        opacity: 50%;
+    }
+
+    to {
+
+        opacity: 100%;
+    }
+}

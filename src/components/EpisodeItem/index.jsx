@@ -8,7 +8,7 @@ import "./styles.scss";
 //assets
 import playIcon from "../../assets/icons/play.svg";
 
-export default function EpisodeItem({ id }) {
+export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
 
   return (
@@ -28,6 +28,7 @@ export default function EpisodeItem({ id }) {
           <article className="grid-episode-item">
             <article className="main-left">
               <MainInput
+                valueName={name}
                 className="input-episodes"
                 label="Título do Hentai Selecionado"
                 placeholder="Ex. Algum anime"

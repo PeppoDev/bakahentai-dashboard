@@ -5,6 +5,7 @@ import EpisodeItem from "../../components/EpisodeItem";
 import plusIcon from "../../assets/icons/plus.svg";
 //css
 import "./styles.scss";
+import { useParams } from "react-router-dom";
 
 function RegisterEpisodes() {
   const initial_state = [
@@ -27,6 +28,7 @@ function RegisterEpisodes() {
       visibility: "",
     },
   ];
+  const { id } = useParams();
 
   const [episodes, setEpisodes] = React.useState(initial_state);
 
@@ -46,6 +48,7 @@ function RegisterEpisodes() {
           id={data.episode}
           index={index}
           onChange={setEpisodes}
+          name={id}
         />
       ))}
 

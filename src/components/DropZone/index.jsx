@@ -82,7 +82,7 @@ function DropZone(props) {
           onChange={filesSelected}
         />
         <img src={upIcon} alt="" />
-        {props.text}
+        <p>{props.text}</p>
       </div>
     </>
   );

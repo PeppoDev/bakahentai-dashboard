@@ -4,8 +4,8 @@ import "./styles.scss";
 
 export default function Badge({ text, index, onClick = () => null }) {
   return (
-    <span className="badge">
-      <p onClick={() => onClick(index)}>X</p>
+    <span className="badge" onClick={() => onClick(index)}>
+      <p>X</p>
       <p>{text}</p>
     </span>
   );

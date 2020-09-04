@@ -2,7 +2,6 @@ import React from "react";
 import DropZone from "../DropZone";
 import Button from "../../components/MenuButton";
 import DropZoneCount from "../DropZoneCount";
-
 //css
 import "./styles.scss";
 
@@ -10,52 +9,92 @@ function DropZoneContainer() {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
 
-  function handleDelete(key) {
-    const newFiles = Array.from(files);
-    newFiles.splice(key, 1);
-    setFiles(newFiles);
-  }
+  const [starred, setStarred] = React.useState(-1);
 
-  function handleReplace(key, file) {
-    let newFiles = Array.from(files);
-    newFiles[key] = file;
-    setFiles(newFiles);
-  }
+  const divStyle =
+    selectedChip !== -1
+      ? {
+          backgroundImage: "url(" + files[selectedChip] + ")",
+        }
+      : null;
 
   const fileInputRef = React.useRef();
+
+  function handleClickInput() {
+    fileInputRef.current.click();
+  }
+
+  function handleDelete() {
+    const newFiles = Array.from(files);
+    newFiles.splice(selectedChip, 1);
+    setFiles(newFiles);
+    setSelectedChip(-1);
+  }
+
+  function handleReplace(file) {
+    let newFiles = Array.from(files);
+    newFiles[selectedChip] = file;
+    setFiles(newFiles);
+  }
+
+  function handleFile() {
+    if (fileInputRef.current.files.length) {
+      if (fileInputRef.current.files[0].type.includes("image")) {
+        const reader = new FileReader();
+        reader.readAsDataURL(fileInputRef.current.files[0]);
+        reader.onload = function (e) {
+          handleReplace(reader.result);
+        };
+      } else {
+        console.log("Erro: formato não suportado");
+      }
+    }
+  }
+  function handleStarred() {
+    setStarred(selectedChip);
+  }
+
+  function handleUnStarred() {
+    setStarred(-1);
+  }
 
   return (
     <section className="dragndrop-container">
       <article className="dragndrop-main-container">
         {selectedChip === -1 ? (
-          <DropZone
-            text="Clique ou arraste uma imagem"
-            setFiles={setFiles}
-            arrlength={files.length}
-            limit={6}
-          />
+          <DropZone text="Clique ou arraste uma imagem" setFiles={setFiles} />
         ) : (
-          <img src={files[selectedChip]} alt="" />
+          <div style={divStyle} alt="">
+            <input
+              ref={fileInputRef}
+              className="file-input"
+              type="file"
+              onChange={handleFile}
+            />
+
+            <div className="button-group">
+              <button onClick={handleClickInput}>Substituir</button>
+              {starred === selectedChip ? (
+                <button onClick={handleUnStarred}>Desfavoritar</button>
+              ) : (
+                <button onClick={handleStarred}>Favoritar</button>
+              )}
+              <button onClick={handleDelete}>Excluir</button>
+            </div>
+          </div>
         )}
       </article>
 
       <article className="count-group">
-        <div>
-          {files.map((data, i) => (
-            // <span key={i} onClick={() => setSelectedChip(i)}>
-            //   {i + 1}
-            // </span>
-            <DropZoneCount
-              key={i}
-              index={i}
-              className="chip"
-              onClick={setSelectedChip}
-              onDelete={handleDelete}
-              onChange={handleReplace}
-              fileInputRef={fileInputRef}
-            />
-          ))}
-        </div>
+        {files.map((data, i) => (
+          <DropZoneCount
+            key={i}
+            index={i}
+            className="chip"
+            onClick={setSelectedChip}
+            starred={starred}
+          />
+        ))}
 
         <span className="last-span" onClick={() => setSelectedChip(-1)}>
           +
@@ -63,7 +102,7 @@ function DropZoneContainer() {
       </article>
       <Button
         className="button-dragndrop"
-        to="RegisterEpisodes"
+        to="RegisterEpisodes/HunterXHunter"
         text="Cadastrar Episódios"
       />
     </section>

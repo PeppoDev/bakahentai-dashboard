@@ -3,7 +3,6 @@ import Settings from "./Settings";
 import Comments from "./Comments";
 import Episodes from "./RegisterEpisodes";
 import FapList from "./FapList";
-import Hentais from "./RegisterHentais";
 import Notifications from "./Notifications";
 import Status from "./Status";
 import Taxonomies from "./Taxonomies";
@@ -19,7 +18,6 @@ export {
   Comments,
   Episodes,
   FapList,
-  Hentais,
   Notifications,
   Status,
   Taxonomies,

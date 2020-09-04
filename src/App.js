@@ -28,18 +28,27 @@ function App() {
                 <Route path="/Comments" exact component={pages.Comments} />
                 <Route path="/FapList" exact component={pages.FapList} />
 
-                <Route path="/AllEpisodes" exact component={pages.Episodes} />
                 <Route
                   path="/RegisterEpisodes"
                   exact
-                  component={pages.Episodes}
+                  component={pages.RegisterEpisodes}
+                />
+                <Route
+                  path="/AllEpisodes"
+                  exact
+                  component={pages.AllEpisodes}
+                />
+                <Route
+                  path="/RegisterEpisodes/:id"
+                  exact
+                  component={pages.RegisterEpisodes}
                 />
 
-                <Route path="/AllHentais" exact component={pages.Hentais} />
+                <Route path="/AllHentais" exact component={pages.AllHentais} />
                 <Route
                   path="/RegisterHentais"
                   exact
-                  component={pages.Hentais}
+                  component={pages.RegisterHentais}
                 />
 
                 <Route

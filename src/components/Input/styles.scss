@@ -19,6 +19,11 @@
             text-align: end;
         }
 
+        &:disabled {
+            background-color: var(--color-menu);
+            color: white;
+        }
+
     }
 
     label {

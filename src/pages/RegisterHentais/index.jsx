@@ -23,8 +23,16 @@ function RegisterHentais() {
   const [tags, setTags] = React.useState([]);
   const [synopsis, setSynopsis] = React.useState("");
   const [status, setStatus] = React.useState(false);
+  const [visibility, setVisibility] = React.useState("");
 
   const [showButton, setShowButton] = React.useState(false);
+
+  function sortTags(newTags) {
+    newTags.sort(function (a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+    return newTags;
+  }
 
   const studio_json = {
     0: {
@@ -75,7 +83,8 @@ function RegisterHentais() {
       censorship !== "" &&
       quality !== "" &&
       tags !== "" &&
-      status !== false
+      status !== false &&
+      visibility !== false
     ) {
       setShowButton(true);
     }
@@ -100,17 +109,18 @@ function RegisterHentais() {
   }
   function handleTags(event) {
     if (event.key === "Enter") {
-      const newtags = tagsTemp.replace(" ", "").split(",");
-      newtags.map((tag) => {
-        setTags((prev) => [...prev, tag]);
-        return null;
-      });
+      let newTags = tagsTemp.replace(/\s/g, "").split(",");
+
+      newTags = sortTags([...newTags, ...tags]);
+      console.log(newTags);
+      setTags(newTags);
       setTagsTemp("");
     }
   }
 
   function handleSetTags(value) {
-    setTags((prev) => [...prev, value]);
+    let newTags = sortTags([...tags, value]);
+    setTags(newTags);
   }
 
   return (
@@ -227,6 +237,27 @@ function RegisterHentais() {
               value="true"
               name="hentai_status"
               text="Completo"
+            />
+          </Radio.RadioForm>
+          <Radio.RadioForm
+            text="Visibilidade"
+            value={status}
+            onChange={setStatus}
+          >
+            <Radio.RadioInput
+              value="all"
+              name="hentai_visibility"
+              text="Visível a todos"
+            />
+            <Radio.RadioInput
+              value="hidden"
+              name="hentai_visibility"
+              text="Oculto da Lista"
+            />
+            <Radio.RadioInput
+              value="only_adm"
+              name="hentai_visibility"
+              text="Somente Admnistrador"
             />
           </Radio.RadioForm>
         </article>
