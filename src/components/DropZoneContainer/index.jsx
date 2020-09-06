@@ -8,8 +8,11 @@ import "./styles.scss";
 function DropZoneContainer() {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
-
   const [starred, setStarred] = React.useState(-1);
+
+  React.useEffect(() => {
+    setSelectedChip(files.length >= 1 ? files.length - 1 : -1);
+  }, [files]);
 
   const divStyle =
     selectedChip !== -1
@@ -31,24 +34,39 @@ function DropZoneContainer() {
     setSelectedChip(-1);
   }
 
-  function handleReplace(file) {
-    let newFiles = Array.from(files);
-    newFiles[selectedChip] = file;
-    setFiles(newFiles);
-  }
-
-  function handleFile() {
+  function handleReplace() {
     if (fileInputRef.current.files.length) {
       if (fileInputRef.current.files[0].type.includes("image")) {
         const reader = new FileReader();
         reader.readAsDataURL(fileInputRef.current.files[0]);
         reader.onload = function (e) {
-          handleReplace(reader.result);
+          let newFiles = Array.from(files);
+          newFiles[selectedChip] = reader.result;
+          setFiles(newFiles);
         };
       } else {
         console.log("Erro: formato não suportado");
       }
     }
+  }
+
+  async function handleFile() {
+    const files = fileInputRef.current.files;
+    const newFiles = Object.values(files);
+
+    newFiles.map((file) => {
+      console.log(file);
+      if (file.type.includes("image")) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+          setFiles((prev) => prev.concat(reader.result));
+        };
+      } else {
+        console.log("Erro: formato não suportado");
+      }
+      return null;
+    });
   }
   function handleStarred() {
     setStarred(selectedChip);
@@ -60,7 +78,14 @@ function DropZoneContainer() {
 
   return (
     <section className="dragndrop-container">
-      <article className="dragndrop-main-container">
+      <article
+        className="dragndrop-main-container"
+        style={
+          selectedChip === -1
+            ? { border: "2px dotted grey" }
+            : { border: "2px dotted #2f2e2e" }
+        }
+      >
         {selectedChip === -1 ? (
           <DropZone text="Clique ou arraste uma imagem" setFiles={setFiles} />
         ) : (
@@ -69,9 +94,15 @@ function DropZoneContainer() {
               ref={fileInputRef}
               className="file-input"
               type="file"
+              onChange={handleReplace}
+            />
+            <input
+              multiple
+              ref={fileInputRef}
+              className="file-input"
+              type="file"
               onChange={handleFile}
             />
-
             <div className="button-group">
               <button onClick={handleClickInput}>Substituir</button>
               {starred === selectedChip ? (
@@ -96,7 +127,7 @@ function DropZoneContainer() {
           />
         ))}
 
-        <span className="last-span" onClick={() => setSelectedChip(-1)}>
+        <span className="last-span" onClick={handleClickInput}>
           +
         </span>
       </article>
