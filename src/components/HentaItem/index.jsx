@@ -16,7 +16,7 @@ export default function HentaItem() {
         </div>
       </article>
       <article className="info-group">
-        <p>Nome do Anime Nome do Anime Nome do Anime</p>
+        <p>Nome do Anime </p>
         <p>Studio</p>
       </article>
     </article>

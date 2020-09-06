@@ -1,9 +1,11 @@
 .all-hentais {
     display: flex;
     width: 100%;
-    justify-content: center;
+
+
 
     .hentai-list {
+        min-height: calc(100vh - 9rem - 6rem);
         grid-auto-flow: row;
         display: grid;
         padding-top: 7px;

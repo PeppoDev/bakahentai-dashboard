@@ -64,7 +64,7 @@ function DropZoneContainer() {
         {selectedChip === -1 ? (
           <DropZone text="Clique ou arraste uma imagem" setFiles={setFiles} />
         ) : (
-          <div style={divStyle} alt="">
+          <div style={divStyle} className="image-container" alt="">
             <input
               ref={fileInputRef}
               className="file-input"

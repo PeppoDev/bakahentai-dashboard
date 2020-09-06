@@ -15,19 +15,24 @@
         width: 26rem;
 
 
-        div {
+        .image-container {
             background-repeat: no-repeat;
             height: 100%;
             width: 100%;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
 
+            &:hover {
+                .button-group {
+                    opacity: 1 !important;
+                    animation: appear-button-group 0.2s ease forwards;
 
-            .group-button {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end !important;
-                height: 100%;
+                }
+            }
 
-
+            .button-group {
+                opacity: 0 !important;
 
                 button {
                     background-color: rgba(0, 0, 0, 0.7);
@@ -44,9 +49,18 @@
                     height: 4rem;
                     font-weight: 500;
                     width: auto;
-                    border-radius: 2px;
                     padding-left: 1rem;
-                    animation: appear-button 0.2s ease forwards;
+
+                    padding-right: 1rem;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+
+                }
+
+                &:hover {
+                    button {
+                        opacity: 1;
+                    }
                 }
 
             }

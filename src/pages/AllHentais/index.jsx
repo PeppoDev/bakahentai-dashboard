@@ -24,7 +24,6 @@ function AllHentais() {
         {/* {hentais.map((index, data) => (
           <HentaItem />
         ))} */}
-
         <HentaItem />
         <HentaItem />
         <HentaItem />
