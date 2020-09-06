@@ -78,6 +78,19 @@ function DropZoneContainer() {
 
   return (
     <section className="dragndrop-container">
+      <input
+        ref={fileInputRef}
+        className="file-input"
+        type="file"
+        onChange={handleReplace}
+      />
+      <input
+        multiple
+        ref={fileInputRef}
+        className="file-input"
+        type="file"
+        onChange={handleFile}
+      />
       <article
         className="dragndrop-main-container"
         style={
@@ -90,19 +103,6 @@ function DropZoneContainer() {
           <DropZone text="Clique ou arraste uma imagem" setFiles={setFiles} />
         ) : (
           <div style={divStyle} className="image-container" alt="">
-            <input
-              ref={fileInputRef}
-              className="file-input"
-              type="file"
-              onChange={handleReplace}
-            />
-            <input
-              multiple
-              ref={fileInputRef}
-              className="file-input"
-              type="file"
-              onChange={handleFile}
-            />
             <div className="button-group">
               <button onClick={handleClickInput}>Substituir</button>
               {starred === selectedChip ? (
