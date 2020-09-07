@@ -5,11 +5,13 @@ import DropZoneCount from "../DropZoneCount";
 //css
 import "./styles.scss";
 
-function DropZoneContainer() {
+function DropZoneContainer({ title }) {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
 
+  const link = "RegisterEpisodes/" + title;
+  
   React.useEffect(() => {
     setSelectedChip(files.length >= 1 ? files.length - 1 : -1);
   }, [files]);
@@ -133,7 +135,7 @@ function DropZoneContainer() {
       </article>
       <Button
         className="button-dragndrop"
-        to="RegisterEpisodes/HunterXHunter"
+        to={link}
         text="Cadastrar Episódios"
       />
     </section>

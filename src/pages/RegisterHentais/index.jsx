@@ -270,7 +270,7 @@ function RegisterHentais() {
           </Radio.RadioForm>
         </article>
         <article className="main-right">
-          <DropZoneContainer />
+          <DropZoneContainer title={title} />
         </article>
       </article>
 
