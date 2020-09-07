@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 //css
 import "./styles.scss";
 //components
@@ -14,7 +15,9 @@ import FavoriteBanner from "../../components/FavoriteBanner";
 //assets
 
 function RegisterHentais() {
-  const [title, setTitle] = React.useState("");
+  const { id } = useParams();
+
+  const [title, setTitle] = React.useState(id);
   const [original_title, setOriginal_title] = React.useState("");
   const [adm, setAdm] = React.useState("");
   const [studio, setStudio] = React.useState("");

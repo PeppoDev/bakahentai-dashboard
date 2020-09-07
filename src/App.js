@@ -50,6 +50,11 @@ function App() {
                   exact
                   component={pages.RegisterHentais}
                 />
+                <Route
+                  path="/RegisterHentais/:id"
+                  exact
+                  component={pages.RegisterHentais}
+                />
 
                 <Route
                   path="/Notifications"
