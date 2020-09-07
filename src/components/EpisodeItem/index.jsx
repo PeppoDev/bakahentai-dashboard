@@ -11,6 +11,8 @@ import playIcon from "../../assets/icons/play.svg";
 export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
 
+
+  //TODO:resovlver a bagaça do MainInput disable
   return (
     <article className="register-episodes-container">
       <div

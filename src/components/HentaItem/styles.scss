@@ -7,9 +7,10 @@
         background-image: url("../../assets/images/prev2.png");
         background-repeat: no-repeat;
         background-size: cover;
-
         display: flex;
         align-items: flex-end;
+        border-top-right-radius: 2px;
+        border-top-left-radius: 2px;
 
         &:hover {
             .button-group {
@@ -63,6 +64,8 @@
         padding-left: 1rem;
         padding-top: 1rem;
         width: 100%;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
 
         p {
             overflow: hidden;

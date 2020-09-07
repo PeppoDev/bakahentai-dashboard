@@ -1,0 +1,53 @@
+.favorite-banner {
+    display: flex;
+    width: 100%;
+    min-height: 5rem;
+    background-color: #2b2b30;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+    -webkit-box-shadow: 3px 8px 41px -8px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 3px 8px 41px -8px rgba(0, 0, 0, 0.77);
+    box-shadow: 3px 8px 41px -8px rgba(0, 0, 0, 0.77);
+
+    .main-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+        span {
+            width: 4rem;
+            height: 4rem;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        p {
+            margin-left: 1rem;
+            color: white;
+            font-size: 1.3rem;
+
+            strong {
+                color: var(--color-primary-pink)
+            }
+        }
+    }
+
+    .main-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: rgb(160, 160, 160);
+
+        img {
+            width: 1.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+    }
+}

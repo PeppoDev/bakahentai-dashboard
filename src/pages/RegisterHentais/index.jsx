@@ -9,12 +9,14 @@ import TextArea from "../../components/TextArea";
 import DropZoneContainer from "../../components/DropZoneContainer";
 import TitlePage from "../../components/TitlePage";
 import Badge from "../../components/Badge";
+import FavoriteBanner from "../../components/FavoriteBanner";
 
 //assets
 
 function RegisterHentais() {
   const [title, setTitle] = React.useState("");
   const [original_title, setOriginal_title] = React.useState("");
+  const [adm, setAdm] = React.useState("");
   const [studio, setStudio] = React.useState("");
   const [realeasey, setRealeasey] = React.useState("");
   const [censorship, setCensorship] = React.useState("");
@@ -139,6 +141,12 @@ function RegisterHentais() {
             placeholder="Ex. Algum anime"
             value={original_title}
             onChange={setOriginal_title}
+          />
+          <MainInput
+            label="Administrador"
+            placeholder="Ex. Algum anime"
+            value={adm}
+            onChange={setAdm}
           />
           <article className="input-n-select">
             <MainInput
@@ -271,6 +279,8 @@ function RegisterHentais() {
           Cadastrar
         </button>
       ) : null}
+
+      <FavoriteBanner />
     </section>
   );
 }
