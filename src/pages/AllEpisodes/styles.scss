@@ -1,0 +1,15 @@
+.all-episodes {
+    display: flex;
+    width: 100%;
+
+    .episode-list {
+        min-height: calc(100vh - 9rem - 6rem);
+        grid-auto-flow: row;
+        display: grid;
+        padding-top: 7px;
+        grid-gap: 5px;
+        background-color: var(--color-background);
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}

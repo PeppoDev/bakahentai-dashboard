@@ -3,10 +3,10 @@ import React from "react";
 import api from "../../services/api/axios";
 //components
 import TitlePage from "../../components/TitlePage";
-//css
-import "./styles.scss";
 import HentaItem from "../../components/HentaItem";
 import SearchInput from "../../components/SearchInput";
+//css
+import "./styles.scss";
 
 function AllHentais() {
   const [hentais, setHentais] = React.useState([]);
@@ -23,7 +23,7 @@ function AllHentais() {
       <TitlePage text="Listar Hentais">
         <SearchInput />
       </TitlePage>
-      <section className="hentai-list">
+      <article className="hentai-list">
         {/* {hentais.map((index, data) => (
           <HentaItem />
         ))} */}
@@ -39,7 +39,7 @@ function AllHentais() {
         <HentaItem />
         <HentaItem />
         <HentaItem />
-      </section>
+      </article>
     </section>
   );
 }

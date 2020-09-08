@@ -11,7 +11,6 @@ import playIcon from "../../assets/icons/play.svg";
 export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
 
-
   //TODO:resovlver a bagaça do MainInput disable
   return (
     <article className="register-episodes-container">
@@ -26,7 +25,7 @@ export default function EpisodeItem({ id, name }) {
       </div>
 
       {showItens ? (
-        <article>
+        <>
           <article className="grid-episode-item">
             <article className="main-left">
               <MainInput
@@ -51,7 +50,7 @@ export default function EpisodeItem({ id, name }) {
             </article>
           </article>
           <InputVideo />
-        </article>
+        </>
       ) : null}
     </article>
   );
