@@ -3,14 +3,18 @@ import React from "react";
 import DropZone from "../DropZone";
 import MainInput from "../Input";
 import InputVideo from "../InputVideo";
+import * as Radio from "../Radio";
 //css
 import "./styles.scss";
 //assets
 import playIcon from "../../assets/icons/play.svg";
+import PreviewGroup from "../PreviewGroup";
 
 export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
   const [file, setFile] = React.useState("");
+  const [hour, setHour] = React.useState(0);
+  const [visibility, setVisibility] = React.useState("");
 
   const fileInputRef = React.useRef();
 
@@ -104,7 +108,39 @@ export default function EpisodeItem({ id, name }) {
               )}
             </article>
           </article>
+          <PreviewGroup />
           <InputVideo />
+          <div className="radio-form">
+            <Radio.RadioForm
+              text="Opções de visibilidade"
+              onChange={setVisibility}
+            >
+              <Radio.RadioInput
+                value="all"
+                name="visibility"
+                text="Visível a todos"
+              />
+              <Radio.RadioInput
+                value="premiums"
+                name="visibility"
+                text="Visível a Premiums"
+              />
+              <Radio.RadioInput
+                value={hour}
+                name="visibility"
+                text="Liberar a todos em:"
+              />
+              <input
+                htmlFor="visbility-input"
+                className="hour-input"
+                type="text"
+                onChange={(e) => setHour(e.target.value)}
+              />
+              <label htmlFor="visbility-input" className="hour-label">
+                Hora(s)
+              </label>
+            </Radio.RadioForm>
+          </div>
         </>
       ) : null}
     </article>

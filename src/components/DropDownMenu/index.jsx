@@ -15,9 +15,10 @@ export default function DropDownMenu(props) {
         className="dropdown-menu"
         onClick={() => setShowMenu(showMenu ? false : true)}
       >
-        <img src={props.icon} alt="" />
-        {props.text}
-
+        <article>
+          <img src={props.icon} alt="" />
+          {props.text}
+        </article>
         <img className="sub-icon" src={arrowIcon} alt="" />
       </button>
 
