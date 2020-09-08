@@ -130,7 +130,7 @@ function RegisterHentais() {
 
   return (
     <section className="page-container register-hentais" onClick={verify}>
-      <TitlePage text="Cadastrar Hentai" />
+      <TitlePage text={id ? "Editar Hentai" : "Cadastrar Hentai"} />
       <article className="register-hentais-container">
         <article className="main-left">
           <MainInput

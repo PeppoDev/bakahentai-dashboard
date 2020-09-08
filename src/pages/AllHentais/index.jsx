@@ -6,6 +6,7 @@ import TitlePage from "../../components/TitlePage";
 //css
 import "./styles.scss";
 import HentaItem from "../../components/HentaItem";
+import SearchInput from "../../components/SearchInput";
 
 function AllHentais() {
   const [hentais, setHentais] = React.useState([]);
@@ -19,7 +20,9 @@ function AllHentais() {
   }, []);
   return (
     <section className="page-container all-hentais">
-      <TitlePage text="Listar Hentais" />
+      <TitlePage text="Listar Hentais">
+        <SearchInput />
+      </TitlePage>
       <section className="hentai-list">
         {/* {hentais.map((index, data) => (
           <HentaItem />

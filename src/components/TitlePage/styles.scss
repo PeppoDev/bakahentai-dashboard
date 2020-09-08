@@ -1,16 +1,37 @@
-.backicon {
-    transform: scaleX(-1);
-    margin-right: 1rem;
-}
-
 .page-title {
-    color: rgb(163, 163, 163);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    margin: 2rem 3rem;
-}
+    display: flex;
+    flex-direction: column;
 
-hr {
-    margin: 0 3rem 2rem;
-    border: 0.5px solid #2f2e2e;
+    div {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        margin-right: 3rem;
+
+
+    }
+
+    article {
+        display: flex;
+
+        justify-content: space-between;
+
+    }
+
+    .backicon {
+        transform: scaleX(-1);
+        margin-right: 1rem;
+    }
+
+    p {
+        color: rgb(163, 163, 163);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin: 2rem 3rem;
+    }
+
+    hr {
+        margin: 0 3rem 2rem;
+        border: 0.5px solid #2f2e2e;
+    }
 }

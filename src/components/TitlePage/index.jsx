@@ -5,16 +5,21 @@ import "./styles.scss";
 //assets
 import backIcon from "../../assets/icons/back.png";
 
-export default function TitlePage({ text }) {
+export default function TitlePage(props) {
+  const { text } = props;
   return (
-    <>
-      <p className="page-title">
-        <Link to="/">
-          <img className="backicon" src={backIcon} alt="" />
-        </Link>
-        {text}
-      </p>
+    <section className="page-title">
+      <article>
+        <p>
+          <Link to="/">
+            <img className="backicon" src={backIcon} alt="" />
+          </Link>
+          {text}
+        </p>
+        <div>{props.children}</div>
+      </article>
+
       <hr />
-    </>
+    </section>
   );
 }
