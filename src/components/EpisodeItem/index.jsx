@@ -16,6 +16,12 @@ export default function EpisodeItem({ id, name }) {
   const [hour, setHour] = React.useState(0);
   const [visibility, setVisibility] = React.useState("");
 
+  const radioRef = React.useRef();
+
+  const radioClick = () => {
+    radioRef.current.click();
+  };
+
   return (
     <article className="register-episodes-container">
       <div
@@ -77,12 +83,14 @@ export default function EpisodeItem({ id, name }) {
                 value={hour}
                 name="visibility"
                 text="Liberar a todos em:"
+                ref={radioRef}
               />
               <input
                 htmlFor="visbility-input"
                 className="hour-input"
-                type="text"
+                type="number"
                 onChange={(e) => setHour(e.target.value)}
+                onClick={radioClick}
               />
               <label htmlFor="visbility-input" className="hour-label">
                 Hora(s)

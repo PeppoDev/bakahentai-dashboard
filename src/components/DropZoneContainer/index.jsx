@@ -53,12 +53,14 @@ function DropZoneContainer({ title, limit }) {
   }
 
   async function handleFile() {
-    const files = fileInputRef.current.files;
-    const newFiles = Object.values(files);
+    const filestemp = fileInputRef.current.files;
+    const newFiles = Object.values(filestemp);
+
+    let count = files.length;
 
     newFiles.map((file) => {
-      console.log(file);
-      if (file.type.includes("image")) {
+      if (file.type.includes("image") && count < limit) {
+        count = count + 1;
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function (e) {

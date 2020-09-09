@@ -134,8 +134,8 @@ function RegisterHentais() {
       <article className="register-hentais-container">
         <article className="main-left">
           <MainInput
-            label="Ex: Oni Chichi"
-            placeholder="Ex. Algum anime"
+            label="Título"
+            placeholder="Ex: Oni Chichi"
             value={title}
             onChange={setTitle}
           />
@@ -205,7 +205,7 @@ function RegisterHentais() {
           <article className="input-n-select">
             <MainInput
               type="search"
-              label="Gênero"
+              label="Gêneros"
               placeholder="Ex: Colegial, Escolar, Peitões"
               value={tagsTemp}
               onChange={setTagsTemp}
