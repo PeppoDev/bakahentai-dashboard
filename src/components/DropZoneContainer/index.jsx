@@ -5,15 +5,20 @@ import DropZoneCount from "../DropZoneCount";
 //css
 import "./styles.scss";
 
-function DropZoneContainer({ title, limit }) {
+function DropZoneContainer({ title, limit = 100 }) {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
+  const [showPopOver, setShowPopOver] = React.useState(false);
 
   const link = "RegisterEpisodes/" + title;
 
   React.useEffect(() => {
     setSelectedChip(files.length >= 1 ? files.length - 1 : -1);
+    setShowPopOver(files.length === 1 ? true : false);
+    setTimeout(() => {
+      setShowPopOver(false);
+    }, 10000);
   }, [files]);
 
   const divStyle =
@@ -112,6 +117,17 @@ function DropZoneContainer({ title, limit }) {
           />
         ) : (
           <div style={divStyle} className="image-container" alt="">
+            <div className="pop-over-warning">
+              {showPopOver ? (
+                <>
+                  <h2 onClick={() => setShowPopOver(false)}>X</h2>
+                  <p>
+                    Algum Aviso Algum Aviso Algum Aviso Algum Aviso Algum Aviso
+                    Algum Aviso Algum Aviso Algum Aviso Algum Aviso Algum Aviso
+                  </p>
+                </>
+              ) : null}
+            </div>
             <div className="button-group">
               <button onClick={handleClickInput}>Substituir</button>
               {starred === selectedChip ? (

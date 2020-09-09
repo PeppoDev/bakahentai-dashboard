@@ -106,6 +106,7 @@
                 .button-group {
                     opacity: 1 !important;
                     animation: appear-button-group 0.2s ease forwards;
+                    align-self: flex-start;
 
                 }
             }
