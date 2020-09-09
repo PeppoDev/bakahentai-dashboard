@@ -16,11 +16,10 @@ function RadioForm(props) {
   );
 }
 
-function RadioInput({ value, name, text, ref }) {
-  console.log(ref);
+function RadioInput({ value, name, text, refInput }) {
   return (
     <article className="radio-container">
-      <input type="radio" id={value} name={name} value={value} />
+      <input type="radio" id={value} name={name} value={value} ref={refInput} />
       <label htmlFor={value}>{text}</label>
     </article>
   );

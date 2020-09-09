@@ -83,7 +83,7 @@ export default function EpisodeItem({ id, name }) {
                 value={hour}
                 name="visibility"
                 text="Liberar a todos em:"
-                ref={radioRef}
+                refInput={radioRef}
               />
               <input
                 htmlFor="visbility-input"
