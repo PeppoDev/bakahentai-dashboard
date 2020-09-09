@@ -4,6 +4,7 @@ import DropZoneContainer from "../DropZoneContainer";
 import MainInput from "../Input";
 import InputVideo from "../InputVideo";
 import * as Radio from "../Radio";
+import Popover from "@material-ui/core/Popover";
 //css
 import "./styles.scss";
 //assets
@@ -17,6 +18,19 @@ export default function EpisodeItem({ id, name }) {
   const [visibility, setVisibility] = React.useState("");
 
   const radioRef = React.useRef();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const idPop = open ? "simple-popover" : undefined;
 
   const radioClick = () => {
     radioRef.current.click();
@@ -95,6 +109,29 @@ export default function EpisodeItem({ id, name }) {
               <label htmlFor="visbility-input" className="hour-label">
                 Hora(s)
               </label>
+              <p onClick={handleClick}>(?)</p>
+              <Popover
+                id={idPop}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "center",
+                }}
+                transformOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+              >
+                <span className="popover">
+                  <p>
+                    Esta opção deixará o episódio bloqueado apenas para usuários
+                    com o "X" de horas que for estabelecido.
+                  </p>
+                  <p>Logo após este período de será liberado a todos.</p>
+                </span>
+              </Popover>
             </Radio.RadioForm>
           </div>
         </>
