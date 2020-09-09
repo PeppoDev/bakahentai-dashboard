@@ -31,7 +31,9 @@
         width: 2.3rem;
     }
 
-
+    .sub-icon {
+        width: 2rem !important;
+    }
 
     &:hover {
         background-color: var(--color-menu-hover);

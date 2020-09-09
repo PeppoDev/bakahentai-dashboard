@@ -134,20 +134,20 @@ function RegisterHentais() {
       <article className="register-hentais-container">
         <article className="main-left">
           <MainInput
-            label="Título do Hentai"
+            label="Ex: Oni Chichi"
             placeholder="Ex. Algum anime"
             value={title}
             onChange={setTitle}
           />
           <MainInput
             label="Título Original"
-            placeholder="Ex. Algum anime"
+            placeholder="Ex: 鬼父 "
             value={original_title}
             onChange={setOriginal_title}
           />
           <MainInput
             label="Administrador"
-            placeholder="Ex. Algum anime"
+            placeholder="Ex: Ichidou"
             value={adm}
             onChange={setAdm}
           />
@@ -155,7 +155,7 @@ function RegisterHentais() {
             <MainInput
               type="search"
               label="Estúdio"
-              placeholder="Ex. Algum anime"
+              placeholder="Ex: PoRO"
               value={studio}
               onChange={setStudio}
             />
@@ -172,7 +172,8 @@ function RegisterHentais() {
           </article>
           <MainInput
             label="Ano Lançado"
-            placeholder="Ex. Algum anime"
+            placeholder="Ex: 2010"
+            type="number"
             value={realeasey}
             onChange={setRealeasey}
           />
@@ -205,7 +206,7 @@ function RegisterHentais() {
             <MainInput
               type="search"
               label="Gênero"
-              placeholder="Ex. Algum anime"
+              placeholder="Ex: Colegial, Escolar, Peitões"
               value={tagsTemp}
               onChange={setTagsTemp}
               onKeyPress={handleTags}
@@ -240,12 +241,12 @@ function RegisterHentais() {
           <TextArea text="História" value={synopsis} onChange={setSynopsis} />
           <Radio.RadioForm text="status" value={status} onChange={setStatus}>
             <Radio.RadioInput
-              value="false"
+              value="releasing"
               name="hentai_status"
               text="Lançamento"
             />
             <Radio.RadioInput
-              value="true"
+              value="full"
               name="hentai_status"
               text="Completo"
             />

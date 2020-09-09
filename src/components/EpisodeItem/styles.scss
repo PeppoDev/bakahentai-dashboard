@@ -5,11 +5,33 @@
         margin-bottom: 3rem;
     }
 
+    .dragndrop-container {
+        height: 25rem;
+
+
+        .count-group {
+            max-width: 100%;
+
+            .chip-container {
+                width: 3.56rem;
+            }
+        }
+
+        .button-dragndrop {
+            display: none;
+        }
+    }
+
+    .dragndrop-main-container {
+        height: 100%;
+        width: 100%;
+    }
+
     .radio-form {
         display: flex;
         flex-direction: row;
         width: 100%;
-        max-width: 700px;
+        max-width: 800px;
         margin: 1rem 0 2rem 0;
         align-items: center;
 
@@ -29,7 +51,6 @@
             color: white;
             text-transform: uppercase;
             margin-left: 0.5rem;
-
         }
 
 
@@ -42,12 +63,13 @@
     }
 
 
+
+
     .grid-episode-item {
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
         grid-column-gap: 12rem;
         margin-bottom: 3rem;
-
     }
 
     .input-episodes {
@@ -63,8 +85,8 @@
     }
 
     .main-right {
-        height: 25rem;
-        border: 2px dotted grey;
+        height: 30rem;
+
 
         .image-container {
             background-repeat: no-repeat;

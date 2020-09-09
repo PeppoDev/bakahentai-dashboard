@@ -5,13 +5,13 @@ import DropZoneCount from "../DropZoneCount";
 //css
 import "./styles.scss";
 
-function DropZoneContainer({ title }) {
+function DropZoneContainer({ title, limit }) {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
 
   const link = "RegisterEpisodes/" + title;
-  
+
   React.useEffect(() => {
     setSelectedChip(files.length >= 1 ? files.length - 1 : -1);
   }, [files]);
@@ -102,7 +102,12 @@ function DropZoneContainer({ title }) {
         }
       >
         {selectedChip === -1 ? (
-          <DropZone text="Clique ou arraste uma imagem" setFiles={setFiles} />
+          <DropZone
+            text="Clique ou arraste uma imagem"
+            setFiles={setFiles}
+            limit={limit}
+            files={files}
+          />
         ) : (
           <div style={divStyle} className="image-container" alt="">
             <div className="button-group">

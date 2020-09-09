@@ -1,6 +1,7 @@
 .page-title {
     display: flex;
     flex-direction: column;
+    padding: 0 3rem;
 
     div {
         min-height: 100%;
@@ -27,11 +28,11 @@
         color: rgb(163, 163, 163);
         font-size: 1.2rem;
         text-transform: uppercase;
-        margin: 2rem 3rem;
+        margin: 2rem 0;
     }
 
     hr {
-        margin: 0 3rem 2rem;
+        margin: 0 0 2rem;
         border: 0.5px solid #2f2e2e;
     }
 }

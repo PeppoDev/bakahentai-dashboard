@@ -3,16 +3,9 @@ import "./styles.scss";
 import upIcon from "../../assets/icons/upload.svg";
 
 function DropZone(props) {
-  const [selectedFiles, setSelectedFiles] = React.useState([]);
   const fileInputRef = React.useRef();
 
   const { setFiles } = props;
-
-  React.useEffect(() => {
-    if (selectedFiles.length !== 0) {
-      setFiles((prev) => [...prev, ...selectedFiles]);
-    }
-  }, [selectedFiles]);
 
   const dragOver = (e) => {
     e.preventDefault();
@@ -48,14 +41,14 @@ function DropZone(props) {
   };
 
   const handleFiles = (files) => {
+    console.log(files);
     const newFiles = Object.values(files);
     newFiles.map((file) => {
-      console.log(file);
-      if (file.type.includes("image")) {
+      if (file.type.includes("image") && props.files.length < props.limit) {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function (e) {
-          setSelectedFiles(selectedFiles.concat(reader.result));
+          setFiles(props.files.concat(reader.result));
         };
       } else {
         console.log("Erro: formato não suportado");
