@@ -9,7 +9,7 @@ import Popover from "@material-ui/core/Popover";
 import "./styles.scss";
 //assets
 import playIcon from "../../assets/icons/play.svg";
-import PreviewGroup from "../PreviewGroup";
+import exclamationIcon from "../../assets/icons/exclamation.svg";
 
 export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
@@ -112,7 +112,7 @@ export default function EpisodeItem({ id, name }) {
               <label htmlFor="visbility-input" className="hour-label">
                 Hora(s)
               </label>
-              <p onClick={handleClick}>(?)</p>
+              <img src={exclamationIcon} alt="" onClick={handleClick} />
               <Popover
                 id={idPop}
                 open={open}

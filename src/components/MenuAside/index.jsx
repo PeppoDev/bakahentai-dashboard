@@ -10,7 +10,6 @@ import usersIcon from "../../assets/icons/users.svg";
 import statusIcon from "../../assets/icons/tools.svg";
 import episodesIcon from "../../assets/icons/image.svg";
 import hentaiIcon from "../../assets/icons/play.svg";
-
 //css
 import "./styles.scss";
 //components
