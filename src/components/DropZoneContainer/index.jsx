@@ -4,8 +4,10 @@ import Button from "../../components/MenuButton";
 import DropZoneCount from "../DropZoneCount";
 //css
 import "./styles.scss";
+//assets
+import closeIcon from "../../assets/icons/close.svg";
 
-function DropZoneContainer({ title, limit = 100 }) {
+function DropZoneContainer({ title, limit = 100, poptext }) {
   const [files, setFiles] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
@@ -120,11 +122,12 @@ function DropZoneContainer({ title, limit = 100 }) {
             <div className="pop-over-warning">
               {showPopOver ? (
                 <>
-                  <h2 onClick={() => setShowPopOver(false)}>X</h2>
-                  <p>
-                    Algum Aviso Algum Aviso Algum Aviso Algum Aviso Algum Aviso
-                    Algum Aviso Algum Aviso Algum Aviso Algum Aviso Algum Aviso
-                  </p>
+                  <img
+                    src={closeIcon}
+                    alt=""
+                    onClick={() => setShowPopOver(false)}
+                  />
+                  <p>{poptext}</p>
                 </>
               ) : null}
             </div>

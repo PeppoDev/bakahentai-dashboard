@@ -71,6 +71,9 @@ export default function EpisodeItem({ id, name }) {
             </article>
             <article className="main-right">
               <DropZoneContainer
+                poptext="É necessário um total de 9 imagens para o cadastro ser
+                    concluído, a imagem favoritada será usada como thumbnail e
+                    as demais como previews"
                 text="Clique ou arraste uma imagem de até 1280x720"
                 limit={8}
                 setFiles={setFiles}
@@ -127,7 +130,7 @@ export default function EpisodeItem({ id, name }) {
                 <span className="popover">
                   <p>
                     Esta opção deixará o episódio bloqueado apenas para usuários
-                    com o "X" de horas que for estabelecido.
+                    Premiums de acordo com o "X" de horas que for estabelecido.
                   </p>
                   <p>Logo após este período de será liberado a todos.</p>
                 </span>

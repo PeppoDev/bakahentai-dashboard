@@ -7,6 +7,10 @@ import fappedIcon from "../../assets/icons/fapped.svg";
 import taxonomiesIcon from "../../assets/icons/taxonomias.svg";
 import notificationsIcon from "../../assets/icons/notifications.svg";
 import usersIcon from "../../assets/icons/users.svg";
+import statusIcon from "../../assets/icons/tools.svg";
+import episodesIcon from "../../assets/icons/image.svg";
+import hentaiIcon from "../../assets/icons/play.svg";
+
 //css
 import "./styles.scss";
 //components
@@ -23,19 +27,19 @@ function MenuAside() {
 
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
       <MenuButton to="faplist" icon={fappedIcon} text="Lista de Fap" />
-      <MenuButton to="status" initial icon={settingsIcon} text="Status Geral" />
+      <MenuButton to="status" initial icon={statusIcon} text="Status Geral" />
       <MenuButton
         to="notifications"
         icon={notificationsIcon}
         text="Notificações"
       />
 
-      <DropDownMenu text="Hentais" icon={settingsIcon}>
+      <DropDownMenu text="Hentais" icon={hentaiIcon}>
         <DropDownButton text="Todos Hentais" to="allhentais" />
         <DropDownButton text="Cadastrar Hentais" to="registerhentais" />
       </DropDownMenu>
 
-      <DropDownMenu text="Episódios" icon={settingsIcon}>
+      <DropDownMenu text="Episódios" icon={episodesIcon}>
         <DropDownButton text="Todos Episódios" to="allepisodes" />
         <DropDownButton text="Cadastrar Episódios" to="registerepisodes" />
       </DropDownMenu>

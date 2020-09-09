@@ -1,3 +1,8 @@
+.icons i,
+.icons svg {
+    color: #2759AE;
+}
+
 .dragndrop-container {
     width: 100%;
 
@@ -154,6 +159,14 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     animation: appear-popOver 0.4s ease-in forwards;
+
+    img {
+        width: 2rem;
+        align-self: center;
+        margin: 1rem 0rem 1rem 1rem;
+        cursor: pointer;
+
+    }
 
     h2 {
         color: white;

@@ -274,7 +274,10 @@ function RegisterHentais() {
           </Radio.RadioForm>
         </article>
         <article className="main-right">
-          <DropZoneContainer title={title} />
+          <DropZoneContainer
+            poptext="A imagem que estiver como favorita é a que aparecerá na listagem de todos os hentais."
+            title={title}
+          />
         </article>
       </article>
 
