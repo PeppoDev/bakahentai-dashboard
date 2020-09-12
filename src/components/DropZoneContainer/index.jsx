@@ -2,6 +2,7 @@ import React from "react";
 import DropZone from "../DropZone";
 import Button from "../../components/MenuButton";
 import DropZoneCount from "../DropZoneCount";
+import * as ButtonHover from "../ButtonHover";
 //css
 import "./styles.scss";
 //assets
@@ -9,6 +10,7 @@ import closeIcon from "../../assets/icons/close.svg";
 
 function DropZoneContainer({ title, limit = 100, poptext }) {
   const [files, setFiles] = React.useState([]);
+  const [blob, setBlob] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
   const [showPopOver, setShowPopOver] = React.useState(false);
@@ -16,7 +18,11 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
   const link = "RegisterEpisodes/" + title;
 
   React.useEffect(() => {
-    setSelectedChip(files.length >= 1 ? files.length - 1 : -1);
+    if (files.length >= 1) {
+      setSelectedChip(files.length - 1);
+    }
+    console.log(files);
+    ToBase64();
     setShowPopOver(files.length === 1 ? true : false);
     setTimeout(() => {
       setShowPopOver(false);
@@ -26,33 +32,66 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
   const divStyle =
     selectedChip !== -1
       ? {
-          backgroundImage: "url(" + files[selectedChip] + ")",
+          backgroundImage: "url(" + blob[selectedChip] + ")",
         }
       : null;
 
   const fileInputRef = React.useRef();
+  const fileInputReplaceRef = React.useRef();
+
+  // function handleFiletoBase64(file) {
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onload = function (e) {
+  //     setBase64((prev) => [...prev, reader.result]);
+  //   };
+  // }
+
+  // function handleReplaceBase64(file) {
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onload = function (e) {
+  //     setBase64((prev) => prev.slice(selectedChip, 1, reader.result));
+  //   };
+  // }
+  // function handleDeleteBase64() {
+  //   const newArray = Array.from(base64);
+  //   newArray.splice(selectedChip, 1);
+  //   setBase64(newArray);
+  // }
+
+  function ToBase64() {
+    setBlob([]);
+    files.map((file) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function (e) {
+        setBlob((prev) => [...prev, reader.result]);
+      };
+    });
+  }
 
   function handleClickInput() {
     fileInputRef.current.click();
   }
+  function handleClickInputReplace() {
+    fileInputReplaceRef.current.click();
+  }
 
   function handleDelete() {
-    const newFiles = Array.from(files);
+    // handleDeleteBase64();
+    const newFiles = files.slice();
     newFiles.splice(selectedChip, 1);
     setFiles(newFiles);
     setSelectedChip(-1);
   }
 
   function handleReplace() {
-    if (fileInputRef.current.files.length) {
-      if (fileInputRef.current.files[0].type.includes("image")) {
-        const reader = new FileReader();
-        reader.readAsDataURL(fileInputRef.current.files[0]);
-        reader.onload = function (e) {
-          let newFiles = Array.from(files);
-          newFiles[selectedChip] = reader.result;
-          setFiles(newFiles);
-        };
+    const filestemp = fileInputReplaceRef.current.files;
+    const newFiles = Object.values(filestemp);
+    if (fileInputReplaceRef.current.files.length) {
+      if (fileInputReplaceRef.current.files[0].type.includes("image")) {
+        setFiles((prev) => prev.slice(selectedChip, 1, newFiles[0]));
       } else {
         console.log("Erro: formato não suportado");
       }
@@ -62,17 +101,13 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
   async function handleFile() {
     const filestemp = fileInputRef.current.files;
     const newFiles = Object.values(filestemp);
-
     let count = files.length;
 
     newFiles.map((file) => {
       if (file.type.includes("image") && count < limit) {
         count = count + 1;
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function (e) {
-          setFiles((prev) => prev.concat(reader.result));
-        };
+        // handleFiletoBase64(file);
+        setFiles((prev) => [...prev, file]);
       } else {
         console.log("Erro: formato não suportado");
       }
@@ -90,7 +125,7 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
   return (
     <section className="dragndrop-container">
       <input
-        ref={fileInputRef}
+        ref={fileInputReplaceRef}
         className="file-input"
         type="file"
         onChange={handleReplace}
@@ -131,15 +166,22 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
                 </>
               ) : null}
             </div>
-            <div className="button-group">
-              <button onClick={handleClickInput}>Substituir</button>
+            <ButtonHover.Container>
+              <ButtonHover.Button
+                text="Substituir"
+                onClick={handleClickInputReplace}
+              />
+
               {starred === selectedChip ? (
-                <button onClick={handleUnStarred}>Desfavoritar</button>
+                <ButtonHover.Button
+                  text="Desfavoritar"
+                  onClick={handleUnStarred}
+                />
               ) : (
-                <button onClick={handleStarred}>Favoritar</button>
+                <ButtonHover.Button text="Favoritar" onClick={handleStarred} />
               )}
-              <button onClick={handleDelete}>Excluir</button>
-            </div>
+              <ButtonHover.Button text="Excluir" onClick={handleDelete} />
+            </ButtonHover.Container>
           </div>
         )}
       </article>

@@ -13,7 +13,7 @@
             max-width: 100%;
 
             .chip-container {
-                width: 3.56rem;
+                width: 3.6rem;
             }
         }
 
@@ -223,7 +223,7 @@
 
 
 .popover {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: transparent;
     width: 100%;
     color: #dad8d8;
     display: flex;
@@ -249,4 +249,5 @@
     background-color: transparent !important;
     width: 32rem;
     height: auto;
+    margin-top: -2rem;
 }

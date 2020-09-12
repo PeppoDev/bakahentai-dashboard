@@ -75,7 +75,7 @@ export default function EpisodeItem({ id, name }) {
                     concluído, a imagem favoritada será usada como thumbnail e
                     as demais como previews"
                 text="Clique ou arraste uma imagem de até 1280x720"
-                limit={8}
+                limit={9}
                 setFiles={setFiles}
               />
             </article>

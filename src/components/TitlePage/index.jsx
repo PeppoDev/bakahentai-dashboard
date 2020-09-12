@@ -16,7 +16,7 @@ export default function TitlePage(props) {
           </Link>
           {text}
         </p>
-        <div>{props.children}</div>
+        <div className="select-container">{props.children}</div>
       </article>
 
       <hr />

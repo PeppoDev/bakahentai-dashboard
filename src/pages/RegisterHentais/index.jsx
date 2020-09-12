@@ -32,6 +32,8 @@ function RegisterHentais() {
 
   const [showButton, setShowButton] = React.useState(false);
 
+  const [genders, setGenders] = React.useState([]);
+
   function sortTags(newTags) {
     newTags.sort(function (a, b) {
       return a.toLowerCase().localeCompare(b.toLowerCase());
@@ -59,26 +61,152 @@ function RegisterHentais() {
   };
   const studio_arr = Object.values(studio_json);
 
-  const tags_json = {
-    0: {
-      value: "ahegao",
-      text: "Ahegao",
+  const genders_temp = [
+    {
+      id: 1,
+      name: "Incesto",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    1: {
-      value: "ação",
-      text: "Ação",
+    {
+      id: 2,
+      name: "Escolar",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    2: {
-      value: "sci-fi",
-      text: "Sci-fi",
+    {
+      id: 3,
+      name: "Estupro",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    3: {
-      value: "musical",
-      text: "Musical",
+    {
+      id: 4,
+      name: "Traição",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-  };
-  const tags_arr = Object.values(tags_json);
+    {
+      id: 5,
+      name: "Peitões",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 6,
+      name: "Milf",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 7,
+      name: "Colegial",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 8,
+      name: "Stockings",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 9,
+      name: "Anal",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 10,
+      name: "Futanari",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 11,
+      name: "Professora",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 12,
+      name: "Romance",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 13,
+      name: "Professor",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 14,
+      name: "Empregadas",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 15,
+      name: "Paizuri",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 16,
+      name: "Footjob",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 17,
+      name: "Harém",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 18,
+      name: "Ahegao",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 19,
+      name: "Yuri",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 20,
+      name: "Dark Skin",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 21,
+      name: "Loli",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 22,
+      name: "Bondage",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 23,
+      name: "Shotacon",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+  ];
+  const tags_arr = Object.values(genders_temp);
 
+  React.useEffect(() => {
+    tags_arr.map((tag) => setGenders((prev) => [...prev, tag.name]));
+    console.log(genders);
+  }, []);
   function verify() {
     if (
       title !== "" &&
@@ -111,15 +239,16 @@ function RegisterHentais() {
     setTagsTemp("");
     setSynopsis("");
     setStatus(true);
+    setVisibility("");
   }
   function handleTags(event) {
     if (event.key === "Enter") {
       let newTags = tagsTemp.replace(/\s/g, "").split(",");
-
-      newTags = sortTags([...newTags, ...tags]);
-      console.log(newTags);
-      setTags(newTags);
       setTagsTemp("");
+      newTags = sortTags([...newTags, ...tags]);
+      newTags.map((tag) =>
+        setTags((prev) => (genders.includes(tag) ? [...prev, tag] : prev))
+      );
     }
   }
 
@@ -217,11 +346,11 @@ function RegisterHentais() {
               onChange={(e) => handleSetTags(e)}
               multiple={true}
             >
-              {tags_arr.map((tag, i) => (
+              {genders.map((tag, key) => (
                 <ComboBox.ComboItem
-                  key={i}
-                  value={tag.value}
-                  text={tag.text}
+                  key={key}
+                  value={tag}
+                  text={tag}
                 ></ComboBox.ComboItem>
               ))}
             </ComboBox.ComboSelect>
@@ -253,8 +382,8 @@ function RegisterHentais() {
           </Radio.RadioForm>
           <Radio.RadioForm
             text="Visibilidade"
-            value={status}
-            onChange={setStatus}
+            value={visibility}
+            onChange={setVisibility}
           >
             <Radio.RadioInput
               value="all"

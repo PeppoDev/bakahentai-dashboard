@@ -27,7 +27,6 @@ function App() {
                 <Route path="/Settings" exact component={pages.Settings} />
                 <Route path="/Comments" exact component={pages.Comments} />
                 <Route path="/FapList" exact component={pages.FapList} />
-
                 <Route
                   path="/RegisterEpisodes"
                   exact

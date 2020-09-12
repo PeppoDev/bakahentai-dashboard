@@ -1,23 +1,20 @@
 import React from "react";
 import prev from "../../assets/images/prev2.png";
+import * as ButtonHover from "../ButtonHover";
 import "./styles.scss";
-export default function HentaItem() {
-  const divStyle = {
-    backgroundImage: "url(" + prev + ")",
-  };
-
+export default function HentaItem({ name, studios, img }) {
   return (
     <article className="hentai-item">
       <article className="image-container">
-        <div className="button-group">
-          <button onClick={() => null}>Editar</button>
-          <button onClick={() => null}>Deletar</button>
-          <button onClick={() => null}>Episódios</button>
-        </div>
+        <ButtonHover.Container>
+          <ButtonHover.Button text="Editar" />
+          <ButtonHover.Button text="Deletar" />
+          <ButtonHover.Button text="Episódios" />
+        </ButtonHover.Container>
       </article>
       <article className="info-group">
-        <p>Nome do Anime </p>
-        <p>Studio</p>
+        <p>{name}</p>
+        <p>{studios[0].name}</p>
       </article>
     </article>
   );

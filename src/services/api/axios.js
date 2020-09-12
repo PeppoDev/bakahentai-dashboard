@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://bakahentai.org/",
-  //   baseURL: process.env.REACT_APP_BACKEND_URL,
+  headers: { Authorization: "Basic QmFrYUhlbnRhaTpCYWthSGVudGFpITIz" },
 });
 
 export default api;

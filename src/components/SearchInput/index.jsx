@@ -4,10 +4,15 @@ import "./styles.scss";
 //assets
 import searchIcon from "../../assets/icons/search.svg";
 
-function SearchInput() {
+function SearchInput({ value, onChange }) {
   return (
     <section className="search-input">
-      <input type="search" placeholder="Pesquisar"></input>
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        type="search"
+        placeholder="Pesquisar"
+      ></input>
       <img src={searchIcon} alt="" />
     </section>
   );
