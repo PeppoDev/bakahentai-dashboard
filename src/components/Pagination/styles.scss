@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    background-color: var(--color-background);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+
+
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        max-width: 20rem;
+    }
+
+    .chip-container {
+        cursor: pointer;
+        transition: 0.2 ease;
+
+    }
+
+    .selected-chip {
+        background-color: var(--color-primary-pink);
+    }
+
+
+}
