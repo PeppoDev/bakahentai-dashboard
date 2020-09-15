@@ -16,7 +16,7 @@ import FavoriteBanner from "../../components/FavoriteBanner";
 
 function RegisterHentais() {
   const { id } = useParams();
-
+  //inputs
   const [title, setTitle] = React.useState(id);
   const [original_title, setOriginal_title] = React.useState("");
   const [adm, setAdm] = React.useState("");
@@ -30,17 +30,14 @@ function RegisterHentais() {
   const [status, setStatus] = React.useState(false);
   const [visibility, setVisibility] = React.useState("");
 
+  const [placholderGender, setPlacholderGender] = React.useState(
+    "Ex: Colegial, Escolar, Peitões"
+  );
+
   const [showButton, setShowButton] = React.useState(false);
-
+  //list name genders
   const [genders, setGenders] = React.useState([]);
-
-  function sortTags(newTags) {
-    newTags.sort(function (a, b) {
-      return a.toLowerCase().localeCompare(b.toLowerCase());
-    });
-    return newTags;
-  }
-
+  //Data input
   const studio_json = {
     0: {
       value: "Studio 1",
@@ -203,10 +200,6 @@ function RegisterHentais() {
   ];
   const tags_arr = Object.values(genders_temp);
 
-  React.useEffect(() => {
-    tags_arr.map((tag) => setGenders((prev) => [...prev, tag.name]));
-    console.log(genders);
-  }, []);
   function verify() {
     if (
       title !== "" &&
@@ -245,17 +238,48 @@ function RegisterHentais() {
     if (event.key === "Enter") {
       let newTags = tagsTemp.replace(/\s/g, "").split(",");
       setTagsTemp("");
-      newTags = sortTags([...newTags, ...tags]);
-      newTags.map((tag) =>
-        setTags((prev) => (genders.includes(tag) ? [...prev, tag] : prev))
-      );
+      console.log(newTags);
+
+      let newArray = [];
+      newTags.map((tag) => {
+        if (!tags.includes(tag)) newArray.push(tag);
+      });
+
+      console.log(!tags.includes("Ahegao"));
+      newArray = [...newArray, ...tags];
+      newArray = GenderSort(newArray);
+      setTags(newArray);
+      // newArray.map((tag) =>
+      //   setTags((prev) => (genders.includes(tag) ? [...prev, tag] : prev))
+      // );
     }
   }
 
   function handleSetTags(value) {
-    let newTags = sortTags([...tags, value]);
-    setTags(newTags);
+    if (value !== "Selecionar") {
+      const newTags = [...Array.from(tags), value];
+      const filteredTags = Genderfilter(newTags);
+      const sortedTags = GenderSort(filteredTags);
+      setTags(sortedTags);
+    }
   }
+
+  function Genderfilter(tags) {
+    let newTags = new Set(tags);
+    return [...newTags];
+  }
+
+  function GenderSort(tags) {
+    const newTags = Array.from(tags);
+    newTags.sort(function (a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+    return newTags;
+  }
+
+  React.useEffect(() => {
+    tags_arr.map((tag) => setGenders((prev) => [...prev, tag.name]));
+  }, []);
 
   return (
     <section className="page-container register-hentais" onClick={verify}>
@@ -335,7 +359,7 @@ function RegisterHentais() {
             <MainInput
               type="search"
               label="Gêneros"
-              placeholder="Ex: Colegial, Escolar, Peitões"
+              placeholder={placholderGender}
               value={tagsTemp}
               onChange={setTagsTemp}
               onKeyPress={handleTags}
@@ -343,7 +367,7 @@ function RegisterHentais() {
             <ComboBox.ComboSelect
               htmlFor="tags"
               value={tags}
-              onChange={(e) => handleSetTags(e)}
+              onChange={handleSetTags}
               multiple={true}
             >
               {genders.map((tag, key) => (

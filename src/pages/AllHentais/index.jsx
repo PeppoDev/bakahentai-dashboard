@@ -1,22 +1,16 @@
 import React from "react";
 //services
-import api from "../../services/api/axios";
+// import api from "../../services/api/axios";
 //components
 import TitlePage from "../../components/TitlePage";
 import SearchInput from "../../components/SearchInput";
-import Select from "react-select";
-import { Autocomplete } from "@material-ui/lab";
-import { TextField } from "@material-ui/core";
 import HentaiList from "../../components/HentaiList";
-import Pagination from "../../components/Pagination";
-
 //css
 import "./styles.scss";
 
 function AllHentais() {
-  const [hentais, setHentais] = React.useState([]);
+  // const [hentais, setHentais] = React.useState([]);
   const [query, setQuery] = React.useState("");
-  const [currentPage, setCurrentPage] = React.useState(1);
   const [hentaisPerPage, setHentaisPerPage] = React.useState(10);
 
   const hentais_list = [
@@ -1031,9 +1025,6 @@ function AllHentais() {
     query,
   ]);
 
-  const hentais_name = [];
-  hentais_list.map((hentai) => hentais_name.splice(-1, 0, hentai.name));
-
   React.useEffect(() => {
     // async function getHentais() {
     //   const response = await api.get("api/admin/hentais");
@@ -1042,16 +1033,7 @@ function AllHentais() {
     // getHentais();
   }, []);
 
-  const indexOfLastHentais = currentPage * hentaisPerPage;
-  const indexOfFirstHentais = indexOfLastHentais - hentaisPerPage;
-  const currentHentais = hentais_list.slice(
-    indexOfFirstHentais,
-    indexOfLastHentais
-  );
-
-  function paginate(number) {
-    setCurrentPage(number);
-  }
+  const currentHentais = hentais_list.slice(0, hentaisPerPage);
   return (
     <section className="page-container all-hentais">
       <TitlePage text="Listar Hentais">
@@ -1062,14 +1044,11 @@ function AllHentais() {
       </article>
 
       {query === "" ? (
-        <Pagination
-          hentaisPerPage={hentaisPerPage}
-          totalHentais={filtered.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        />
+        <button onClick={() => setHentaisPerPage((prev) => prev + 15)}>
+          Mostrar Mais
+        </button>
       ) : (
-        <></>
+        <React.Fragment></React.Fragment>
       )}
     </section>
   );
