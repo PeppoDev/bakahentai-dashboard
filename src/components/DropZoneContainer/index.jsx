@@ -38,27 +38,6 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
   const fileInputRef = React.useRef();
   const fileInputReplaceRef = React.useRef();
 
-  // function handleFiletoBase64(file) {
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   reader.onload = function (e) {
-  //     setBase64((prev) => [...prev, reader.result]);
-  //   };
-  // }
-
-  // function handleReplaceBase64(file) {
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   reader.onload = function (e) {
-  //     setBase64((prev) => prev.slice(selectedChip, 1, reader.result));
-  //   };
-  // }
-  // function handleDeleteBase64() {
-  //   const newArray = Array.from(base64);
-  //   newArray.splice(selectedChip, 1);
-  //   setBase64(newArray);
-  // }
-
   function ToBase64() {
     setBlob([]);
     files.map((file) => {

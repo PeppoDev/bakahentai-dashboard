@@ -3,6 +3,7 @@ import React from "react";
 import "./styles.scss";
 
 export default function Badge({ text, index, onClick = () => null }) {
+
   return (
     <span className="badge" onClick={() => onClick(index)}>
       <p>X</p>

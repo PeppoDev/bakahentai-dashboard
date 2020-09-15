@@ -290,12 +290,13 @@ function Taxonomies() {
     },
   ];
   const tags_arr = Object.values(genders_temp);
+
   return (
     <section className="page-container ">
       <TitlePage text="Taxonomias" />
       <section className="taxonomies">
         <article className="filter-tag-container">
-          <MainInput label="Título da Taxonomia" />
+          <MainInput label="Cadastrar nova Taxonomia" />
           <article className="input-and-button">
             <ComboBox.ComboSelect>
               <ComboBox.ComboItem value="" text="Categoria" />
@@ -306,13 +307,12 @@ function Taxonomies() {
         <hr />
         <article className="classifier">
           <p>
-            OBSERVAÇÃO. Para <strong>Editar</strong> ou{" "}
-            <strong>Excluir </strong>
+            Para <strong>Editar</strong> ou <strong>Excluir </strong>
             alguma taxonomia basta clicar nela
           </p>
           <div>
             <p>
-              Classificar por <strong>*</strong>
+              Ordem <strong>*</strong>
             </p>
             <ComboBox.ComboSelect></ComboBox.ComboSelect>
           </div>

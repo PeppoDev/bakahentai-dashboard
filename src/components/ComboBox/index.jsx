@@ -16,9 +16,19 @@ function ComboSelect(props) {
             : (event) => props.onChange(event.target.value)
         }
       >
-        <option className="combo-item" value={null} defaultValue>
-          Selecionar
-        </option>
+        {props.defaultValue ? (
+          <option
+            className="combo-item"
+            value={props.defaultValue}
+            defaultValue
+          >
+            {props.defaultValue}
+          </option>
+        ) : (
+          <option className="combo-item" value={null} defaultValue>
+            Selecionar
+          </option>
+        )}
 
         {props.children}
       </select>

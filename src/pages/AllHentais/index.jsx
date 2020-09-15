@@ -12,7 +12,7 @@ import "./styles.scss";
 function AllHentais() {
   const [hentais, setHentais] = React.useState([]);
   const [query, setQuery] = React.useState("");
-  const [hentaisPerPage, setHentaisPerPage] = React.useState(10);
+  const [hentaisPerPage, setHentaisPerPage] = React.useState(15);
   const [order, setOrder] = React.useState("Alfabética");
 
   let hentais_list = [
@@ -1098,7 +1098,6 @@ function AllHentais() {
       <TitlePage text="Listar Hentais">
         <SearchInput onChange={setQuery} value={query} />
         <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
-          <ComboBox.ComboItem value="Alfabética" text="Alfabética" />
           <ComboBox.ComboItem value="Postagem" text="Postagem" />
           <ComboBox.ComboItem value="Lançamento" text="Lançamento" />
           <ComboBox.ComboItem value="Maior nota" text="Maior nota" />

@@ -24,8 +24,19 @@ const useStyles = makeStyles((theme) => ({
 function GridPainel({ data, title }) {
   const [showAll, setShowAll] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+
+  const [input, setInput] = React.useState("");
+  const [selectedBadge, setSelectedBadge] = React.useState("");
+
   const classes = useStyles();
 
+  function handleClick(key) {
+    console.log(key);
+    console.log(data[0]);
+    setSelectedBadge(key);
+    handleOpen();
+    setInput("");
+  }
   const handleOpen = () => {
     setOpen(true);
   };
@@ -43,7 +54,7 @@ function GridPainel({ data, title }) {
       <div className="tags-painel">
         <div className={showAll ? "height-auto" : null}>
           {data.map((data, index) => (
-            <Badge onClick={handleOpen} key={index} text={data.name} />
+            <Badge onClick={handleClick} key={index} text={data.name} />
           ))}
         </div>
       </div>
@@ -74,7 +85,7 @@ function GridPainel({ data, title }) {
         <div className="badge-modal">
           <h2>Editar Taxonomia</h2>
           <hr />
-          <MainInput label="Título" />
+          <MainInput label="Título" onChange={setInput} value={input} />
           <span>
             <button onClick={handleClose}>Atualizar</button>
             <button onClick={handleClose}>Excluir</button>
