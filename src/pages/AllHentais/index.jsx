@@ -5,15 +5,17 @@ import React from "react";
 import TitlePage from "../../components/TitlePage";
 import SearchInput from "../../components/SearchInput";
 import HentaiList from "../../components/HentaiList";
+import * as ComboBox from "../../components/ComboBox";
 //css
 import "./styles.scss";
 
 function AllHentais() {
-  // const [hentais, setHentais] = React.useState([]);
+  const [hentais, setHentais] = React.useState([]);
   const [query, setQuery] = React.useState("");
   const [hentaisPerPage, setHentaisPerPage] = React.useState(10);
+  const [order, setOrder] = React.useState("Alfabética");
 
-  const hentais_list = [
+  let hentais_list = [
     {
       id: 1,
       name: "Otome Dori",
@@ -1015,14 +1017,70 @@ function AllHentais() {
   ];
 
   const filter = (hentais, query) => {
-    return hentais.filter((hentai) =>
-      hentai.name.toLowerCase().includes(query.toLowerCase())
+    hentais_list = Array.from(
+      hentais.filter((hentai) =>
+        hentai.name.toLowerCase().includes(query.toLowerCase())
+      )
     );
   };
 
-  const filtered = React.useMemo(() => filter(hentais_list, query), [
+  React.useMemo(() => filter(hentais_list, query), [hentais_list, query]);
+
+  const sorter = (hentais, order) => {
+    if (order === "Alfabética") {
+      hentais_list = Array.from(
+        hentais.sort(function (a, b) {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          return 0;
+        })
+      );
+    } else if (order === "Postagem") {
+      hentais_list = Array.from(
+        hentais.sort(function (a, b) {
+          if (a.created_at > b.created_at) {
+            return 1;
+          }
+          if (a.created_at < b.created_at) {
+            return -1;
+          }
+          return 0;
+        })
+      );
+    } else if (order === "Postagem") {
+      hentais_list = Array.from(
+        hentais.sort(function (a, b) {
+          if (a.release_year > b.release_year) {
+            return 1;
+          }
+          if (a.release_year < b.release_year) {
+            return -1;
+          }
+          return 0;
+        })
+      );
+    } else {
+      hentais_list = Array.from(
+        hentais.sort(function (a, b) {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          return 0;
+        })
+      );
+    }
+  };
+
+  const sorted = React.useMemo(() => sorter(hentais_list, order), [
     hentais_list,
-    query,
+    order,
   ]);
 
   React.useEffect(() => {
@@ -1034,19 +1092,33 @@ function AllHentais() {
   }, []);
 
   const currentHentais = hentais_list.slice(0, hentaisPerPage);
+
   return (
     <section className="page-container all-hentais">
       <TitlePage text="Listar Hentais">
         <SearchInput onChange={setQuery} value={query} />
+        <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
+          <ComboBox.ComboItem value="Alfabética" text="Alfabética" />
+          <ComboBox.ComboItem value="Postagem" text="Postagem" />
+          <ComboBox.ComboItem value="Lançamento" text="Lançamento" />
+          <ComboBox.ComboItem value="Maior nota" text="Maior nota" />
+          <ComboBox.ComboItem value="Mais fapados" text="Mais fapados" />
+          <ComboBox.ComboItem
+            value="Mais favoritados"
+            text="Mais favoritados"
+          />
+        </ComboBox.ComboSelect>
       </TitlePage>
       <article className="hentai-list">
-        <HentaiList data={query === "" ? currentHentais : filtered} />
+        <HentaiList data={currentHentais} />
       </article>
 
       {query === "" ? (
-        <button onClick={() => setHentaisPerPage((prev) => prev + 15)}>
-          Mostrar Mais
-        </button>
+        <div className="button-show-more">
+          <button onClick={() => setHentaisPerPage((prev) => prev + 15)}>
+            Mostrar Mais
+          </button>
+        </div>
       ) : (
         <React.Fragment></React.Fragment>
       )}

@@ -21,7 +21,6 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
     if (files.length >= 1) {
       setSelectedChip(files.length - 1);
     }
-    console.log(files);
     ToBase64();
     setShowPopOver(files.length === 1 ? true : false);
     setTimeout(() => {
@@ -91,7 +90,8 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
     const newFiles = Object.values(filestemp);
     if (fileInputReplaceRef.current.files.length) {
       if (fileInputReplaceRef.current.files[0].type.includes("image")) {
-        setFiles((prev) => prev.slice(selectedChip, 1, newFiles[0]));
+        console.log(newFiles);
+        setFiles((prev) => prev.splice(selectedChip, 2, newFiles[0]));
       } else {
         console.log("Erro: formato não suportado");
       }

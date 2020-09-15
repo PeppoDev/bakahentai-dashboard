@@ -20,7 +20,8 @@ function RegisterHentais() {
   const [title, setTitle] = React.useState(id);
   const [original_title, setOriginal_title] = React.useState("");
   const [adm, setAdm] = React.useState("");
-  const [studio, setStudio] = React.useState("");
+  const [studiosTemp, setStudiosTemp] = React.useState("");
+  const [studios, setStudios] = React.useState([]);
   const [realeasey, setRealeasey] = React.useState("");
   const [censorship, setCensorship] = React.useState("");
   const [quality, setQuality] = React.useState("");
@@ -33,29 +34,70 @@ function RegisterHentais() {
   const [placholderGender, setPlacholderGender] = React.useState(
     "Ex: Colegial, Escolar, Peitões"
   );
+  const [placholderStudio, setPlacholderStudio] = React.useState("Ex: PoRO");
 
   const [showButton, setShowButton] = React.useState(false);
   //list name genders
   const [genders, setGenders] = React.useState([]);
+  const [studioDB, setStudioDB] = React.useState([]);
+
   //Data input
-  const studio_json = {
-    0: {
-      value: "Studio 1",
-      text: "Studio 1",
+  const studio_json = [
+    {
+      id: 1,
+      name: "Mary Jane",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    1: {
-      value: "Studio 2",
-      text: "Studio 2",
+    {
+      id: 2,
+      name: "Bootleg",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    2: {
-      value: "Studio 3",
-      text: "Studio 3",
+    {
+      id: 3,
+      name: "Bunnywalker",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-    3: {
-      value: "Studio 4",
-      text: "Studio 4",
+    {
+      id: 4,
+      name: "Pink Pineapple",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
     },
-  };
+    {
+      id: 5,
+      name: "Union Cho",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 6,
+      name: "PashminaA",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 7,
+      name: "Chippai",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 8,
+      name: "Queen Bee",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+    {
+      id: 9,
+      name: "Erozuki",
+      created_at: "2020-07-11T12:34:34.000000Z",
+      updated_at: "2020-07-11T12:34:34.000000Z",
+    },
+  ];
   const studio_arr = Object.values(studio_json);
 
   const genders_temp = [
@@ -204,7 +246,7 @@ function RegisterHentais() {
     if (
       title !== "" &&
       original_title !== "" &&
-      studio !== "" &&
+      studios !== "" &&
       realeasey !== "" &&
       censorship !== "" &&
       quality !== "" &&
@@ -221,10 +263,17 @@ function RegisterHentais() {
     newTags.splice(key, 1);
     setTags(newTags);
   }
+
+  function handleRemoveBadgeStudio(key) {
+    console.log(key);
+    const newTags = Array.from(studios);
+    newTags.splice(key, 1);
+    setStudios(newTags);
+  }
   function handleSend() {
     setTitle("");
     setOriginal_title("");
-    setStudio("");
+    setStudios("");
     setRealeasey("");
     setCensorship("");
     setQuality("");
@@ -234,11 +283,55 @@ function RegisterHentais() {
     setStatus(true);
     setVisibility("");
   }
+
+  function handleStudios(event) {
+    if (event.key === "Enter") {
+      let newTags = studiosTemp.replace(/\s/g, "").split(",");
+      setStudiosTemp("");
+      setPlacholderStudio("Ex: PoRO");
+
+      let newArray = [];
+      newTags.map((tag) => {
+        if (!studios.includes(tag)) newArray.push(tag);
+      });
+
+      newArray = [...newArray, ...studios];
+      newArray = sort(newArray);
+
+      let verifiedArray = [];
+      let noValid = "Estúdios inválidos: ";
+      newArray.map((tag) => {
+        if (studioDB.includes(tag)) {
+          verifiedArray.push(tag);
+        } else {
+          noValid = noValid.concat(
+            noValid === "Estúdios inválidos: " ? `${tag}` : `,${tag}`
+          );
+        }
+      });
+
+      setPlacholderStudio((prev) =>
+        noValid !== "Estúdios inválidos: " ? noValid : prev
+      );
+
+      setStudios(verifiedArray);
+    }
+  }
+
+  function handleSetStudios(value) {
+    if (value !== "Selecionar") {
+      setPlacholderStudio("Ex: PoRO");
+      const newTags = [...Array.from(studios), value];
+      const filteredTags = filter(newTags);
+      const sortedTags = sort(filteredTags);
+      setStudios(sortedTags);
+    }
+  }
   function handleTags(event) {
     if (event.key === "Enter") {
       let newTags = tagsTemp.replace(/\s/g, "").split(",");
       setTagsTemp("");
-      console.log(newTags);
+      setPlacholderGender("Ex: Colegial, Escolar, Peitões");
 
       let newArray = [];
       newTags.map((tag) => {
@@ -247,29 +340,44 @@ function RegisterHentais() {
 
       console.log(!tags.includes("Ahegao"));
       newArray = [...newArray, ...tags];
-      newArray = GenderSort(newArray);
-      setTags(newArray);
-      // newArray.map((tag) =>
-      //   setTags((prev) => (genders.includes(tag) ? [...prev, tag] : prev))
-      // );
+      newArray = sort(newArray);
+
+      let verifiedArray = [];
+      let noValid = "Taxonomias inválidas: ";
+      newArray.map((tag) => {
+        if (genders.includes(tag)) {
+          verifiedArray.push(tag);
+        } else {
+          noValid = noValid.concat(
+            noValid === "Taxonomias inválidas: " ? `${tag}` : `,${tag}`
+          );
+        }
+      });
+
+      setPlacholderGender((prev) =>
+        noValid !== "Taxonomias inválidas: " ? noValid : prev
+      );
+
+      setTags(verifiedArray);
     }
   }
 
   function handleSetTags(value) {
     if (value !== "Selecionar") {
+      setPlacholderGender("Ex: Colegial, Escolar, Peitões");
       const newTags = [...Array.from(tags), value];
-      const filteredTags = Genderfilter(newTags);
-      const sortedTags = GenderSort(filteredTags);
+      const filteredTags = filter(newTags);
+      const sortedTags = sort(filteredTags);
       setTags(sortedTags);
     }
   }
 
-  function Genderfilter(tags) {
+  function filter(tags) {
     let newTags = new Set(tags);
     return [...newTags];
   }
 
-  function GenderSort(tags) {
+  function sort(tags) {
     const newTags = Array.from(tags);
     newTags.sort(function (a, b) {
       return a.toLowerCase().localeCompare(b.toLowerCase());
@@ -279,6 +387,7 @@ function RegisterHentais() {
 
   React.useEffect(() => {
     tags_arr.map((tag) => setGenders((prev) => [...prev, tag.name]));
+    studio_arr.map((tag) => setStudioDB((prev) => [...prev, tag.name]));
   }, []);
 
   return (
@@ -304,24 +413,41 @@ function RegisterHentais() {
             value={adm}
             onChange={setAdm}
           />
+
           <article className="input-n-select">
             <MainInput
               type="search"
-              label="Estúdio"
-              placeholder="Ex: PoRO"
-              value={studio}
-              onChange={setStudio}
+              label="Estúdios"
+              placeholder={placholderStudio}
+              value={studiosTemp}
+              onChange={setStudiosTemp}
+              onKeyPress={handleStudios}
             />
-            <ComboBox.ComboSelect htmlFor="studio" onChange={setStudio}>
-              {studio_arr.map((studio) => (
+            <ComboBox.ComboSelect
+              htmlFor="studios"
+              value={studios}
+              onChange={handleSetStudios}
+              multiple={true}
+            >
+              {studioDB.map((tag, key) => (
                 <ComboBox.ComboItem
-                  key={studio.value}
-                  value={studio.value}
-                  text={studio.text}
+                  key={key}
+                  value={tag}
+                  text={tag}
                 ></ComboBox.ComboItem>
               ))}
-              ;
             </ComboBox.ComboSelect>
+          </article>
+
+          <article className="badge-group">
+            {studios.map((tag, index) => (
+              <Badge
+                text={tag}
+                key={index}
+                index={index}
+                onClick={handleRemoveBadgeStudio}
+              />
+            ))}
           </article>
           <MainInput
             label="Ano Lançado"

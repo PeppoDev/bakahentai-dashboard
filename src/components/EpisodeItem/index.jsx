@@ -13,9 +13,9 @@ import exclamationIcon from "../../assets/icons/exclamation.svg";
 
 export default function EpisodeItem({ id, name }) {
   const [showItens, setShowItens] = React.useState(true);
-  const [files, setFiles] = React.useState([]);
+  const [, setFiles] = React.useState([]);
   const [hour, setHour] = React.useState(0);
-  const [visibility, setVisibility] = React.useState("");
+  const [, setVisibility] = React.useState("");
 
   const radioRef = React.useRef();
 
