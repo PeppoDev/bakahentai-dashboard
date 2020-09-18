@@ -319,15 +319,11 @@ function Taxonomies() {
         </article>
         <article className="grid-gender">
           <GridPainel data={tags_arr} title="Gêneros" />
-          <article className="grid-painel">
-            <GridPainel data={tags_arr} title="Qualidades" />
-          </article>
-          <article className="grid-painel">
-            <GridPainel data={tags_arr} title="Anos Lançados" />
-          </article>
-          <article className="grid-painel">
-            <GridPainel data={tags_arr} title="Estúdios" />
-          </article>
+          <GridPainel data={tags_arr} title="Qualidades" />
+        </article>
+        <article className="grid-gender">
+          <GridPainel data={tags_arr} title="Anos Lançados" />
+          <GridPainel data={tags_arr} title="Estúdios" />
         </article>
       </section>
     </section>

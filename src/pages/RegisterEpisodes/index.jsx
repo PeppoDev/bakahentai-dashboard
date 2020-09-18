@@ -41,7 +41,7 @@ function RegisterEpisodes() {
 
   return (
     <section className="page-container register-episodes">
-      <TitlePage text="Cadastrar de Episódios" />
+      <TitlePage text="Cadastrar Episódios" />
       {episodes.map((data, index) => (
         <EpisodeItem
           key={data.episode}

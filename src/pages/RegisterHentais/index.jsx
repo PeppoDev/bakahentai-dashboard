@@ -11,7 +11,8 @@ import DropZoneContainer from "../../components/DropZoneContainer";
 import TitlePage from "../../components/TitlePage";
 import Badge from "../../components/Badge";
 import FavoriteBanner from "../../components/FavoriteBanner";
-
+import Button from "../../components/MenuButton";
+import api from "../../services/api/axios";
 //assets
 
 function RegisterHentais() {
@@ -28,8 +29,9 @@ function RegisterHentais() {
   const [tagsTemp, setTagsTemp] = React.useState("");
   const [tags, setTags] = React.useState([]);
   const [synopsis, setSynopsis] = React.useState("");
-  const [status, setStatus] = React.useState(false);
+  const [status, setStatus] = React.useState("");
   const [visibility, setVisibility] = React.useState("");
+  const [files, setFiles] = React.useState([]);
 
   const [placholderGender, setPlacholderGender] = React.useState(
     "Ex: Colegial, Escolar, Peitões"
@@ -246,13 +248,14 @@ function RegisterHentais() {
     if (
       title !== "" &&
       original_title !== "" &&
-      studios !== "" &&
+      studios !== [] &&
       realeasey !== "" &&
       censorship !== "" &&
       quality !== "" &&
       tags !== "" &&
-      status !== false &&
-      visibility !== false
+      status !== "" &&
+      visibility !== "" &&
+      files !== []
     ) {
       setShowButton(true);
     }
@@ -270,10 +273,26 @@ function RegisterHentais() {
     newTags.splice(key, 1);
     setStudios(newTags);
   }
-  function handleSend() {
+  async function handleSend() {
+    let data = {
+      title,
+      original_title,
+      studios,
+      realeasey,
+      censorship,
+      quality,
+      tags,
+      synopsis,
+      status,
+      visibility,
+      files,
+    };
+
+    const response = await api.post("api/admin/hentais", data);
+
     setTitle("");
     setOriginal_title("");
-    setStudios("");
+    setStudios([]);
     setRealeasey("");
     setCensorship("");
     setQuality("");
@@ -391,7 +410,11 @@ function RegisterHentais() {
   }, []);
 
   return (
-    <section className="page-container register-hentais" onClick={verify}>
+    <section
+      className="page-container register-hentais"
+      onClick={verify}
+      onMouseMove={verify}
+    >
       <TitlePage text={id ? "Editar Hentai" : "Cadastrar Hentai"} />
       <article className="register-hentais-container">
         <article className="main-left">
@@ -460,12 +483,12 @@ function RegisterHentais() {
           <div className="radio-form">
             <Radio.RadioForm text="Censura" onChange={setCensorship}>
               <Radio.RadioInput
-                value="false"
+                value="0"
                 name="censorship"
                 text="Com Censura"
               />
               <Radio.RadioInput
-                value="true"
+                value="1"
                 name="censorship"
                 text="Sem Censura"
               />
@@ -476,8 +499,8 @@ function RegisterHentais() {
               value={quality}
               onChange={setQuality}
             >
-              <Radio.RadioInput value="1080" name="quality" text="1080p" />
-              <Radio.RadioInput value="720" name="quality" text="720p" />
+              <Radio.RadioInput value="1080P" name="quality" text="1080p" />
+              <Radio.RadioInput value="720P" name="quality" text="720p" />
             </Radio.RadioForm>
           </div>
 
@@ -520,12 +543,12 @@ function RegisterHentais() {
           <TextArea text="História" value={synopsis} onChange={setSynopsis} />
           <Radio.RadioForm text="status" value={status} onChange={setStatus}>
             <Radio.RadioInput
-              value="releasing"
+              value="Lançamento"
               name="hentai_status"
               text="Lançamento"
             />
             <Radio.RadioInput
-              value="full"
+              value="Completo"
               name="hentai_status"
               text="Completo"
             />
@@ -556,6 +579,13 @@ function RegisterHentais() {
           <DropZoneContainer
             poptext="A imagem que estiver como favorita é a que aparecerá na listagem de todos os hentais."
             title={title}
+            files={files}
+            setFiles={setFiles}
+          />
+          <Button
+            className="button-dragndrop"
+            to={"RegisterEpisodes/" + title}
+            text="Cadastrar Episódios"
           />
         </article>
       </article>

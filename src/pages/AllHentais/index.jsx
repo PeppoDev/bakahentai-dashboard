@@ -1095,7 +1095,7 @@ function AllHentais() {
 
   return (
     <section className="page-container all-hentais">
-      <TitlePage text="Listar Hentais">
+      <TitlePage text="TODOS OS HENTAIS">
         <SearchInput onChange={setQuery} value={query} />
         <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
           <ComboBox.ComboItem value="Postagem" text="Postagem" />

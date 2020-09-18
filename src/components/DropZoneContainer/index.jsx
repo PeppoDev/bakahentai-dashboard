@@ -1,6 +1,5 @@
 import React from "react";
 import DropZone from "../DropZone";
-import Button from "../../components/MenuButton";
 import DropZoneCount from "../DropZoneCount";
 import * as ButtonHover from "../ButtonHover";
 //css
@@ -8,14 +7,11 @@ import "./styles.scss";
 //assets
 import closeIcon from "../../assets/icons/close.svg";
 
-function DropZoneContainer({ title, limit = 100, poptext }) {
-  const [files, setFiles] = React.useState([]);
+function DropZoneContainer({ title, limit = 100, poptext, files, setFiles }) {
   const [blob, setBlob] = React.useState([]);
   const [selectedChip, setSelectedChip] = React.useState(-1);
   const [starred, setStarred] = React.useState(-1);
   const [showPopOver, setShowPopOver] = React.useState(false);
-
-  const link = "RegisterEpisodes/" + title;
 
   React.useEffect(() => {
     if (files.length >= 1) {
@@ -69,8 +65,9 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
     const newFiles = Object.values(filestemp);
     if (fileInputReplaceRef.current.files.length) {
       if (fileInputReplaceRef.current.files[0].type.includes("image")) {
-        console.log(newFiles);
-        setFiles((prev) => prev.splice(selectedChip, 2, newFiles[0]));
+        let newArray = Array.from(files);
+        newArray.splice(selectedChip, 1, newFiles[0]);
+        setFiles(newArray);
       } else {
         console.log("Erro: formato não suportado");
       }
@@ -180,11 +177,6 @@ function DropZoneContainer({ title, limit = 100, poptext }) {
           +
         </span>
       </article>
-      <Button
-        className="button-dragndrop"
-        to={link}
-        text="Cadastrar Episódios"
-      />
     </section>
   );
 }

@@ -11,6 +11,7 @@ export default function Input({
   onChange,
   valueName,
   onKeyPress = () => null,
+  list = null,
 }) {
   const style = className + " group-input";
 
@@ -19,6 +20,7 @@ export default function Input({
       <input
         type={type}
         id={label}
+        list={list}
         disabled={valueName ? true : false}
         placeholder={placeholder}
         value={valueName ? valueName : value}

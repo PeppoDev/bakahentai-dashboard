@@ -22,20 +22,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function GridPainel({ data, title }) {
-  const [showAll, setShowAll] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [showAll, setShowAll] = React.useState(false);
+
+  const [tagsPerPage, setTagsPerPage] = React.useState(-1);
 
   const [input, setInput] = React.useState("");
-  const [selectedBadge, setSelectedBadge] = React.useState("");
+  const [, setSelectedBadge] = React.useState("");
 
   const classes = useStyles();
 
+  function handleShowAll() {
+    setShowAll(true);
+  }
+  function handleShowLess() {
+    setShowAll(false);
+  }
+
   function handleClick(key) {
-    console.log(key);
-    console.log(data[0]);
-    setSelectedBadge(key);
+    setInput(data[key].name);
     handleOpen();
-    setInput("");
   }
   const handleOpen = () => {
     setOpen(true);
@@ -44,29 +50,42 @@ function GridPainel({ data, title }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const currentTags = data.slice(0, tagsPerPage);
   return (
     <article
       className="grid-painel"
-      style={showAll ? { height: `${23 + (data.length / 7) * 3}rem` } : null}
+      style={
+        showAll
+          ? { height: `${23 + (data.length / 7) * 3}rem` }
+          : { height: "23rem" }
+      }
     >
       <div className="title-painel">{title}</div>
 
       <div className="tags-painel">
-        <div className={showAll ? "height-auto" : null}>
-          {data.map((data, index) => (
-            <Badge onClick={handleClick} key={index} text={data.name} />
+        <div>
+          {currentTags.map((data, index) => (
+            <Badge
+              onClick={handleClick}
+              key={index}
+              index={index}
+              text={data.name}
+            />
           ))}
         </div>
       </div>
-      {data.length > 7 && showAll === false ? (
-        <p onClick={() => setShowAll(true)} className="show-all">
-          Mostrar Todos
-        </p>
-      ) : (
-        <p onClick={() => setShowAll(false)} className="show-all">
-          Mostrar Menos
-        </p>
-      )}
+      {data.length > 7 ? (
+        !showAll ? (
+          <p onClick={handleShowAll} className="show-all">
+            Mostrar Todos
+          </p>
+        ) : (
+          <p onClick={handleShowLess} className="show-all">
+            Mostrar Menos
+          </p>
+        )
+      ) : null}
 
       <Modal
         open={open}
@@ -74,8 +93,6 @@ function GridPainel({ data, title }) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -83,7 +100,11 @@ function GridPainel({ data, title }) {
         }}
       >
         <div className="badge-modal">
-          <h2>Editar Taxonomia</h2>
+          <div>
+            <h2>Editar Taxonomia</h2>
+            <p onClick={handleClose}>X</p>
+          </div>
+
           <hr />
           <MainInput label="Título" onChange={setInput} value={input} />
           <span>

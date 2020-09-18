@@ -1,6 +1,13 @@
 .register-hentais {
     padding-bottom: 3rem;
 
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     .register-button {
         width: 100%;
         width: 15rem;

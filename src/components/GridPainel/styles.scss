@@ -1,5 +1,4 @@
 .height-auto {
-    display: flex;
-    max-height: none !important;
+    grid-auto-rows: auto !important;
     overflow: visible !important;
 }
