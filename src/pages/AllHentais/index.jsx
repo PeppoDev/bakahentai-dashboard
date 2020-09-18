@@ -1,6 +1,6 @@
 import React from "react";
 //services
-// import api from "../../services/api/axios";
+import api from "../../services/api/axios";
 //components
 import TitlePage from "../../components/TitlePage";
 import SearchInput from "../../components/SearchInput";
@@ -10,11 +10,6 @@ import * as ComboBox from "../../components/ComboBox";
 import "./styles.scss";
 
 function AllHentais() {
-  const [hentais, setHentais] = React.useState([]);
-  const [query, setQuery] = React.useState("");
-  const [hentaisPerPage, setHentaisPerPage] = React.useState(15);
-  const [order, setOrder] = React.useState("Alfabética");
-
   let hentais_list = [
     {
       id: 1,
@@ -1015,7 +1010,19 @@ function AllHentais() {
       updated_at: "2020-07-13T20:25:50.000000Z",
     },
   ];
+  const [hentais, setHentais] = React.useState(hentais_list);
+  const [query, setQuery] = React.useState("");
+  const [hentaisPerPage, setHentaisPerPage] = React.useState(15);
+  const [order, setOrder] = React.useState("Alfabética");
 
+  React.useEffect(() => {
+    async function getHentais() {
+      const response = await api.get("api/admin/hentais");
+      setHentais(response.data);
+      hentais_list = Array.from(hentais);
+    }
+    getHentais();
+  }, []);
   const filter = (hentais, query) => {
     hentais_list = Array.from(
       hentais.filter((hentai) =>
@@ -1082,14 +1089,6 @@ function AllHentais() {
     hentais_list,
     order,
   ]);
-
-  React.useEffect(() => {
-    // async function getHentais() {
-    //   const response = await api.get("api/admin/hentais");
-    //   setHentais(response.data);
-    // }
-    // getHentais();
-  }, []);
 
   const currentHentais = hentais_list.slice(0, hentaisPerPage);
 

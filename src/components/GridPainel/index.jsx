@@ -3,6 +3,8 @@ import React from "react";
 import Badge from "../Badge";
 import MainInput from "../Input";
 import { Modal, makeStyles, Backdrop } from "@material-ui/core";
+//assets
+import closeIcon from "../../assets/icons/close.svg";
 //css
 import "./styles.scss";
 
@@ -102,7 +104,7 @@ function GridPainel({ data, title }) {
         <div className="badge-modal">
           <div>
             <h2>Editar Taxonomia</h2>
-            <p onClick={handleClose}>X</p>
+            <img onClick={handleClose} src={closeIcon} alt="" />
           </div>
 
           <hr />
