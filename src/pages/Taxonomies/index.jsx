@@ -5,6 +5,8 @@ import TitlePage from "../../components/TitlePage";
 import * as ComboBox from "../../components/ComboBox";
 import Badge from "../../components/Badge";
 import GridPainel from "../../components/GridPainel";
+
+import ModalSucess from "../../components/ModalSucess";
 //css
 import "./styles.scss";
 
@@ -299,7 +301,10 @@ function Taxonomies() {
           <MainInput label="Cadastrar nova Taxonomia" />
           <article className="input-and-button">
             <ComboBox.ComboSelect>
-              <ComboBox.ComboItem value="" text="Categoria" />
+              <ComboBox.ComboItem value="" text="Gêneros" />
+              <ComboBox.ComboItem value="" text="Qualidade" />
+              <ComboBox.ComboItem value="" text="Anos Lançados" />
+              <ComboBox.ComboItem value="" text="Estúdios" />
             </ComboBox.ComboSelect>
             <button>Adicionar</button>
           </article>

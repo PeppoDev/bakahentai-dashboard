@@ -1,72 +1,10 @@
-.taxonomies {
-    padding: 0 3rem;
-
-    .filter-tag-container {
-        display: grid;
-        grid-template-columns: 700px 1fr;
-        grid-gap: 1rem;
-
-        .input-and-button {
-            display: grid;
-            flex-direction: row;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 2rem;
-
-            .combo-select {
-                width: 100%;
-            }
-
-            button {
-                height: 4rem;
-                width: 100%;
-                text-transform: uppercase;
-                color: white;
-                background-color: var(--color-primary-pink);
-                font-size: 1.3rem;
-                font-weight: 500;
-                border: 0;
-                border-radius: 2px;
-                cursor: pointer;
-            }
-        }
-    }
-
-    .classifier {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        margin-bottom: 2rem;
-
-        div {
-            display: flex;
-            align-items: center;
-        }
-
-        strong {
-            color: var(--color-primary-pink);
-        }
-    }
-
-    hr {
-        margin: 0 0 2rem;
-        border: 0.5px solid #2f2e2e;
-    }
-
-    .grid-gender {
-        display: flex;
-
-
-    }
-}
-
-.badge-modal {
+.badge-sucess-modal {
     background-color: rgba(26, 26, 29, 0.941176);
     width: 40rem;
     border-radius: 4px;
     padding: 3rem;
 
-    div {
+    .title-modal {
         display: flex;
         justify-content: space-between;
         align-items: center;

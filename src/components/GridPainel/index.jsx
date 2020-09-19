@@ -7,7 +7,6 @@ import { Modal, makeStyles, Backdrop } from "@material-ui/core";
 import closeIcon from "../../assets/icons/close.svg";
 //css
 import "./styles.scss";
-
 //style
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -27,7 +26,7 @@ function GridPainel({ data, title }) {
   const [open, setOpen] = React.useState(false);
   const [showAll, setShowAll] = React.useState(false);
 
-  const [tagsPerPage, setTagsPerPage] = React.useState(-1);
+  const [tagsPerPage, setTagsPerPage] = React.useState(-2);
 
   const [input, setInput] = React.useState("");
   const [, setSelectedBadge] = React.useState("");
@@ -65,7 +64,17 @@ function GridPainel({ data, title }) {
     >
       <div className="title-painel">{title}</div>
 
-      <div className="tags-painel">
+      <div
+        className="tags-painel"
+        style={
+          showAll
+            ? {
+                overflow: "visible",
+                height: `${7 + (data.length / 7) * 3}rem`,
+              }
+            : { height: "7rem" }
+        }
+      >
         <div>
           {currentTags.map((data, index) => (
             <Badge

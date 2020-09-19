@@ -263,12 +263,12 @@
     }
 }
 
-// .MuiPaper-root {
-//     background-color: transparent !important;
-//     width: 32rem;
-//     height: auto;
-//     margin-top: -2rem;
-// }
+.MuiPopover-paper {
+    background-color: transparent !important;
+    width: 32rem;
+    height: auto;
+    margin-top: -2rem;
+}
 
 .MuiTextField-root {
     background-color: white;
