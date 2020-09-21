@@ -7,10 +7,8 @@ import {
   Backdrop,
 } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
-import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import CheckIcon from "@material-ui/icons/Check";
-import SaveIcon from "@material-ui/icons/Save";
 import clsx from "clsx";
 //assets
 import closeIcon from "../../assets/icons/close.svg";
@@ -52,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
     left: -6,
     zIndex: 1,
   },
+  fab: {
+    backgroundColor: "#1a1a1df0",
+  },
   buttonProgress: {
     color: green[500],
     position: "absolute",
@@ -84,12 +85,15 @@ function CircularIntegration() {
     timer.current = setTimeout(() => {
       setSuccess(true);
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>
-        <Fab aria-label="save" color="primary" className={buttonClassname}>
+        <Fab
+          aria-label="save"
+          className={success ? buttonClassname : (buttonClassname, classes.fab)}
+        >
           {success ? <CheckIcon /> : null}
         </Fab>
         {loading && (
@@ -102,7 +106,7 @@ function CircularIntegration() {
 
 export default function ModalSucess({ open, setOpen }) {
   const classes = useStyles();
-  const [loading, setLoading] = React.useState(false);
+  const [, setLoading] = React.useState(false);
 
   const handleClose = () => {
     setOpen(false);
@@ -128,14 +132,13 @@ export default function ModalSucess({ open, setOpen }) {
       }}
     >
       <div className="badge-sucess-modal">
-        <div className="title-modal">
-          <h2>Editar Taxonomia</h2>
-          <img onClick={handleClose} src={closeIcon} alt="" />
-        </div>
-
-        <hr />
-
         <CircularIntegration />
+        <h2>Cadastro Conluído</h2>
+        <p>Parabéns por ter cadastrado mais um hentai</p>
+        <a href="!#">wwww.bakahentai.net/nome-do-hentai</a>
+        <button onClick={handleClose} className="button-modal-sucess">
+          Feito!
+        </button>
       </div>
     </Modal>
   );

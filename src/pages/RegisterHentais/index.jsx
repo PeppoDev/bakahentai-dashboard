@@ -13,6 +13,8 @@ import Badge from "../../components/Badge";
 import FavoriteBanner from "../../components/FavoriteBanner";
 import Button from "../../components/MenuButton";
 import api from "../../services/api/axios";
+import ModalSucess from "../../components/ModalSucess";
+import ModalAlert from "../../components/ModalAlert";
 //assets
 
 function RegisterHentais() {
@@ -32,6 +34,8 @@ function RegisterHentais() {
   const [status, setStatus] = React.useState("");
   const [visibility, setVisibility] = React.useState("");
   const [files, setFiles] = React.useState([]);
+
+  const [open, setOpen] = React.useState(false);
 
   const [placholderGender, setPlacholderGender] = React.useState(
     "Ex: Colegial, Escolar, Peitões"
@@ -274,6 +278,11 @@ function RegisterHentais() {
     setStudios(newTags);
   }
   async function handleSend() {
+    if (!id) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
     let data = {
       title,
       original_title,
@@ -287,20 +296,22 @@ function RegisterHentais() {
       visibility,
       files,
     };
-
-    const response = await api.post("api/admin/hentais", data);
-
     setTitle("");
     setOriginal_title("");
     setStudios([]);
+    setStudiosTemp("");
     setRealeasey("");
     setCensorship("");
     setQuality("");
+    setVisibility("");
     setTags([]);
     setTagsTemp("");
+    setStatus("");
     setSynopsis("");
-    setStatus(true);
-    setVisibility("");
+    setAdm("");
+    setFiles([]);
+
+      const response = await api.post("api/admin/hentais", data);
   }
 
   function handleStudios(event) {
@@ -591,12 +602,21 @@ function RegisterHentais() {
       </article>
 
       {showButton ? (
-        <button className="register-button" onClick={handleSend}>
+        <button
+          className="register-button"
+          onClick={id ? () => setOpen(true) : handleSend}
+        >
           Cadastrar
         </button>
       ) : null}
 
       <FavoriteBanner />
+
+      {id ? (
+        <ModalAlert open={open} setOpen={setOpen} onClick={handleSend} />
+      ) : (
+        <ModalSucess open={open} setOpen={setOpen} />
+      )}
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 //components
-import ModalSucess from "../../components/ModalSucess";
+import ModalAlert from "../../components/ModalAlert";
 //css
 import "./styles.scss";
 
@@ -11,10 +11,10 @@ function FapList() {
     setOpen(true);
   };
   return (
-    <section className="page-container status">
+    <section className="page-container faplist">
       <h2>Status</h2>
       <button onClick={handleOpen}>Modal</button>
-      <ModalSucess open={open} setOpen={setOpen} />
+      <ModalAlert open={open} setOpen={setOpen} />
     </section>
   );
 }

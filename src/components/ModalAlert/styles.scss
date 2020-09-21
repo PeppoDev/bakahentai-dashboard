@@ -1,0 +1,79 @@
+.badge-alert-modal {
+    background-color: rgba(26, 26, 29, 0.941176);
+    width: 40rem;
+    border-radius: 4px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: appear-modal 0.2s ease forwards;
+
+
+
+    img {
+        cursor: pointer;
+        width: 7rem;
+        margin-bottom: 4rem;
+    }
+
+
+    h2 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 1rem;
+
+    }
+
+    p {
+        color: rgb(172, 172, 172);
+        margin-bottom: 2rem;
+    }
+
+
+
+    span {
+        display: flex;
+
+        align-self: flex-end;
+
+        button {
+            padding: 1rem;
+
+            cursor: pointer;
+        }
+
+        button:first-child {
+            background-color: red;
+
+            border: 0;
+            color: #fff;
+            height: 4rem;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-right: 1rem;
+        }
+
+        button:last-child {
+            background-color: var(--color-primary-pink);
+            color: #fff;
+            border: 0;
+            border-radius: 2px;
+        }
+    }
+}
+
+@keyframes appear-modal {
+    from {
+        opacity: 50%;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
