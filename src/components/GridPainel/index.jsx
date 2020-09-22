@@ -54,76 +54,84 @@ function GridPainel({ data, title }) {
 
   const currentTags = data.slice(0, tagsPerPage);
   return (
-    <article
-      className="grid-painel"
-      style={
-        showAll
-          ? { height: `${23 + (data.length / 7) * 3}rem` }
-          : { height: "23rem" }
-      }
-    >
-      <div className="title-painel">{title}</div>
-
+    <article className="grid-container">
       <div
-        className="tags-painel"
+        className="title-painel"
+        onClick={() => setShowAll((prev) => (prev ? false : true))}
+      >
+        {title}
+      </div>
+
+      <article
+        className="grid-painel"
         style={
           showAll
-            ? {
-                overflow: "visible",
-                height: `${7 + (data.length / 7) * 3}rem`,
-              }
-            : { height: "7rem" }
+            ? { height: `${23 + (data.length / 7) * 3}rem` }
+            : { height: "23rem" }
         }
       >
-        <div>
-          {currentTags.map((data, index) => (
-            <Badge
-              onClick={handleClick}
-              key={index}
-              index={index}
-              text={data.name}
-            />
-          ))}
-        </div>
-      </div>
-      {data.length > 7 ? (
-        !showAll ? (
-          <p onClick={handleShowAll} className="show-all">
-            Mostrar Todos
-          </p>
-        ) : (
-          <p onClick={handleShowLess} className="show-all">
-            Mostrar Menos
-          </p>
-        )
-      ) : null}
-
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <div className="badge-modal">
+        <p className="for-adjust"></p>
+        <div
+          className="tags-painel"
+          style={
+            showAll
+              ? {
+                  overflow: "visible",
+                  height: `${7 + (data.length / 7) * 3}rem`,
+                }
+              : { height: "7rem" }
+          }
+        >
           <div>
-            <h2>Editar Taxonomia</h2>
-            <img onClick={handleClose} src={closeIcon} alt="" />
+            {currentTags.map((data, index) => (
+              <Badge
+                onClick={handleClick}
+                key={index}
+                index={index}
+                text={data.name}
+              />
+            ))}
           </div>
-
-          <hr />
-          <MainInput label="Título" onChange={setInput} value={input} />
-          <span>
-            <button onClick={handleClose}>Atualizar</button>
-            <button onClick={handleClose}>Excluir</button>
-          </span>
         </div>
-      </Modal>
+        {data.length > 7 ? (
+          !showAll ? (
+            <p onClick={handleShowAll} className="show-all">
+              Mostrar Todos
+            </p>
+          ) : (
+            <p onClick={handleShowLess} className="show-all">
+              Mostrar Menos
+            </p>
+          )
+        ) : null}
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <div className="badge-modal">
+            <div>
+              <h2>Editar Taxonomia</h2>
+              <img onClick={handleClose} src={closeIcon} alt="" />
+            </div>
+
+            <hr />
+            <MainInput label="Título" onChange={setInput} value={input} />
+            <span>
+              <button onClick={handleClose}>Atualizar</button>
+              <button onClick={handleClose}>Excluir</button>
+            </span>
+          </div>
+        </Modal>
+      </article>
     </article>
   );
 }

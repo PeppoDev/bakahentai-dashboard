@@ -10,7 +10,7 @@ import "./styles.scss";
 function Bar() {
   return (
     <nav className="bar">
-      <span className="left-group">
+      {/* <span className="left-group">
         <img src={logo} alt="" />
         <p className="bar-text">Aleatório</p>
         <p className="bar-text">Hentais</p>
@@ -21,7 +21,7 @@ function Bar() {
         <img src={SearchIcon} alt="" className="bar-icon" />
         <img src={BellIcon} alt="" className="bar-icon" />
         <img src={photo} alt="" />
-      </span>
+      </span> */}
     </nav>
   );
 }

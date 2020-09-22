@@ -41,9 +41,17 @@ function Settings() {
             label="Seu Site"
             placeholder="N/A"
           />
-
-          <h3>Tipo de Conta</h3>
-          <a href="#">Tornar Premium</a>
+          {isEditing ? (
+            <span>
+              <button onClick={() => isEditing(false)}>Cancelar</button>
+              <button onClick={() => isEditing(false)}>Salvar</button>
+            </span>
+          ) : (
+            <>
+              <h3>Tipo de Conta</h3>
+              <a href="#">Tornar Premium</a>
+            </>
+          )}
         </article>
       </section>
     </section>
