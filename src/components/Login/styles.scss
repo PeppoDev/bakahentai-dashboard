@@ -1,0 +1,30 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-menu);
+    border-radius: 4px;
+    height: 40rem;
+    width: 40rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+
+    input {
+        margin-top: 2rem;
+        height: 4rem;
+        border-radius: 4px;
+        color: black;
+        padding: 0 1rem;
+
+    }
+
+}
