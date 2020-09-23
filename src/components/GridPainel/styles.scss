@@ -1,72 +1,107 @@
 .grid-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    margin-right: 1rem;
-
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
 }
 
 .title-painel {
-    width: 100%;
-    width: 100%;
-    height: 5rem;
-    max-height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: inset 0 10px 10px 0 rgba(0, 0, 0, .06),
-        0 15px 15px 0 rgba(0, 0, 0, .2);
-    background-color: var(--color-menu);
-    cursor: pointer;
+  width: 100%;
+  width: 100%;
+  height: 5rem;
+  max-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: inset 0 10px 10px 0 rgba(0, 0, 0, 0.06),
+    0 15px 15px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--color-menu);
+  cursor: pointer;
 }
 
 .grid-painel {
-    background-color: var(--color-menu);
-    width: 100%;
-    min-height: 23rem;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.2s ease;
-    justify-content: space-between;
+  background-color: var(--color-menu);
+  width: 100%;
+  min-height: 23rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+  justify-content: space-between;
+  align-self: center;
+  justify-self: center;
+  -webkit-box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
+
+  .show-all {
+    color: rgb(192, 192, 192);
     align-self: center;
-    justify-self: center;
-    -webkit-box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 1px 11px 13px -12px rgba(0, 0, 0, 0.75);
+    justify-self: end !important;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+
+  .tags-painel {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    padding: 0 1rem;
+    overflow: hidden;
+
+    div {
+      display: grid;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-self: center;
+      justify-self: center;
+      grid-template-columns: repeat(7, 1fr);
+      margin: 1rem 0;
+      transition: 0.2s ease;
+    }
+  }
+}
 
 
-    .show-all {
-        color: rgb(192, 192, 192);
-        align-self: center;
-        justify-self: end !important;
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        cursor: pointer;
+@media screen and (orientation: portrait) {
+
+  .all-hentais {
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+
+    .hentai-list {
+      min-height: calc(100vh - 15rem);
+      grid-auto-flow: row;
+      display: grid;
+      padding: 0.5rem 0 10rem 0;
+      grid-gap: 5px;
+      background-color: var(--color-background);
+      grid-template-columns: 1fr;
     }
 
-    .tags-painel {
+    .search-input {
+
+      input {
         width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        height: 7rem;
-        padding: 0 1rem;
-        overflow: hidden;
+      }
 
-        div {
-            display: grid;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-self: center;
-            justify-self: center;
-            grid-template-columns: repeat(7, 1fr);
-            margin: 1rem 0;
-            transition: 0.2s ease;
-        }
     }
+
+    .page-title {
+      article {
+        flex-direction: column !important;
+      }
+    }
+
+
+  }
 }

@@ -99,3 +99,11 @@
 .css-tlfecz-indicatorContainer {
     display: none !important;
 }
+
+
+@media screen and (orientation: portrait) {
+    .page-title {
+        justify-content: center;
+    }
+
+}

@@ -146,3 +146,62 @@
 
 
 }
+
+@media screen and (orientation: portrait) {
+
+    .register-hentais {
+
+
+        .main-container {
+            padding: 0 !important;
+        }
+
+        .register-hentais-container {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center;
+            justify-content: center !important;
+            padding: 0 !important;
+
+        }
+
+        .input-n-select {
+            flex-direction: column !important;
+        }
+
+        .radio-form {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-self: flex-start !important;
+            width: 40% !important;
+
+
+            p {
+                padding-bottom: 1rem;
+            }
+        }
+
+        .combo-select {
+            margin: 0 !important;
+            margin-bottom: 2rem !important;
+
+        }
+
+        .badge-group {
+            max-width: 31rem !important;
+        }
+
+        .radio-container {
+            display: flex !important;
+            align-content: flex-start !important;
+            justify-content: flex-start !important;
+            margin-right: 1rem;
+        }
+
+
+
+
+    }
+
+}

@@ -491,7 +491,7 @@ function RegisterHentais() {
             onChange={setRealeasey}
           />
 
-          <div className="radio-form">
+     
             <Radio.RadioForm text="Censura" onChange={setCensorship}>
               <Radio.RadioInput
                 value="0"
@@ -513,7 +513,7 @@ function RegisterHentais() {
               <Radio.RadioInput value="1080P" name="quality" text="1080p" />
               <Radio.RadioInput value="720P" name="quality" text="720p" />
             </Radio.RadioForm>
-          </div>
+ 
 
           <article className="input-n-select">
             <MainInput

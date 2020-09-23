@@ -17,7 +17,7 @@
             min-height: calc(100% - 2rem - 5rem);
             width: 100%;
             background-color: var(--color-boxes);
-            margin-top: calc(2rem + 5rem);
+            margin-top: calc(2rem + 55px);
             margin-left: calc(230px + 2rem);
             border-radius: 2px;
             max-width: 1450px;
@@ -38,5 +38,17 @@
             }
         }
 
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .main-container {
+        padding: 0 !important;
+    }
+
+    .main-page {
+        margin: 0;
+        margin-top: calc(55px) !important;
+        margin-left: 0 !important;
     }
 }

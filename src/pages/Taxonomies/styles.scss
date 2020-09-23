@@ -141,3 +141,42 @@
         }
     }
 }
+
+@media screen and (orientation: portrait) {
+
+    .taxonomies {
+        .grid-gender {
+            flex-direction: column;
+        }
+
+        .tags-painel div {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .filter-tag-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            .combo-select {
+                margin-left: 0rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        .classifier {
+            flex-direction: column;
+
+
+            div {
+                margin-top: 3rem;
+                align-self: flex-start;
+            }
+        }
+
+
+    }
+}

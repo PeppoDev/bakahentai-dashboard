@@ -2,7 +2,9 @@
     display: flex;
     width: 100%;
 
-
+    input {
+        height: 4rem;
+    }
 
     .hentai-list {
         min-height: calc(100vh - 15rem);
@@ -29,4 +31,46 @@
     }
 
 
+}
+
+
+@media screen and (orientation: portrait) {
+
+    .all-hentais {
+        display: flex !important;
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        .hentai-list {
+            min-height: calc(100vh - 15rem);
+            grid-auto-flow: row;
+            display: grid;
+            padding: 0.5rem 0 10rem 0;
+            grid-gap: 5px;
+            background-color: var(--color-background);
+            grid-template-columns: 1fr;
+        }
+
+        .search-input {
+
+            input {
+                width: 100%;
+            }
+
+        }
+
+        .page-title {
+            article {
+                flex-direction: column !important;
+            }
+
+            .select-container {
+                margin-bottom: 2rem !important;
+            }
+
+        }
+
+
+    }
 }

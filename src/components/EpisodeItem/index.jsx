@@ -1197,7 +1197,7 @@ export default function EpisodeItem({ id, name }) {
                   id="combo-box-demo"
                   options={top100Films}
                   getOptionLabel={(option) => option.title}
-                  style={{ width: 700 }}
+                  style={{ maxWidth: 700 }}
                   renderInput={(params) => (
                     <div>
                       <TextField
@@ -1253,23 +1253,25 @@ export default function EpisodeItem({ id, name }) {
                 name="visibility"
                 text="Visível a Premiums"
               />
-              <Radio.RadioInput
-                value={hour}
-                name="visibility"
-                text="Liberar a todos em:"
-                refInput={radioRef}
-              />
-              <input
-                htmlFor="visbility-input"
-                className="hour-input"
-                type="number"
-                onChange={(e) => setHour(e.target.value)}
-                onClick={radioClick}
-              />
-              <label htmlFor="visbility-input" className="hour-label">
-                Hora(s)
-              </label>
-              <img src={exclamationIcon} alt="" onClick={handleClick} />
+              <span>
+                <Radio.RadioInput
+                  value={hour}
+                  name="visibility"
+                  text="Liberar a todos em:"
+                  refInput={radioRef}
+                />
+                <input
+                  htmlFor="visbility-input"
+                  className="hour-input"
+                  type="number"
+                  onChange={(e) => setHour(e.target.value)}
+                  onClick={radioClick}
+                />
+                <label htmlFor="visbility-input" className="hour-label">
+                  Hora(s)
+                </label>
+                <img src={exclamationIcon} alt="" onClick={handleClick} />
+              </span>
               <Popover
                 id={idPop}
                 open={open}

@@ -30,3 +30,9 @@
     }
 
 }
+
+@media screen and (orientation: portrait) {
+    .menu-container {
+        display: none;
+    }
+}
