@@ -6,7 +6,7 @@ export default function Login({ setClick }) {
   const [password, setPassword] = React.useState("");
 
   React.useEffect(() => {
-    if (password === "peppita") {
+    if (password === "Chunchunmaru") {
       setClick(true);
     }
   }, [password]);
