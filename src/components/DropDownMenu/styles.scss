@@ -36,7 +36,40 @@
     }
 
     &:hover {
-        background-color: var(--color-menu-hover);
+        background-color: var(--color-primary-pink);
+
     }
 
+}
+
+
+
+.showmenu-animation-open {
+    animation: show-menu 0.2s ease forwards;
+}
+
+.showmenu-animation-close {
+    animation: hidden-menu 0.2s ease forwards;
+}
+
+@keyframes show-menu {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+
+    }
+}
+
+@keyframes hidden-menu {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+
+    }
 }
