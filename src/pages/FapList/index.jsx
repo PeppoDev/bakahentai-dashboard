@@ -7,6 +7,7 @@ import SearchInput from "../../components/SearchInput";
 import HentaiList from "../../components/HentaiList";
 import FapLister from "../../components/FapList";
 import * as ComboBox from "../../components/ComboBox";
+import ShowMore from "../../components/ShowMore";
 //css
 import "./styles.scss";
 import { Link } from "react-router-dom";
@@ -1137,11 +1138,9 @@ function FapList() {
         <FapLister data={currentHentais} />
       </article>
 
-      {query === "" ? (
+      {query === "" && currentHentais.length < hentais_list.length ? (
         <div className="button-show-more">
-          <button onClick={() => setHentaisPerPage((prev) => prev + 15)}>
-            Mostrar Mais
-          </button>
+          <ShowMore setValue={() => setHentaisPerPage((prev) => prev + 15)} />
         </div>
       ) : (
         <React.Fragment></React.Fragment>
