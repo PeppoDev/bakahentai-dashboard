@@ -1,11 +1,11 @@
 import React from "react";
 //components
-import MainInput from "../../components/Input";
+import InputSettings from "../../components/InputSettings";
 //css
 import "./styles.scss";
 //assets
 import ditto from "../../assets/images/ditto.png";
-import InputSettings from "../../components/InputSettings";
+import tick from "../../assets/icons/tick.png";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);
@@ -16,16 +16,23 @@ function Settings() {
         <div className="account-photo">
           <img src={ditto} alt="" />
           <img src="" alt="" />
-          <p>Astolfo</p>
+          <p>
+            Astolfo <img src={tick} alt="" />
+          </p>
         </div>
         <p className="date">Membro desde: 01/05/2020</p>
       </article>
 
       <section>
         <article className="input-box">
-          <button onClick={() => setIsEditing((prev) => (prev ? false : true))}>
+          <button
+            className="edit-button"
+            onClick={() => setIsEditing(true)}
+            style={!isEditing ? null : { opacity: "0%", cursor: "auto" }}
+          >
             Editar
           </button>
+
           <InputSettings
             disable={isEditing ? false : true}
             label="E-mail"

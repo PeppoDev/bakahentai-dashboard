@@ -40,8 +40,19 @@
 
             p {
                 font-size: 1.6rem;
-                color: white;
+                padding: 1.1rem;
+                color: #fff;
                 font-weight: 500;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 2rem !important;
+                    height: 2rem !important;
+                    margin: 0 !important;
+
+                }
             }
         }
 
@@ -57,8 +68,10 @@
     }
 
     .input-box {
+        margin-top: 5px;
         width: 50rem;
-
+        max-height: 50rem;
+        height: 100%;
         align-self: center;
         flex-direction: column;
         background-color: var(--color-menu);
@@ -102,6 +115,10 @@
             font-size: 1.2rem;
             margin-bottom: 4rem;
             align-self: center;
+        }
+
+        .edit-button {
+            height: 20rem;
         }
 
         button {
