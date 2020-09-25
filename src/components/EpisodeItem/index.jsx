@@ -1198,6 +1198,7 @@ export default function EpisodeItem({ id, name }) {
                   options={top100Films}
                   getOptionLabel={(option) => option.title}
                   style={{ maxWidth: 700 }}
+                  autoComplete={false}
                   renderInput={(params) => (
                     <div>
                       <TextField
