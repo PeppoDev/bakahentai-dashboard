@@ -24,7 +24,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>
@@ -38,7 +38,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>
@@ -52,7 +52,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>
@@ -66,7 +66,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>
@@ -80,7 +80,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>
@@ -94,7 +94,7 @@ export default function LastFeedBacks() {
               <p>Acabou de comentar</p>
             </div>
           </article>
-        </div>{" "}
+        </div>
         <div className="last-feed-item">
           <span>
             <p>Nome do anime</p>

@@ -10,10 +10,12 @@
         min-height: calc(100vh - 15rem);
         grid-auto-flow: row;
         display: grid;
-        padding: 0.5rem 0 10rem 0;
         grid-gap: 5px;
         background-color: var(--color-background);
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding: .5rem 0 3rem;
+
+
     }
 
     .button-show-more {
@@ -22,7 +24,7 @@
         width: 100%;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
+        padding-bottom: 5rem;
 
         button {
             width: 100%;

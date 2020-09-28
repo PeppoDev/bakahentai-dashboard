@@ -30,11 +30,11 @@
             display: flex;
             height: auto;
 
-            img:first-child {
+            .profile-photo {
                 border-radius: 50%;
                 border: 2px solid #252529;
-                width: 10rem;
-                height: 10rem;
+                width: 7rem;
+                height: 7rem;
                 margin-top: -32%;
             }
 
@@ -47,11 +47,11 @@
                 justify-content: center;
                 align-items: center;
 
-                img {
+                .badge-name {
                     width: 2rem !important;
                     height: 2rem !important;
                     margin: 0 !important;
-
+                    margin-left: 5px !important;
                 }
             }
         }

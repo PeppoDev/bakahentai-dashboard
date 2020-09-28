@@ -10,6 +10,7 @@ import usersIcon from "../../assets/icons/users.svg";
 import statusIcon from "../../assets/icons/tools.svg";
 import episodesIcon from "../../assets/icons/image.svg";
 import hentaiIcon from "../../assets/icons/play.svg";
+import tick from "../../assets/icons/tick.png";
 //css
 import "./styles.scss";
 //components
@@ -21,7 +22,9 @@ function MenuAside() {
   return (
     <aside className="menu-container">
       <img src={photo} alt="" />
-      <h2>Peppa</h2>
+      <h2>
+        Peppa <img className="badge-name" src={tick} alt="" />
+      </h2>
       <p>Membro desde 17/08/2020</p>
 
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />

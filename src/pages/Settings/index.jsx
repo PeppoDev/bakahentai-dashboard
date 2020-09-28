@@ -14,10 +14,10 @@ function Settings() {
       <article className="image-banner" />
       <article className="account-banner">
         <div className="account-photo">
-          <img src={ditto} alt="" />
+          <img src={ditto} className="profile-photo" alt="" />
           <img src="" alt="" />
           <p>
-            Astolfo <img src={tick} alt="" />
+            Astolfo <img className="badge-name" src={tick} alt="" />
           </p>
         </div>
         <p className="date">Membro desde: 01/05/2020</p>
@@ -50,8 +50,8 @@ function Settings() {
           />
           {isEditing ? (
             <span>
-              <button onClick={() => isEditing(false)}>Cancelar</button>
-              <button onClick={() => isEditing(false)}>Salvar</button>
+              <button onClick={() => setIsEditing(false)}>Cancelar</button>
+              <button onClick={() => setIsEditing(false)}>Salvar</button>
             </span>
           ) : (
             <>
