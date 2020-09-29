@@ -38,21 +38,23 @@ function Settings() {
             Editar
           </button>
 
-          <InputSettings
-            disable={isEditing ? false : true}
-            label="E-mail"
-            placeholder="Algum email"
-          />
-          <InputSettings
-            disable={isEditing ? false : true}
-            label="Senha"
-            placeholder="******"
-          />
-          <InputSettings
-            disable={isEditing ? false : true}
-            label="Seu Site"
-            placeholder="N/A"
-          />
+          <article>
+            <InputSettings
+              disable={isEditing ? false : true}
+              label="E-mail"
+              placeholder="Algum email"
+            />
+            <InputSettings
+              disable={isEditing ? false : true}
+              label="Senha"
+              placeholder="******"
+            />
+            <InputSettings
+              disable={isEditing ? false : true}
+              label="Seu Site"
+              placeholder="N/A"
+            />
+          </article>
 
           <footer>
             {isEditing ? (

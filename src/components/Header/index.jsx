@@ -2,7 +2,7 @@ import React from "react";
 //css
 import "./styles.scss";
 //assets
-import plusIcon from "../../assets/icons/plus.svg";
+import plusIcon from "../../assets/icons/plusblack.svg";
 //components
 import QuickAcess from "../../components/QuickAcess";
 
