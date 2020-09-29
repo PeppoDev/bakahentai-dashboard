@@ -11,6 +11,34 @@
     padding-top: 3rem;
     position: fixed;
 
+    .profile-container {
+        display: flex;
+        max-width: 80%;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+
+
+        p {
+            font-size: 1.6rem;
+            color: #fff;
+            font-weight: 500;
+            padding-right: 0;
+            margin: 0;
+            margin-right: 2px   ;
+
+        }
+
+        .badge-name {
+            width: 2rem !important;
+            height: 2rem !important;
+            margin: 0 !important;
+            margin-bottom: 2px !important;
+            margin-right: 5px !important;
+        }
+
+    }
+
 
     &>img {
         width: 6rem;

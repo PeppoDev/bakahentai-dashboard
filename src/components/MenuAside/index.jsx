@@ -22,9 +22,16 @@ function MenuAside() {
   return (
     <aside className="menu-container">
       <img src={photo} alt="" />
-      <h2>
-        Peppa <img className="badge-name" src={tick} alt="" />
-      </h2>
+
+      <span className="profile-container">
+        <p>Astolfo</p>
+        <img className="badge-name" src={tick} alt="" />
+        <img className="badge-name" src={tick} alt="" />
+        <img className="badge-name" src={tick} alt="" />
+        <img className="badge-name" src={tick} alt="" />
+        <img className="badge-name" src={tick} alt="" />
+        <img className="badge-name" src={tick} alt="" />
+      </span>
       <p>Membro desde 17/08/2020</p>
 
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />

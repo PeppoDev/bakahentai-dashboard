@@ -16,9 +16,14 @@ function Settings() {
         <div className="account-photo">
           <img src={ditto} className="profile-photo" alt="" />
           <img src="" alt="" />
-          <p>
-            Astolfo <img className="badge-name" src={tick} alt="" />
-          </p>
+          <span className="profile-container">
+            <p>Astolfo</p>
+            <img className="badge-name" src={tick} alt="" />
+            <img className="badge-name" src={tick} alt="" />
+            <img className="badge-name" src={tick} alt="" />
+            <img className="badge-name" src={tick} alt="" />
+            <img className="badge-name" src={tick} alt="" />
+          </span>
         </div>
         <p className="date">Membro desde: 01/05/2020</p>
       </article>
@@ -48,17 +53,20 @@ function Settings() {
             label="Seu Site"
             placeholder="N/A"
           />
-          {isEditing ? (
-            <span>
-              <button onClick={() => setIsEditing(false)}>Cancelar</button>
-              <button onClick={() => setIsEditing(false)}>Salvar</button>
-            </span>
-          ) : (
-            <>
-              <h3>Tipo de Conta</h3>
-              <a href="#">Tornar Premium</a>
-            </>
-          )}
+
+          <footer>
+            {isEditing ? (
+              <span>
+                <button onClick={() => setIsEditing(false)}>Cancelar</button>
+                <button onClick={() => setIsEditing(false)}>Salvar</button>
+              </span>
+            ) : (
+              <>
+                <h3>Tipo de Conta</h3>
+                <a href="#">Tornar Premium</a>
+              </>
+            )}
+          </footer>
         </article>
       </section>
     </section>
