@@ -6,7 +6,7 @@ export default function RegistredComments() {
   return (
     <article className="registred-comments">
       <article>
-        <p>Ops. Você não Cadastrou Aqui</p>
+        <p>Você ainda não comentou algo</p>
       </article>
     </article>
   );

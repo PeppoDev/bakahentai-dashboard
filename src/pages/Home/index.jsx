@@ -22,14 +22,17 @@ function Home() {
       </article>
       <hr />
       <article className="third-container-title">
-        <h2>Hentai Cadastrado</h2>
-        <h2>Hentai Cadastrado</h2>
-        <h2>Hentai Cadastrado</h2>
+        <h2 className="title-component">Hentais Cadastrados</h2>
+        <h2 className="title-component">Episódios Cadastrados</h2>
+        <h2 className="title-component">Comentários</h2>
       </article>
 
       <article className="third-container">
+        <h2 className="title-component opacity">Hentai Cadastrado</h2>
         <RegistredHentai />
+        <h2 className="title-component opacity">Episódios Cadastrados</h2>
         <RegistredEpisodes />
+        <h2 className="title-component opacity">Comentários</h2>
         <RegistredComments />
       </article>
     </section>

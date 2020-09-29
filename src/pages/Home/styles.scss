@@ -1,6 +1,15 @@
 .home {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+
+    .registreds {
+        height: 35rem;
+
+        padding-right: 2rem;
+        border-right: 1px solid var(--color-menu);
+
+    }
+
 
     .second-container {
         display: grid;
@@ -28,6 +37,18 @@
         margin-bottom: 2rem;
     }
 
+    .opacity {
+        display: none;
+    }
+
+    .title-component {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.3rem;
+
+    }
+
     .third-container-title {
         display: grid;
         grid-template-columns: 0.5fr 0.5fr 1fr;
@@ -40,6 +61,52 @@
 
         h2 {
             margin-left: -2rem;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+
+    .home {
+
+        .registreds {
+            // padding-top: 2rem;
+            // border-top: 1px solid var(--color-menu);
+        }
+
+        justify-content: center !important;
+
+        .second-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            max-height: none;
+        }
+
+        .third-container-title {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            max-height: none;
+
+        }
+
+        .third-container {
+            display: flex;
+            flex-direction: column;
+            max-height: none;
+
+        }
+
+        .third-container-title {
+            display: none;
+        }
+
+        .opacity {
+            display: inline;
+            align-self: center;
+        }
+
+        article+.registred-episodes {
+            border-top: 1px solid grey;
         }
     }
 }
