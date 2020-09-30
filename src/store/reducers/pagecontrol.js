@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  page: "home",
+  page: "hentais",
   drag_img: [],
   selected_drag: 0,
 };

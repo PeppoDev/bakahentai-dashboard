@@ -11,11 +11,7 @@ function MenuButton({ icon, text, to, initial, className }) {
 
   const dispatch = useDispatch();
   return (
-    <Link
-      to={initial ? "/" : `/${to}`}
-      className={style}
-      onClick={() => dispatch(allActions.pageActions.changePage(to))}
-    >
+    <Link to={initial ? "/" : `/${to}`} className={style}>
       <img src={icon} alt="" />
       {text}
     </Link>

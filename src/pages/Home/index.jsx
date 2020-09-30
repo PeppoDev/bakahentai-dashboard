@@ -10,13 +10,23 @@ import RegistredHentai from "../../components/RegistredHentai";
 import RegistredEpisodes from "../../components/RegistredEpisodes";
 import RegistredComments from "../../components/RegistredComments";
 
+import LastRegistersHentai from "../../components/LastRegistersHentai";
+import LastRegistersEpisode from "../../components/LastRegistersEpisode";
+//react-redux
+import { useSelector } from "react-redux";
+
 function Home() {
+  const page = useSelector((state) => state.page);
+
   return (
     <section className="page-container home">
       <Header />
 
       <article className="second-container">
-        <LastRegisters />
+        <LastRegisters>
+          {page === "hentais" ? <LastRegistersHentai /> : null}
+          {page === "episodes" ? <LastRegistersEpisode /> : null}
+        </LastRegisters>
         <LastFeedBacks />
         <Map />
       </article>

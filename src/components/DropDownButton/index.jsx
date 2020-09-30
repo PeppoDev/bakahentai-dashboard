@@ -9,11 +9,7 @@ import "./styles.scss";
 function DropDownButton({ icon, text, to, initial }) {
   const dispatch = useDispatch();
   return (
-    <Link
-      to={initial ? "/" : `/${to}`}
-      className="dropdown-button"
-      onClick={() => dispatch(allActions.pageActions.changePage(to))}
-    >
+    <Link to={initial ? "/" : `/${to}`} className="dropdown-button">
       {text}
     </Link>
   );

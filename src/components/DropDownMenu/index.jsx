@@ -20,7 +20,11 @@ export default function DropDownMenu(props) {
           {props.text}
         </article>
         <img
-          className={showMenu ? "sub-icon showmenu-animation-open" : "sub-icon showmenu-animation-close"}
+          className={
+            showMenu
+              ? "sub-icon showmenu-animation-open"
+              : "sub-icon showmenu-animation-close"
+          }
           src={arrowIcon}
           alt=""
         />

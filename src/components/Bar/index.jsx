@@ -1,9 +1,5 @@
 import React from "react";
 //assets
-import logo from "../../assets/images/logo.png";
-import photo from "../../assets/images/ditto.png";
-import BellIcon from "../../assets/icons/bell.svg";
-import SearchIcon from "../../assets/icons/search.svg";
 //css
 import "./styles.scss";
 
