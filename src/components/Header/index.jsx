@@ -5,6 +5,7 @@ import "./styles.scss";
 import plusIcon from "../../assets/icons/plusblack.svg";
 //components
 import QuickAcess from "../../components/QuickAcess";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -18,14 +19,19 @@ function Header() {
           <p>Gostaria de adicionar algo novo hoje?</p>
         </span>
         <span className="group-button">
-          <button>
-            <img src={plusIcon} alt="" />
-            Novo hentai
-          </button>
-          <button>
-            <img src={plusIcon} alt="" />
-            Novo Episódio
-          </button>
+          <Link to="RegisterHentais">
+            <button>
+              <img src={plusIcon} alt="" />
+              Novo hentai
+            </button>
+          </Link>
+
+          <Link to="RegisterEpisodes">
+            <button>
+              <img src={plusIcon} alt="" />
+              Novo Episódio
+            </button>
+          </Link>
         </span>
       </div>
       <QuickAcess />
