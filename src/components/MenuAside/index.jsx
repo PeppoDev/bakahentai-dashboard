@@ -28,9 +28,6 @@ function MenuAside() {
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />
-        <img className="badge-name" src={tick} alt="" />
-        <img className="badge-name" src={tick} alt="" />
-        <img className="badge-name" src={tick} alt="" />
       </span>
       <p>Membro desde 17/08/2020</p>
 

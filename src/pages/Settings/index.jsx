@@ -21,8 +21,6 @@ function Settings() {
             <img className="badge-name" src={tick} alt="" />
             <img className="badge-name" src={tick} alt="" />
             <img className="badge-name" src={tick} alt="" />
-            <img className="badge-name" src={tick} alt="" />
-            <img className="badge-name" src={tick} alt="" />
           </span>
         </div>
         <p className="date">Membro desde: 01/05/2020</p>

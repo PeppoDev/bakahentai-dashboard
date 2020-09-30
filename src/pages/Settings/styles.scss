@@ -62,7 +62,7 @@
                 border: 2px solid #252529;
                 width: 7rem;
                 height: 7rem;
-                margin-top: -22%;
+                margin-top: -4rem;
             }
 
             p {
@@ -89,14 +89,14 @@
     .input-box {
         margin-top: 5px;
         width: 50rem;
-        max-height: 50rem;
         height: 100%;
         align-self: center;
         flex-direction: column;
         background-color: var(--color-menu);
-        border-radius: 4px;
         display: flex;
         justify-content: space-between;
+        max-height: 45rem;
+        border-radius: 2px;
 
         article {
             width: 100%;
@@ -113,11 +113,12 @@
 
             button {
                 margin-top: 2rem;
-                margin-bottom: 2rem;
+                margin-bottom: 4rem;
             }
 
             button:first-child {
-                border: 1px white solid;
+                border: 1px solid #d1d1d1;
+                color: #d1d1d1;
                 background-color: transparent;
                 margin-right: 1rem;
 
@@ -151,7 +152,6 @@
         button {
             align-self: flex-end;
             background-color: var(--color-primary-pink);
-            width: 10rem;
             height: 4rem;
             color: #fff;
             border: 0;
@@ -163,6 +163,10 @@
             text-transform: uppercase;
             font-size: 1.5rem;
             cursor: pointer;
+            width: 12rem;
+
+
+
         }
     }
 }
