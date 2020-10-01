@@ -3,7 +3,6 @@ import React from "react";
 import "./styles.scss";
 //assets
 import penIcon from "../../assets/icons/pen.svg";
-
 export default function LastRegistersHentai() {
   return (
     <article className="last-registers-list">

@@ -11,7 +11,7 @@ export default function InputSettings({
   disable,
 }) {
   return (
-    <aticle className="input-group-settings">
+    <article className="input-group-settings">
       <label htmlFor={type}>
         {label} <span>*</span>
       </label>
@@ -22,6 +22,6 @@ export default function InputSettings({
         type={type}
         placeholder={placeholder}
       />
-    </aticle>
+    </article>
   );
 }

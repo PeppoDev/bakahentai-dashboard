@@ -3,6 +3,9 @@
     padding: 2rem 0 0;
     border-radius: 4px;
     max-width: 377.44px;
+    -webkit-box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 1);
 
     h1 {
         font-size: 1.3rem;
@@ -35,7 +38,7 @@
         flex-direction: column;
         overflow-y: scroll;
         height: 100%;
-        max-height: 30rem;
+        max-height: 32rem;
 
         &::-webkit-scrollbar {
             width: 6px;

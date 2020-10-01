@@ -24,7 +24,7 @@ function MenuAside() {
       <img src={photo} alt="" />
 
       <span className="profile-container">
-        <p>Astolfo</p>
+        <h2>Astolfo</h2>
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />

@@ -12,6 +12,9 @@ import RegistredComments from "../../components/RegistredComments";
 
 import LastRegistersHentai from "../../components/LastRegistersHentai";
 import LastRegistersEpisode from "../../components/LastRegistersEpisode";
+import LastRegistersUser from "../../components/LastRegistersUser";
+import LastRegistersComment from "../../components/LastRegistersComment";
+
 //react-redux
 import { useSelector } from "react-redux";
 
@@ -26,6 +29,8 @@ function Home() {
         <LastRegisters>
           {page === "hentais" ? <LastRegistersHentai /> : null}
           {page === "episodes" ? <LastRegistersEpisode /> : null}
+          {page === "users" ? <LastRegistersUser /> : null}
+          {page === "comments" ? <LastRegistersComment /> : null}
         </LastRegisters>
         <LastFeedBacks />
         <Map />
