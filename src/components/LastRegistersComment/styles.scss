@@ -72,13 +72,14 @@
                      color: var(--color-primary-pink);
                      font-weight: 400;
                      font-size: 1.3rem;
+                     padding-bottom: 0.5rem;
                      text-transform: capitalize;
                  }
 
                  p {
                      font-size: 1.2rem;
-                     color: white;
-                     text-transform: capitalize;
+                     color: #fff;
+                     text-align: justify;
 
                  }
              }
