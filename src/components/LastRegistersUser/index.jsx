@@ -46,6 +46,7 @@ export default function LastRegistersUser() {
             vertical: "bottom",
             horizontal: "center",
           }}
+          style={{ width: "15rem" }}
         >
           <span className="popover status">
             <button>Ver Perfil</button>
