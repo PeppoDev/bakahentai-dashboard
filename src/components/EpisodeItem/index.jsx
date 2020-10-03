@@ -1217,7 +1217,7 @@ export default function EpisodeItem({ id, name }) {
               </div>
               <MainInput
                 className="input-episodes"
-                label="Número de Episódios"
+                label="Número do Episódio"
                 placeholder="Ex. Algum anime"
               />
               <MainInput
@@ -1287,7 +1287,7 @@ export default function EpisodeItem({ id, name }) {
                   horizontal: "center",
                 }}
               >
-                <span className="popover">
+                <span className="popover popover-episode-item">
                   <p>
                     Esta opção deixará o episódio bloqueado apenas para usuários
                     Premiums de acordo com o "X" de horas que for estabelecido.

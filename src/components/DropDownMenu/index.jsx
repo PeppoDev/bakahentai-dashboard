@@ -25,7 +25,7 @@ export default function DropDownMenu(props) {
               ? "sub-icon showmenu-animation-open"
               : "sub-icon showmenu-animation-close"
           }
-          src={arrowIcon}
+          src={"https://baka.s3.fr-par.scw.cloud/i/close.svg"}
           alt=""
         />
       </button>

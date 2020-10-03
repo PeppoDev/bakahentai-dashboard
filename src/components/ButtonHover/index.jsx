@@ -3,9 +3,13 @@ import React from "react";
 import "./styles.scss";
 
 export function Container(props) {
-  return <div className="button-group">{props.children}</div>;
+  return <ul className="button-group">{props.children}</ul>;
 }
 
 export function Button({ text, onClick = () => null }) {
-  return <button onClick={onClick}>{text}</button>;
+  return (
+    <li>
+      <button onClick={onClick}>{text}</button>
+    </li>
+  );
 }

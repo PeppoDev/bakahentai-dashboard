@@ -1,5 +1,34 @@
    .button-group {
        opacity: 0 !important;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       overflow: hidden;
+       width: 100%;
+       height: 100%;
+
+       & li button {
+           transform: translateX(-100px);
+           transition: 0.2s;
+       }
+
+       &:hover button {
+           transform: translateX(0);
+       }
+
+       & li:nth-child(1) button {
+           transition-delay: 0.0s;
+       }
+
+       & li:nth-child(2) button {
+           transition-delay: 0.05s;
+       }
+
+       & li:nth-child(3) button {
+           transition-delay: 0.1s;
+       }
+
+
 
 
        button {
@@ -23,9 +52,7 @@
            border-top-right-radius: 5px;
            border-bottom-right-radius: 5px;
 
-           &:hover {
-               animation: hover-button forwards 0.1s;
-           }
+           &:hover {}
 
        }
 

@@ -4,7 +4,7 @@ import "./styles.scss";
 function RadioForm(props) {
   return (
     <section
-      className="radio-form"
+      className={`radio-form ${props.className}`}
       onChange={(event) => props.onChange(event.target.value)}
     >
       <p>

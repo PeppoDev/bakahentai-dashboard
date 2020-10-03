@@ -311,7 +311,7 @@ function RegisterHentais() {
     setAdm("");
     setFiles([]);
 
-      const response = await api.post("api/admin/hentais", data);
+    const response = await api.post("api/admin/hentais", data);
   }
 
   function handleStudios(event) {
@@ -491,29 +491,20 @@ function RegisterHentais() {
             onChange={setRealeasey}
           />
 
-     
-            <Radio.RadioForm text="Censura" onChange={setCensorship}>
-              <Radio.RadioInput
-                value="0"
-                name="censorship"
-                text="Com Censura"
-              />
-              <Radio.RadioInput
-                value="1"
-                name="censorship"
-                text="Sem Censura"
-              />
-            </Radio.RadioForm>
+          <Radio.RadioForm text="Censura" onChange={setCensorship}>
+            <Radio.RadioInput value="0" name="censorship" text="Com Censura" />
+            <Radio.RadioInput value="1" name="censorship" text="Sem Censura" />
+          </Radio.RadioForm>
 
-            <Radio.RadioForm
-              text="Qualidade"
-              value={quality}
-              onChange={setQuality}
-            >
-              <Radio.RadioInput value="1080P" name="quality" text="1080p" />
-              <Radio.RadioInput value="720P" name="quality" text="720p" />
-            </Radio.RadioForm>
- 
+          <Radio.RadioForm
+            className="last-radio-form"
+            text="Qualidade"
+            value={quality}
+            onChange={setQuality}
+          >
+            <Radio.RadioInput value="1080P" name="quality" text="1080p" />
+            <Radio.RadioInput value="720P" name="quality" text="720p" />
+          </Radio.RadioForm>
 
           <article className="input-n-select">
             <MainInput

@@ -49,6 +49,20 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            transition: 0.2s ease;
+        }
+
+        p:first-child:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        p:last-child {
+            // font-size: 1.2rem;
+        }
+
+        p:last-child:hover {
+            opacity: 0.8;
         }
 
     }

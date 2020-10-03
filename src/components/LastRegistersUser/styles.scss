@@ -82,10 +82,19 @@
     background-color: rgba(0, 0, 0, 0.7) !important;
     padding: 1rem;
 
+
     button {
         background-color: transparent;
         border: 0;
         cursor: pointer;
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+
+
+    }
+
+    button:last-child {
+        margin-bottom: 0;
 
     }
 }

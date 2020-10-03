@@ -1,0 +1,66 @@
+  .last-registers-episodes-list {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      height: 100%;
+      max-height: 32rem;
+
+      &::-webkit-scrollbar {
+          width: 6px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+          background: rgb(82, 82, 82)8;
+          border-radius: 2px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+          background: #888;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+      }
+
+      .registered-item {
+          display: flex;
+          justify-content: space-between;
+          color: #fff;
+          text-transform: uppercase;
+          background-color: #393939;
+          padding: 1.5rem 2rem;
+          margin-bottom: 2px;
+
+          span {
+              display: flex;
+
+              p {
+                  font-size: 1.2rem;
+                  max-width: 25rem;
+                  text-transform: capitalize;
+              }
+
+              p:first-child {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+              }
+
+              p:last-child {
+                  white-space: pre;
+              }
+          }
+
+
+
+
+          img {
+              width: 1rem;
+              cursor: pointer;
+          }
+      }
+
+  }

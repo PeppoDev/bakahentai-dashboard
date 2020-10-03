@@ -6,15 +6,20 @@ import "./styles.scss";
 //assets
 import ditto from "../../assets/images/ditto.png";
 import tick from "../../assets/icons/tick.png";
+import pen from "../../assets/icons/penw.svg";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);
   return (
     <section className="page-container settings">
-      <article className="image-banner" />
+      <article className="image-banner">
+        <img src={pen} alt="" />
+      </article>
       <article className="account-banner">
         <div className="account-photo">
-          <img src={ditto} className="profile-photo" alt="" />
+          <article className="profile-photo" alt="">
+            <img src={pen} alt="" />
+          </article>
           <img src="" alt="" />
           <span className="profile-container">
             <p>Astolfo</p>
