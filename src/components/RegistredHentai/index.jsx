@@ -1,24 +1,14 @@
 import React from "react";
+//components
+import HentaiItem from "../HentaItem";
 
 //css
 import "./styles.scss";
 
 export default function RegisteredHentai() {
   return (
-    <article className="registreds registred-hentai">
-      {/* <article>
-        <p>Ops. Você não Cadastrou Aqui</p>
-      </article> */}
-
-      <div className="imagem-container">
-        <span className="hentai-item-name-container">
-          <span>
-            <h1>Nome do anime, eu acho </h1>
-            <p> - Episode 1</p>
-          </span>
-          <p>Algum outro nome enos</p>
-        </span>
-      </div>
+    <article className="registred-hentai">
+      <HentaiItem name={"Algum nome"} studios={[{ name: "algum studio" }]} />
     </article>
   );
 }

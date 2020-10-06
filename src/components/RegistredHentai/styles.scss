@@ -1,5 +1,11 @@
 .registred-hentai {
-  height: 35rem;
+
+
+  .info-group {
+    height: 100%;
+    padding-top: 0rem;
+    align-items: initial;
+  }
 
   .imagem-container {
     width: 100%;
@@ -19,9 +25,9 @@
       width: 100%;
 
       p {
-        font-size: 1.2rem;
-        color: white;
-        font-weight: 500;
+        // font-size: 1.2rem;
+        // color: white;
+        // font-weight: 500;
       }
 
       span {
@@ -38,9 +44,9 @@
         }
 
         p {
-          text-transform: capitalize;
-          color: white;
-          font-size: 1.3rem;
+          // text-transform: capitalize;
+          // color: white;
+          // font-size: 1.3rem;
         }
       }
     }
@@ -48,6 +54,7 @@
 
   article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -56,15 +63,15 @@
     box-shadow: 0 5px 20px 0 #0c0c0c;
 
     p {
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40%;
-      text-align: center;
+      // color: white;
+      // font-weight: 600;
+      // font-size: 1.2rem;
+      // text-transform: uppercase;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // width: 40%;
+      // text-align: center;
     }
   }
 }

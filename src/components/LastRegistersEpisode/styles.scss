@@ -25,6 +25,11 @@
           background: #555;
       }
 
+
+      .last-registers-list .registered-item p {
+          max-width: none;
+      }
+
       .registered-item {
           display: flex;
           justify-content: space-between;

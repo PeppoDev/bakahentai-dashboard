@@ -1,14 +1,14 @@
 .main-select {
-    background-color: rgba(11, 9, 12, 0.5);
+    background-color: rgba(11, 9, 12, .5);
     border: 0;
-    width: 15rem;
+    width: 18rem;
     height: 4rem;
     border-radius: 2px;
-    color: white;
+    color: #fff;
     text-transform: capitalize;
     font-weight: 600;
     font-size: 1.5rem;
-    margin: 0rem 0rem 0rem 1rem;
+    margin: 0 0 0 1rem;
     cursor: pointer;
 
     select {
@@ -18,7 +18,8 @@
     article {
         width: 100%;
         height: 100%;
-        width: 15rem;
+        width: 18rem;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -40,24 +41,30 @@
         visibility: visible;
         position: relative;
         bottom: 0;
-        width: 15rem;
+        width: 18rem;
         z-index: 888;
-        background-color: rgba(11, 9, 12, 0.8);
+        background-color: rgba(11, 9, 12, .8);
         overflow-y: scroll;
         max-height: 400px;
+        transition: 0.2s ease;
 
         .selected-option {
             background-color: var(--color-primary-pink);
+
+            &:hover {
+                opacity: 1 !important;
+            }
         }
 
 
         &::-webkit-scrollbar {
+            position: fixed;
             width: 6px;
         }
 
         /* Track */
         &::-webkit-scrollbar-track {
-            background: rgb(82, 82, 82) 8;
+            background: rgba(82, 82, 82, 0.5) 8;
             border-radius: 2px;
         }
 
@@ -78,7 +85,7 @@
             user-select: none;
 
             &:hover {
-                background-color: var(--color-primary-pink);
+                opacity: 0.8;
             }
         }
     }

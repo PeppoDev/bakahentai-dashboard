@@ -1,11 +1,13 @@
 import React from "react";
+//components
+import EpisodeItemList from "../EpisodeItemList";
 import "./styles.scss";
 
 export default function RegistredEpisodes() {
   return (
     <article className="registreds registred-episodes">
-      <article>
-        {/* <p className="empty">Ops. Você não Cadastrou Aqui</p> */}
+      {/* <p className="empty">Ops. Você não Cadastrou Aqui</p> */}
+      {/* <article>
         <div className="image-container">
           <span className="episode-item-name-container">
             <span>
@@ -15,9 +17,9 @@ export default function RegistredEpisodes() {
             <p>Algum outro nome enos</p>
           </span>
         </div>
-      </article>
-      <article>
-        {/* <p className="empty" > Ops. Você não Cadastrou Aqui</p> */}
+      </article> */}
+      {/* <p className="empty" > Ops. Você não Cadastrou Aqui</p> */}
+      {/* <article>
         <div className="image-container">
           <span className="episode-item-name-container">
             <span>
@@ -27,7 +29,10 @@ export default function RegistredEpisodes() {
             <p>Algum outro nome enos</p>
           </span>
         </div>
-      </article>
+      </article> */}
+
+      <EpisodeItemList />
+      <EpisodeItemList />
     </article>
   );
 }

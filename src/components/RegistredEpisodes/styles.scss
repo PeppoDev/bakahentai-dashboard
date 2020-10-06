@@ -3,13 +3,16 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 1rem;
-
-
     background-color: var(--color-boxes) !important;
 
+    .info-group {
+        align-items: initial;
+        padding-top: 0rem;
+    }
 
     article {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;

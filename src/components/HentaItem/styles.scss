@@ -1,6 +1,7 @@
 .hentai-item {
     min-width: 0;
     animation: appear-hentai-item 0.2 ease;
+    
 
     .image-container {
         width: 100%;
@@ -36,8 +37,10 @@
 
     .info-group {
         background-color: var(--color-menu);
-        color: rgb(214, 212, 212);
-        height: 6rem;
+        color: #d6d4d4;
+        font-size: 1.5rem;
+        height: 5.5rem;
+        padding-right: 1rem;
         padding-left: 1rem;
         padding-top: 1rem;
         width: 100%;
