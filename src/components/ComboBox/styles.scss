@@ -1,16 +1,105 @@
-.combo-select {
-    background-color: rgb(11, 9, 12);
+.main-select {
+    background-color: rgba(11, 9, 12, 0.5);
     border: 0;
     width: 15rem;
     height: 4rem;
     border-radius: 2px;
     color: white;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0rem 0rem 0rem 1rem;
+    cursor: pointer;
+
+    select {
+        visibility: hidden;
+    }
+
+    article {
+        width: 100%;
+        height: 100%;
+        width: 15rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        p {
+            user-select: none;
+        }
+
+        img {
+            width: 0.9rem;
+            height: 0.4rem;
+            transform: rotate(90deg);
+            user-select: none;
+        }
+    }
+
+    .options-list {
+        visibility: visible;
+        position: relative;
+        bottom: 0;
+        width: 15rem;
+        z-index: 888;
+        background-color: rgba(11, 9, 12, 0.8);
+        overflow-y: scroll;
+        max-height: 400px;
+
+        .selected-option {
+            background-color: var(--color-primary-pink);
+        }
+
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: rgb(82, 82, 82) 8;
+            border-radius: 2px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        option {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            user-select: none;
+
+            &:hover {
+                background-color: var(--color-primary-pink);
+            }
+        }
+    }
+}
+
+.combo-select {
+
+    background-color: rgba(11, 9, 12, 0.5);
+    border: 0;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 2px;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.6rem;
     padding: 1rem;
     // margin: 0rem 1rem 1rem 0rem;
     margin: 0rem 0rem 0rem 1rem;
     cursor: pointer;
-    display: flex;
-
+    //   display: flex;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -32,17 +121,17 @@
     /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
     .combo-item {
         font-size: 1.5rem;
-        font-weight: 600;
+
         color: white;
-        text-transform: uppercase;
+        text-transform: capitalize;
 
         background-color: rgba(11, 9, 12, 0.7);
+        background-color: transparent !important;
 
         &:hover {
             background-color: black !important;
             color: white;
         }
-
     }
 }
 

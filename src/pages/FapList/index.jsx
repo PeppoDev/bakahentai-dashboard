@@ -19,16 +19,16 @@ import backIcon from "../../assets/icons/back.png";
 function TitlePageFapList(props) {
   return (
     <section className="page-title">
-      <article>
+      <article className="page-title-container">
         <article className="header-left">
           <Link to="/">
             <img className="backicon" src={backIcon} alt="" />
           </Link>
-          <div>
+          <div className="faplist-item">
             <p>Minha Lista de Fap</p>
             <span>15</span>
           </div>
-          <div>
+          <div className="faplist-item">
             <p>Favoritos</p>
             <span>0</span>
           </div>

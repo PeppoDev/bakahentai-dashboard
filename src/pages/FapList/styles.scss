@@ -21,7 +21,7 @@
         align-items: center;
     }
 
-    div {
+    .faplist-item {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -54,9 +54,11 @@
 
     .header-left {
         display: flex;
+        justify-content: space-between;
+
     }
 
-    article {
+    .page-title-container {
         display: flex;
         justify-content: space-between;
 

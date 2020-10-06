@@ -9,7 +9,7 @@ export default function TitlePage(props) {
   const { text } = props;
   return (
     <section className="page-title">
-      <article>
+      <article className="page-title-article">
         <p>
           <Link to="/">
             <img className="backicon" src={backIcon} alt="" />

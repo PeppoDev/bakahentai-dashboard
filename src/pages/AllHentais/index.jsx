@@ -1097,16 +1097,12 @@ function AllHentais() {
     <section className="page-container all-hentais">
       <TitlePage text="TODOS OS HENTAIS">
         <SearchInput onChange={setQuery} value={query} />
-        <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
-          <ComboBox.ComboItem value="Postagem" text="Postagem" />
-          <ComboBox.ComboItem value="Lançamento" text="Lançamento" />
-          <ComboBox.ComboItem value="Maior nota" text="Maior nota" />
-          <ComboBox.ComboItem value="Mais fapados" text="Mais fapados" />
-          <ComboBox.ComboItem
-            value="Mais favoritados"
-            text="Mais favoritados"
-          />
-        </ComboBox.ComboSelect>
+        <ComboBox.ComboSelect
+          onChange={setOrder}
+          value={order}
+          data={["Postagem", "Lançamento", "Maior nota", "Mais fapados"]}
+          defaultValue="Alfabética"
+        ></ComboBox.ComboSelect>
       </TitlePage>
       <article className="hentai-list">
         <HentaiList data={currentHentais} />

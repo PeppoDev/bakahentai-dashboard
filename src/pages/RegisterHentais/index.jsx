@@ -349,12 +349,14 @@ function RegisterHentais() {
   }
 
   function handleSetStudios(value) {
-    if (value !== "Selecionar") {
+    if (value !== "Selecionar" && typeof value === "string") {
       setPlacholderStudio("Ex: PoRO");
       const newTags = [...Array.from(studios), value];
       const filteredTags = filter(newTags);
       const sortedTags = sort(filteredTags);
       setStudios(sortedTags);
+    } else if (Array.isArray(value)) {
+      setStudios(value);
     }
   }
   function handleTags(event) {
@@ -393,12 +395,14 @@ function RegisterHentais() {
   }
 
   function handleSetTags(value) {
-    if (value !== "Selecionar") {
+    if (value !== "Selecionar" && typeof value === "string") {
       setPlacholderGender("Ex: Colegial, Escolar, Peitões");
       const newTags = [...Array.from(tags), value];
       const filteredTags = filter(newTags);
       const sortedTags = sort(filteredTags);
       setTags(sortedTags);
+    } else if (Array.isArray(value)) {
+      setStudios(value);
     }
   }
 
@@ -462,15 +466,8 @@ function RegisterHentais() {
               value={studios}
               onChange={handleSetStudios}
               multiple={true}
-            >
-              {studioDB.map((tag, key) => (
-                <ComboBox.ComboItem
-                  key={key}
-                  value={tag}
-                  text={tag}
-                ></ComboBox.ComboItem>
-              ))}
-            </ComboBox.ComboSelect>
+              data={studioDB}
+            />
           </article>
 
           <article className="badge-group">
@@ -520,15 +517,8 @@ function RegisterHentais() {
               value={tags}
               onChange={handleSetTags}
               multiple={true}
-            >
-              {genders.map((tag, key) => (
-                <ComboBox.ComboItem
-                  key={key}
-                  value={tag}
-                  text={tag}
-                ></ComboBox.ComboItem>
-              ))}
-            </ComboBox.ComboSelect>
+              data={genders}
+            />
           </article>
 
           <article className="badge-group">
