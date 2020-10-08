@@ -3,15 +3,17 @@ import React from "react";
 import * as ButtonHover from "../ButtonHover";
 //css
 import "./styles.scss";
+//assets
+import EditIcon from "../../assets/icons/penw.svg";
+import TrashIcon from "../../assets/icons/trashw.svg";
 
 function EpisodeItemList() {
   return (
     <article className="episode-item">
       <article className="image-container">
         <ButtonHover.Container>
-          <ButtonHover.Button text="Editar" />
-          <ButtonHover.Button text="Deletar" />
-          <ButtonHover.Button text="Episódios" />
+          <ButtonHover.Button text="Editar" img={EditIcon} />
+          <ButtonHover.Button text="Deletar" img={TrashIcon} />
         </ButtonHover.Container>
       </article>
       <article className="info-group">

@@ -1,4 +1,6 @@
 import React from "react";
+//hooks
+import { useOutsideAlerter } from "../../hooks/outsideAlerter";
 //css
 import "./styles.scss";
 //assets
@@ -6,8 +8,9 @@ import playIcon from "../../assets/icons/play.svg";
 
 function ComboSelect(props) {
   const selectRef = React.useRef();
-  const [showList, setshowList] = React.useState(false);
+
   const [text, setText] = React.useState("");
+  const { visible, setVisible, ref } = useOutsideAlerter(false);
 
   function handleClick(key) {
     let valuetemp = Array.from(props.value);
@@ -37,14 +40,14 @@ function ComboSelect(props) {
   return (
     <article
       className="main-select"
-      onClick={() => setshowList((prev) => (prev ? false : true))}
+      onClick={() => setVisible((prev) => (prev ? false : true))}
     >
       <article>
         <p>{text}</p>
         <img src={playIcon} onClick={() => selectRef.current.click()} alt="" />
       </article>
-      {showList ? (
-        <div className="options-list">
+      {visible && (
+        <div ref={ref} className="options-list">
           {props.data.map((data) => (
             <ComboItem
               key={data}
@@ -63,8 +66,6 @@ function ComboSelect(props) {
             />
           ))}
         </div>
-      ) : (
-        ""
       )}
 
       {/* <select

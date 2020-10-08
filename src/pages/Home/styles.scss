@@ -26,8 +26,8 @@
 
     .container-title {
         align-self: center;
-        color: white;
-        font-size: 1.6rem;
+        color: #fff;
+        font-size: 1.8rem;
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 2rem;
@@ -35,30 +35,28 @@
 
     .hentai-container {
         display: grid;
-        // grid-template-columns: 28rem 30.7rem 59rem;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 5px;
-        padding: 0 2rem;
+        padding: 0 2rem 5rem;
         height: 100%;
-        margin-bottom: 2rem;
 
         .hentai-item {
-            box-shadow: 0 5px 20px 0 #0c0c0c
+            box-shadow: 0 5px 20px 0 #0c0c0c;
+            height: 34rem;
         }
 
     }
 
     .episode-container {
         display: grid;
-        // grid-template-columns: 28rem 30.7rem 59rem;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 5px;
-        padding: 0 2rem;
+        padding: 0 2rem 10rem;
         height: 100%;
-        margin-bottom: 5rem;
 
         .episode-item {
-            box-shadow: 0 5px 20px 0 #0c0c0c
+            box-shadow: 0 5px 20px 0 #0c0c0c;
+            height: 22rem;
         }
     }
 

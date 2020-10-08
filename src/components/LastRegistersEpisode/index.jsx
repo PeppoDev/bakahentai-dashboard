@@ -4,7 +4,7 @@ import { Popover } from "@material-ui/core";
 //css
 import "./styles.scss";
 //assets
-import penIcon from "../../assets/icons/pen.svg";
+import penIcon from "../../assets/icons/penw.svg";
 
 function LastRegistersEpisodeItem() {
   const [anchorEl, setAnchorEl] = React.useState(null);
