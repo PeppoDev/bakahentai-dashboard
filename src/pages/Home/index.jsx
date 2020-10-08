@@ -14,12 +14,15 @@ import LastRegistersHentai from "../../components/LastRegistersHentai";
 import LastRegistersEpisode from "../../components/LastRegistersEpisode";
 import LastRegistersUser from "../../components/LastRegistersUser";
 import LastRegistersComment from "../../components/LastRegistersComment";
-
+import HentaItem from "../../components/HentaItem";
+import EpisodeItemList from "../../components/EpisodeItemList";
 //react-redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import AllActions from "../../store/actions";
 
 function Home() {
   const page = useSelector((state) => state.page);
+
 
   return (
     <section className="page-container home">
@@ -36,19 +39,37 @@ function Home() {
         <Map />
       </article>
       <hr />
-      <article className="third-container-title">
+      {/* <article className="third-container-title">
         <h2 className="title-component">Hentais Cadastrados</h2>
         <h2 className="title-component">Episódios Cadastrados</h2>
         <h2 className="title-component">Comentários</h2>
-      </article>
-
+      </article> */}
+      {/* 
       <article className="third-container">
         <h2 className="title-component opacity">Hentai Cadastrado</h2>
-        <RegistredHentai />
+        <HentaItem/>
         <h2 className="title-component opacity">Episódios Cadastrados</h2>
         <RegistredEpisodes />
         <h2 className="title-component opacity">Comentários</h2>
         <RegistredComments />
+      </article> */}
+
+      <h2 className="container-title">Comentários</h2>
+      <RegistredComments />
+
+      <h2 className="container-title">Hentais Cadastrados</h2>
+      <article className="hentai-container">
+        <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />
+        <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />
+        <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />
+        <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />
+        <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />
+      </article>
+      <h2 className="container-title">Episódios Cadastrados</h2>
+      <article className="episode-container">
+        <EpisodeItemList />
+        <EpisodeItemList />
+        <EpisodeItemList />
       </article>
     </section>
   );

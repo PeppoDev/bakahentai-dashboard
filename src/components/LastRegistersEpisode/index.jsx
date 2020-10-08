@@ -22,8 +22,10 @@ function LastRegistersEpisodeItem() {
   return (
     <div className="registered-item">
       <span>
-        <p>Nome do anime</p>
-        <p> - Episode 1</p>
+        <a href="!#" target="_blank">
+          <p>Nome do anime</p>
+          <p> - Episode 1</p>
+        </a>
       </span>
       <img src={penIcon} onClick={handleClick} alt="" />
       <Popover
@@ -42,8 +44,9 @@ function LastRegistersEpisodeItem() {
         style={{ width: "15rem" }}
       >
         <span className="popover status">
+          <button>Visualizar</button>
           <button>Editar</button>
-          <button>Punir</button>
+          <button>Deletar</button>
         </span>
       </Popover>
     </div>

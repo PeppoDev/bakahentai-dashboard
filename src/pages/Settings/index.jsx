@@ -6,7 +6,7 @@ import "./styles.scss";
 //assets
 import ditto from "../../assets/images/ditto.png";
 import tick from "../../assets/icons/tick.png";
-import pen from "../../assets/icons/penw.svg";
+import pen from "../../assets/icons/pen.svg";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);

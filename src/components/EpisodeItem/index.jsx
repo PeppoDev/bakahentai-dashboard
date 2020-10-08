@@ -1205,7 +1205,7 @@ export default function EpisodeItem({ id, name }) {
                         {...params}
                         label=""
                         variant="outlined"
-                        placeholder="Ex:Alguma coisa"
+                        placeholder=""
                       />
                     </div>
                   )}
@@ -1218,12 +1218,12 @@ export default function EpisodeItem({ id, name }) {
               <MainInput
                 className="input-episodes"
                 label="Número do Episódio"
-                placeholder="Ex. Algum anime"
+                placeholder="Ex. Episódio 1"
               />
               <MainInput
                 className="input-episodes"
                 label="M3U8"
-                placeholder="Ex. Algum anime"
+                placeholder="Ex. Oni_Chichi_1080P"
               />
             </article>
             <article className="main-right">

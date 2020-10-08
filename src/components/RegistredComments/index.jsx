@@ -24,7 +24,7 @@ function LastRegistersCommentsItem() {
   const idPop = open ? "simple-popover" : undefined;
 
   return (
-    <div className="last-feed-item">
+    <div className="last-feed-item main-comments">
       <span>
         <p>Nome do anime</p>
         <p>Ep.01</p>
@@ -65,8 +65,78 @@ function LastRegistersCommentsItem() {
         style={{ width: "15rem" }}
       >
         <span className="popover status">
+          <button>Visualizar</button>
           <button>Editar</button>
-          <button>Punir</button>
+          <button>Excluir</button>
+        </span>
+      </Popover>
+    </div>
+  );
+}
+
+function LastRegistersRateItem() {
+  const [show, setShow] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const idPop = open ? "simple-popover" : undefined;
+
+  return (
+    <div className="last-rate-item main-comments">
+      <span>
+        <p>Nome do anime</p>
+        <p>Ep.01</p>
+      </span>
+      <article>
+        <img className="arrow" src={arrowIcon} alt="" />
+        <img className="perfil" src={ditto} alt="" />
+        <div>
+          <span>
+            <h2>Chris</h2>
+            <img
+              className="more-icon"
+              src={more}
+              alt=""
+              onClick={handleClick}
+            />
+          </span>
+          <div className="rate-level">
+            <p>Avaliou em</p>
+            <span className="group-star">
+              <img src="" alt="" />
+            </span>
+            8
+          </div>
+        </div>
+      </article>
+
+      <Popover
+        id={idPop}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        style={{ width: "15rem" }}
+      >
+        <span className="popover status">
+          <button>Visualizar</button>
+          <button>Editar</button>
+          <button>Excluir</button>
         </span>
       </Popover>
     </div>
@@ -82,14 +152,16 @@ export default function RegistredComments() {
       <article className="last-comments-list">
         <LastRegistersCommentsItem />
         <LastRegistersCommentsItem />
+        <LastRegistersRateItem />
+        <LastRegistersRateItem />
         <LastRegistersCommentsItem />
         <LastRegistersCommentsItem />
-        <LastRegistersCommentsItem />
+        <LastRegistersRateItem />
         <LastRegistersCommentsItem />
         <LastRegistersCommentsItem />
         <LastRegistersCommentsItem />
       </article>
-      <button>Lista Completa</button>
+      <button>Ver todos</button>
     </article>
   );
 }

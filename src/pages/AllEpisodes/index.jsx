@@ -15,10 +15,12 @@ function AllEpisodes() {
     <section className="page-container all-episodes">
       <TitlePage text="TODOS OS EPISÓDIOS">
         <SearchInput onChange={setQuery} value={query} />
-        <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
-          <ComboBox.ComboItem value="Postagem" text="Postagem" />
-          <ComboBox.ComboItem value="Lançamento" text="Lançamento" />
-        </ComboBox.ComboSelect>
+        <ComboBox.ComboSelect
+          onChange={setOrder}
+          value={order}
+          placeholder="Ordem"
+          data={["Alfabética", "Lançamento", "Mais Vizualizado"]}
+        />
       </TitlePage>
       <article className="episode-list">
         <EpisodeItemList />

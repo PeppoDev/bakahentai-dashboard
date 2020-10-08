@@ -7,6 +7,7 @@ import playIcon from "../../assets/icons/play.svg";
 function ComboSelect(props) {
   const selectRef = React.useRef();
   const [showList, setshowList] = React.useState(false);
+  const [text, setText] = React.useState("");
 
   function handleClick(key) {
     let valuetemp = Array.from(props.value);
@@ -19,15 +20,27 @@ function ComboSelect(props) {
     props.onChange(valuetemp);
   }
 
+  function handleText() {
+    if (props.placeholder) {
+      return props.placeholder;
+    } else if (!props.multiple && props.value !== "") {
+      return props.value;
+    } else {
+      return "Selecionar";
+    }
+  }
+
+  React.useEffect(() => {
+    setText(handleText);
+  }, []);
+
   return (
     <article
       className="main-select"
       onClick={() => setshowList((prev) => (prev ? false : true))}
     >
       <article>
-        <p>
-          {!props.multiple && props.value !== "" ? props.value : "Selecionar"}
-        </p>
+        <p>{text}</p>
         <img src={playIcon} onClick={() => selectRef.current.click()} alt="" />
       </article>
       {showList ? (

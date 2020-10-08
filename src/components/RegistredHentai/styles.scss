@@ -2,61 +2,68 @@
 
 
   .info-group {
-    height: 100%;
     padding-top: 0rem;
     align-items: initial;
   }
 
-  .imagem-container {
-    width: 100%;
-    height: 100%;
-    background-image: url("../../assets/images/prev2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
+  .hentai-item {
     box-shadow: 0 5px 20px 0 #0c0c0c;
 
-    .hentai-item-name-container {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--color-menu);
-      padding: 3px 1rem;
-      width: 100%;
-
-      p {
-        // font-size: 1.2rem;
-        // color: white;
-        // font-weight: 500;
-      }
-
-      span {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        margin-bottom: 3px;
-
-        h1 {
-          color: white;
-          font-weight: 500;
-          text-transform: capitalize;
-          font-size: 1.3rem;
-        }
-
-        p {
-          // text-transform: capitalize;
-          // color: white;
-          // font-size: 1.3rem;
-        }
-      }
+    .image-container {
+      height: 100% !important;
     }
   }
+
+  // .image-container {
+  //   width: 100%;
+  //   height: auto !important;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   display: flex;
+  //   align-items: flex-end;
+  //   box-shadow: 0 5px 20px 0 #0c0c0c;
+
+  //   .hentai-item-name-container {
+  //     display: flex;
+  //     flex-direction: column;
+  //     background-color: var(--color-menu);
+  //     padding: 3px 1rem;
+  //     width: 100%;
+
+  //     p {
+  //       // font-size: 1.2rem;
+  //       // color: white;
+  //       // font-weight: 500;
+  //     }
+
+  //     span {
+  //       display: flex;
+  //       width: 100%;
+  //       align-items: center;
+  //       margin-bottom: 3px;
+
+  //       h1 {
+  //         color: white;
+  //         font-weight: 500;
+  //         text-transform: capitalize;
+  //         font-size: 1.3rem;
+  //       }
+
+  //       p {
+  //         // text-transform: capitalize;
+  //         // color: white;
+  //         // font-size: 1.3rem;
+  //       }
+  //     }
+  //   }
+  // }
 
   article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     width: 100%;
     height: 100%;
     border: 1px solid var(--color-menu);

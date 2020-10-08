@@ -1,11 +1,13 @@
 .registred-comments {
-
     display: flex;
     flex-direction: column;
-
     box-shadow: 0 5px 20px 0 #0c0c0c;
+    margin: 0 2rem;
     padding-top: 2rem;
+    margin-bottom: 2rem;
+
     background-color: var(--color-menu);
+
 
     button {
         border: 0;
@@ -39,6 +41,32 @@
     //     }
     // }
 
+    .last-rate-item {
+        border: 0 !important;
+        border-bottom: 1px solid #404040 !important;
+
+
+        span {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1rem;
+
+            p:first-child {
+                // max-height: 30px;
+                // max-width: 10rem;
+
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: white;
+                text-transform: none;
+                overflow: hidden;
+
+            }
+        }
+    }
+
     .last-feed-item {
         border: 0 !important;
         border-bottom: 1px solid #404040 !important;
@@ -50,17 +78,30 @@
             margin-bottom: 1rem;
 
             p:first-child {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                width: 90%;
+                max-height: 30px;
+                max-width: 10rem;
+
             }
 
             p {
                 font-size: 1.3rem;
                 color: white;
                 text-transform: none;
+                overflow: hidden;
+
             }
         }
+    }
+
+    .main-comments {
+        p:last-child {
+            max-width: 100rem !important;
+
+        }
+
+        article div {
+            width: 100%;
+        }
+
     }
 }

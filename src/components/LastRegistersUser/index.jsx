@@ -25,7 +25,10 @@ function LastRegistersUserItem() {
       <div>
         <img src={photo} alt="" />
         <span>
-          <h2>Peppa Zensual</h2>
+          <a href="!#" target="_blank">
+            <h2>Peppa Zensual</h2>
+          </a>
+
           <p>Criou a conta há 3min</p>
         </span>
       </div>

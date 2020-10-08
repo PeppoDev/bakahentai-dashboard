@@ -1086,10 +1086,7 @@ function AllHentais() {
     }
   };
 
-  const sorted = React.useMemo(() => sorter(hentais_list, order), [
-    hentais_list,
-    order,
-  ]);
+  React.useMemo(() => sorter(hentais_list, order), [hentais_list, order]);
 
   const currentHentais = hentais_list.slice(0, hentaisPerPage);
 
@@ -1100,7 +1097,14 @@ function AllHentais() {
         <ComboBox.ComboSelect
           onChange={setOrder}
           value={order}
-          data={["Postagem", "Lançamento", "Maior nota", "Mais fapados"]}
+          placeholder="Ordem"
+          data={[
+            "Alfabética",
+            "Postagem",
+            "Lançamento",
+            "Maior nota",
+            "Mais fapados",
+          ]}
           defaultValue="Alfabética"
         ></ComboBox.ComboSelect>
       </TitlePage>

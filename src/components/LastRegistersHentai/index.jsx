@@ -21,9 +21,11 @@ function LastRegistersEpisodeItem() {
   const open = Boolean(anchorEl);
   const idPop = open ? "simple-popover" : undefined;
   return (
-    <div className="registered-item">
+    <div className="registered-item last-registred-hentai">
       <span>
-        <p>Nome do anime</p>
+        <a href="!#" target="_blank">
+          <p>Nome do anime</p>
+        </a>
       </span>
       <img src={penIcon} onClick={handleClick} alt="" />
       <Popover
@@ -42,8 +44,9 @@ function LastRegistersEpisodeItem() {
         style={{ width: "15rem" }}
       >
         <span className="popover status">
+          <button>Visualizar</button>
           <button>Editar</button>
-          <button>Punir</button>
+          <button>Deletar</button>
         </span>
       </Popover>
     </div>

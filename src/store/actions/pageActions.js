@@ -4,4 +4,11 @@ const changePage = (page) => {
     payload: page,
   };
 };
-export default { changePage };
+
+const changeSelect = (select) => {
+  return {
+    type: "CHANGE_SELECT",
+    payload: select,
+  };
+};
+export default { changePage, changeSelect };

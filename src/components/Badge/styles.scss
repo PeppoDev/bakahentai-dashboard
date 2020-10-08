@@ -22,11 +22,16 @@
     p:last-child {
         overflow: hidden;
         margin-right: 0.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 10rem;
     }
 
     p:first-child {
         font-size: 1.3rem;
         margin-right: 5px;
+
 
     }
 }

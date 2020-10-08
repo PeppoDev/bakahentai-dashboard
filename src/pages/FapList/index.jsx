@@ -1129,10 +1129,13 @@ function FapList() {
     <section className="page-container all-hentais">
       <TitlePageFapList>
         <SearchInput onChange={setQuery} value={query} />
-        <ComboBox.ComboSelect onChange={setOrder} defaultValue="Alfabética">
-          <ComboBox.ComboItem value="Últimos" text="Últimos" />
-          <ComboBox.ComboItem value="Favoritos" text="Favoritos" />
-        </ComboBox.ComboSelect>
+        <ComboBox.ComboSelect
+          onChange={setOrder}
+          value={order}
+          defaultValue="Alfabética"
+          data={["Alfabética", "Últimos"]}
+          placeholder="Ordem"
+        />
       </TitlePageFapList>
       <article className="hentai-list">
         <FapLister data={currentHentais} />
