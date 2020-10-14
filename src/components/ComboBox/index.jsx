@@ -7,11 +7,12 @@ import "./styles.scss";
 import playIcon from "../../assets/icons/play.svg";
 
 function ComboSelect(props) {
-  const selectRef = React.useRef();
-
   const [text, setText] = React.useState("");
   const { visible, setVisible, ref } = useOutsideAlerter(false);
 
+  const [visibleLocal, setVisibleLocal] = React.useState(false);
+  
+  
   function handleClick(key) {
     let valuetemp = Array.from(props.value);
     valuetemp.forEach((element, i) => {
@@ -19,7 +20,6 @@ function ComboSelect(props) {
         valuetemp.splice(valuetemp.indexOf(key), 1);
       }
     });
-
     props.onChange(valuetemp);
   }
 
@@ -32,29 +32,30 @@ function ComboSelect(props) {
       return "Selecionar";
     }
   }
+  function handleVisible() {
+    setVisibleLocal(visibleLocal ? false : true);
+  }
 
   React.useEffect(() => {
     setText(handleText);
-  }, []);
+  }, [visibleLocal]);
 
   return (
     <article
       className="main-select"
-      onClick={() => setVisible((prev) => (prev ? false : true))}
     >
-      <article>
+      <article onClick={handleVisible}>
         <p>{text}</p>
         <img src={playIcon} alt="" />
       </article>
       {visible && (
-        <div ref={ref} className="options-list">
+        <div ref={ref} className="options-list" >
           {props.data.map((data) => (
             <ComboItem
+              style={props.value.includes(data)?{backgroundColor: "var(--color-primary-pink)"}:{}}
               key={data}
               className={
-                props.value.includes(data)
-                  ? "selected-option combo-item"
-                  : "combo-item"
+                  "combo-item"
               }
               value={data}
               text={data}
@@ -98,10 +99,10 @@ function ComboSelect(props) {
   );
 }
 
-function ComboItem({ value, text, className, onClick }) {
+function ComboItem({ value, text, className, onClick, style }) {
   return (
     <>
-      <option className={className} value={value} onClick={onClick}>
+      <option className={className} value={value} onClick={onClick} style={style}>
         {text}
       </option>
     </>

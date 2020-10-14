@@ -44,12 +44,15 @@
         width: 18rem;
         z-index: 888;
         background-color: rgba(11, 9, 12, .8);
-        overflow-y: scroll;
+        overflow-y: overlay;
         max-height: 400px;
         transition: 0.2s ease;
+        
+        
 
         .selected-option {
             background-color: var(--color-primary-pink);
+            // border-right: 6px solid var(--color-primary-pink);
 
             &:hover {
                 opacity: 1 !important;
@@ -58,13 +61,14 @@
 
 
         &::-webkit-scrollbar {
+            -webkit-appearance: none;
             position: fixed;
             width: 6px;
         }
 
         /* Track */
         &::-webkit-scrollbar-track {
-            background: rgba(82, 82, 82, 0.5) 8;
+            background-color: transparent;
             border-radius: 2px;
         }
 
@@ -83,7 +87,6 @@
             display: flex;
             align-items: center;
             user-select: none;
-
             &:hover {
                 opacity: 0.8;
             }
@@ -92,7 +95,6 @@
 }
 
 .combo-select {
-
     background-color: rgba(11, 9, 12, 0.5);
     border: 0;
     width: 15rem;
@@ -128,13 +130,11 @@
     /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
     .combo-item {
         font-size: 1.5rem;
-
         color: white;
         text-transform: capitalize;
-
-        background-color: rgba(11, 9, 12, 0.7);
-        background-color: transparent !important;
-
+        transition: 0.2s ease;
+        background-color: transparent;
+        
         &:hover {
             background-color: black !important;
             color: white;

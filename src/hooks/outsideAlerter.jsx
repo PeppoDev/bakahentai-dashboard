@@ -7,7 +7,7 @@ export const useOutsideAlerter = (initialValue) => {
   const handleClickOutisde = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       setVisible(false);
-    }
+    } 
   };
   React.useEffect(() => {
     document.addEventListener("click", handleClickOutisde, true);
