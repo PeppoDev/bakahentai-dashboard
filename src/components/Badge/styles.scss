@@ -18,6 +18,8 @@
     cursor: pointer;
     margin-bottom: 2px;
     animation: appear-badge 0.2s ease forwards;
+    opacity: 0;
+
 
     p:last-child {
         overflow: hidden;
@@ -42,6 +44,7 @@
     }
 
     to {
+        opacity: 100% !important;
         transform: scale(1);
     }
 }
