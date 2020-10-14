@@ -44,7 +44,7 @@ function ComboSelect(props) {
     >
       <article>
         <p>{text}</p>
-        <img src={playIcon} onClick={() => selectRef.current.click()} alt="" />
+        <img src={playIcon} alt="" />
       </article>
       {visible && (
         <div ref={ref} className="options-list">

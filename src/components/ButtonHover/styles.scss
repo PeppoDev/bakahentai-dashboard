@@ -36,8 +36,8 @@
        }
 
        &:hover .button-hover {
-           transform: translateX(0);
-       }
+            transform: translateX(0);
+        }
 
        & li:nth-child(1) .button-hover {
            transition-delay: 0.0s;
