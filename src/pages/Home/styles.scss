@@ -1,134 +1,127 @@
 .home {
-    display: flex !important;
-    flex-direction: column !important;
+  display: flex !important;
+  flex-direction: column !important;
 
-    .registreds {
-        padding-right: 2rem;
-        border-right: 1px solid var(--color-menu);
+  .registreds {
+    padding-right: 2rem;
+    border-right: 1px solid var(--color-menu);
+  }
 
+  .second-container {
+    display: flex;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.6fr) minmax(0, 1fr);
+    grid-gap: 2rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    max-height: 45rem;
+    height: 100%;
+  }
 
+  hr {
+    margin: 6rem 2rem 2rem;
+    border: 1px solid #424141;
+  }
+
+  .container-title {
+    align-self: center;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .hentai-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 0 2rem 5rem;
+    height: 100%;
+
+    .hentai-item {
+      box-shadow: 0 5px 20px 0 #0c0c0c;
+      height: 34rem;
     }
+  }
 
-    .second-container {
-        display: grid;
-        grid-template-columns: 0.8fr 0.6fr 1fr;
-        grid-gap: 2rem;
-        padding: 0 2rem;
-        margin-top: 2rem;
-        max-height: 45rem;
-        height: 100%;
+  .episode-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 0 2rem 10rem;
+    height: 100%;
+
+    .episode-item {
+      box-shadow: 0 5px 20px 0 #0c0c0c;
+      height: 22rem;
     }
+  }
 
-    hr {
-        margin: 6rem 2rem 2rem;
-        border: 1px solid #424141;
+  .opacity {
+    display: none;
+  }
+
+  .title-component {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+
+  .third-container-title {
+    display: grid;
+    grid-template-columns: 0.4fr 0.5fr 1fr;
+    grid-gap: 2rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    max-height: 35rem;
+    height: 100%;
+    justify-items: center;
+
+    h2 {
+      margin-left: -2rem;
     }
-
-    .container-title {
-        align-self: center;
-        color: #fff;
-        font-size: 1.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-    }
-
-    .hentai-container {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 5px;
-        padding: 0 2rem 5rem;
-        height: 100%;
-
-        .hentai-item {
-            box-shadow: 0 5px 20px 0 #0c0c0c;
-            height: 34rem;
-        }
-
-    }
-
-    .episode-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5px;
-        padding: 0 2rem 10rem;
-        height: 100%;
-
-        .episode-item {
-            box-shadow: 0 5px 20px 0 #0c0c0c;
-            height: 22rem;
-        }
-    }
-
-    .opacity {
-        display: none;
-    }
-
-    .title-component {
-        color: white;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 1.3rem;
-    }
-
-    .third-container-title {
-        display: grid;
-        grid-template-columns: 0.4fr 0.5fr 1fr;
-        grid-gap: 2rem;
-        padding: 0 2rem;
-        margin-top: 2rem;
-        max-height: 35rem;
-        height: 100%;
-        justify-items: center;
-
-        h2 {
-            margin-left: -2rem;
-        }
-    }
+  }
 }
 
 @media screen and (orientation: portrait) {
-
-    .home {
-
-        .registreds {
-            // padding-top: 2rem;
-            // border-top: 1px solid var(--color-menu);
-        }
-
-        justify-content: center !important;
-
-        .second-container {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            max-height: none;
-        }
-
-        .third-container-title {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            max-height: none;
-
-        }
-
-        .third-container {
-            display: flex;
-            flex-direction: column;
-            max-height: none;
-
-        }
-
-        .third-container-title {
-            display: none;
-        }
-
-        .opacity {
-            display: inline;
-            align-self: center;
-        }
-
-        article+.registred-episodes {
-            border-top: 1px solid grey;
-        }
+  .home {
+    .registreds {
+      // padding-top: 2rem;
+      // border-top: 1px solid var(--color-menu);
     }
+
+    justify-content: center !important;
+
+    .second-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      max-height: none;
+    }
+
+    .third-container-title {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      max-height: none;
+    }
+
+    .third-container {
+      display: flex;
+      flex-direction: column;
+      max-height: none;
+    }
+
+    .third-container-title {
+      display: none;
+    }
+
+    .opacity {
+      display: inline;
+      align-self: center;
+    }
+
+    article + .registred-episodes {
+      border-top: 1px solid grey;
+    }
+  }
 }

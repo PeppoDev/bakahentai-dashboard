@@ -15,7 +15,7 @@ import store from "./store/reducers/index";
 import Login from "./components/Login";
 
 function App() {
-  const [isLogin, setIsLogin] = React.useState(false);
+  const [isLogin, setIsLogin] = React.useState(true);
 
   return (
     <Router>
@@ -75,7 +75,7 @@ function App() {
                       exact
                       component={pages.Taxonomies}
                     />
-                    <Route path="/Users" exact component={pages.Users} />: }
+                    <Route path="/Users" exact component={pages.Users} />}
                   </Switch>
                 </main>
               </>

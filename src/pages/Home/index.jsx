@@ -23,7 +23,6 @@ import AllActions from "../../store/actions";
 function Home() {
   const page = useSelector((state) => state.page);
 
-
   return (
     <section className="page-container home">
       <Header />

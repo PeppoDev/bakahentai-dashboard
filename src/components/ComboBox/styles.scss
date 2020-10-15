@@ -1,145 +1,155 @@
 .main-select {
-    background-color: rgba(11, 9, 12, .5);
-    border: 0;
+  background-color: rgba(11, 9, 12, 0.5);
+  border: 0;
+  width: 18rem;
+  height: 4rem;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 0 1rem;
+  cursor: pointer;
+
+  select {
+    visibility: hidden;
+  }
+
+  article {
+    width: 100%;
+    height: 100%;
     width: 18rem;
-    height: 4rem;
-    border-radius: 2px;
-    color: #fff;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin: 0 0 0 1rem;
-    cursor: pointer;
 
-    select {
-        visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    p {
+      user-select: none;
     }
 
-    article {
-        width: 100%;
-        height: 100%;
-        width: 18rem;
+    img {
+      width: 0.5rem;
+      user-select: none;
+      transition: 0.2s ease;
+    }
+  }
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
+  .options-list {
+    visibility: visible;
+    overflow: hidden;
+    position: relative;
+    top: -4rem;
+    bottom: 0;
+    width: 18rem;
+    z-index: 888;
+    background-color: transparent;
+    overflow-y: overlay;
+    max-height: 400px;
+    transition: 0.2s ease;
 
-        p {
-            user-select: none;
-        }
-
-        img {
-            width: 0.9rem;
-            height: 0.4rem;
-            transform: rotate(90deg);
-            user-select: none;
-        }
+    .closer-select {
+      height: 4rem;
+      background-color: transparent;
     }
 
-    .options-list {
-        visibility: visible;
-        position: relative;
-        bottom: 0;
-        width: 18rem;
-        z-index: 888;
-        background-color: rgba(11, 9, 12, .8);
-        overflow-y: overlay;
-        max-height: 400px;
-        transition: 0.2s ease;
-        
-        
+    .selected-option {
+      background-color: var(--color-primary-pink);
+      // border-right: 6px solid var(--color-primary-pink);
 
-        .selected-option {
-            background-color: var(--color-primary-pink);
-            // border-right: 6px solid var(--color-primary-pink);
-
-            &:hover {
-                opacity: 1 !important;
-            }
-        }
-
-
-        &::-webkit-scrollbar {
-            -webkit-appearance: none;
-            position: fixed;
-            width: 6px;
-        }
-
-        /* Track */
-        &::-webkit-scrollbar-track {
-            background-color: transparent;
-            border-radius: 2px;
-        }
-
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        option {
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            user-select: none;
-            &:hover {
-                opacity: 0.8;
-            }
-        }
+      &:hover {
+        opacity: 1 !important;
+      }
     }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      position: fixed;
+      width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 2px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .combo-item {
+      opacity: 0;
+      font-size: 1.5rem;
+      color: white;
+      text-transform: capitalize;
+      transition: 0.2s ease;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      animation: appear-option-list 0.2s ease forwards;
+
+      &:hover {
+        color: rgb(206, 205, 205);
+      }
+    }
+  }
 }
 
 .combo-select {
-    background-color: rgba(11, 9, 12, 0.5);
-    border: 0;
-    width: 15rem;
-    height: 4rem;
-    border-radius: 2px;
-    color: white;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-size: 1.6rem;
-    padding: 1rem;
-    // margin: 0rem 1rem 1rem 0rem;
-    margin: 0rem 0rem 0rem 1rem;
-    cursor: pointer;
-    //   display: flex;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  background-color: rgba(11, 9, 12, 0.5);
+  border: 0;
+  width: 15rem;
+  height: 4rem;
+  border-radius: 2px;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: 1rem;
+  // margin: 0rem 1rem 1rem 0rem;
+  margin: 0rem 0rem 0rem 1rem;
+  cursor: pointer;
+  //   display: flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-    /* Remove default arrow */
+  /* Remove default arrow */
 
-    /* Add custom arrow */
+  /* Add custom arrow */
 
-    background: url("../../assets/icons/play.svg") no-repeat #0b090c;
-    background-size: 0.7rem;
-    background-position: 90% center;
+  background: url("../../assets/icons/play.svg") no-repeat #0b090c;
+  background-size: 0.7rem;
+  background-position: 90% center;
 
-    /* Imagem de fundo (Seta) */
+  /* Imagem de fundo (Seta) */
 
-    /*Posição da imagem do background*/
+  /*Posição da imagem do background*/
 
-    /* Tamanho do select, maior que o tamanho da div "div-select" */
+  /* Tamanho do select, maior que o tamanho da div "div-select" */
 
-    /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
-    .combo-item {
-        font-size: 1.5rem;
-        color: white;
-        text-transform: capitalize;
-        transition: 0.2s ease;
-        background-color: transparent;
-        
-        &:hover {
-            background-color: black !important;
-            color: white;
-        }
-    }
+  /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
 }
 
-.background-arrow {}
+.background-arrow {
+}
+
+@keyframes appear-option-list {
+  from {
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

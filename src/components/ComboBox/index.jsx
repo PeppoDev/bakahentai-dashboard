@@ -10,9 +10,8 @@ function ComboSelect(props) {
   const [text, setText] = React.useState("");
   const { visible, setVisible, ref } = useOutsideAlerter(false);
 
-  const [visibleLocal, setVisibleLocal] = React.useState(false);
-  
-  
+  const styleimg = visible ? { transform: "rotate(90deg)" } : {};
+
   function handleClick(key) {
     let valuetemp = Array.from(props.value);
     valuetemp.forEach((element, i) => {
@@ -32,31 +31,41 @@ function ComboSelect(props) {
       return "Selecionar";
     }
   }
-  function handleVisible() {
-    setVisibleLocal(visibleLocal ? false : true);
+  function handleVisible(event) {
+    setVisible(true);
   }
 
   React.useEffect(() => {
     setText(handleText);
-  }, [visibleLocal]);
+  }, []);
 
   return (
-    <article
-      className="main-select"
-    >
-      <article onClick={handleVisible}>
+    <article className="main-select">
+      <article onClick={(e) => handleVisible(e)}>
         <p>{text}</p>
-        <img src={playIcon} alt="" />
+        <img src={playIcon} alt="" style={styleimg} />
       </article>
       {visible && (
-        <div ref={ref} className="options-list" >
-          {props.data.map((data) => (
+        <div ref={ref} className="options-list">
+          <div
+            className="closer-select"
+            onClick={() => setVisible(false)}
+          ></div>
+          {props.data.map((data, index) => (
             <ComboItem
-              style={props.value.includes(data)?{backgroundColor: "var(--color-primary-pink)"}:{}}
-              key={data}
-              className={
-                  "combo-item"
+              style={
+                props.value.includes(data)
+                  ? {
+                      backgroundColor: "var(--color-primary-pink)",
+                      animationDelay: `${index * 0.01}s`,
+                    }
+                  : {
+                      backgroundColor: "rgba(11, 9, 12, .8)",
+                      animationDelay: `${index * 0.01}s`,
+                    }
               }
+              key={data}
+              className="combo-item"
               value={data}
               text={data}
               onClick={
@@ -102,7 +111,12 @@ function ComboSelect(props) {
 function ComboItem({ value, text, className, onClick, style }) {
   return (
     <>
-      <option className={className} value={value} onClick={onClick} style={style}>
+      <option
+        className={className}
+        value={value}
+        onClick={onClick}
+        style={style}
+      >
         {text}
       </option>
     </>
