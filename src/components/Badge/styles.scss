@@ -1,50 +1,48 @@
 .badge {
+  max-width: 10rem;
+  min-width: 6rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--color-primary-pink);
+  border-radius: 2px;
+  margin-right: 2px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: 2px;
+  animation: appear-badge 0.2s ease forwards;
+  user-select: none;
+
+  p:last-child {
+    overflow: hidden;
+    margin-right: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 10rem;
-    min-width: 6rem;
-    height: 3rem;
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: var(--color-primary-pink);
-    border-radius: 2px;
-    margin-right: 2px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    text-transform: capitalize;
-    cursor: pointer;
-    margin-bottom: 2px;
-    animation: appear-badge 0.2s ease forwards;
+  }
 
-
-    p:last-child {
-        overflow: hidden;
-        margin-right: 0.3rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 10rem;
-    }
-
-    p:first-child {
-        font-size: 1.3rem;
-        margin-right: 5px;
-
-
-    }
+  p:first-child {
+    font-size: 1.3rem;
+    margin-right: 5px;
+  }
 }
 
 @keyframes appear-badge {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

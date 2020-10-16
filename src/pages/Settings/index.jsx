@@ -4,7 +4,6 @@ import InputSettings from "../../components/InputSettings";
 //css
 import "./styles.scss";
 //assets
-import ditto from "../../assets/images/ditto.png";
 import tick from "../../assets/icons/tick.png";
 import pen from "../../assets/icons/pen.svg";
 

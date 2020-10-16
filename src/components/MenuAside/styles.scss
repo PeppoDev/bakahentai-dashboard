@@ -1,64 +1,62 @@
 .menu-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 2px);
+  width: 28rem;
+  max-width: 230px;
+  background-color: var(--color-boxes);
+  border-radius: 2px;
+  margin-top: calc(5rem);
+  align-items: center;
+  padding-top: 3rem;
+  position: fixed;
+
+  .profile-container {
     display: flex;
-    flex-direction: column;
-    height: calc(100% - 2px);
-    width: 28rem;
-    max-width: 230px;
-    background-color: var(--color-boxes);
-    border-radius: 2px;
-    margin-top: calc(5rem);
+    justify-content: center;
     align-items: center;
-    padding-top: 3rem;
-    position: fixed;
 
-
-
-    .profile-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .badge-name {
-            width: 1.5rem !important;
-            margin: 0 0 0 2px !important;
-        }
-
+    .badge-name {
+      width: 1.5rem !important;
+      margin: 0 0 0 2px !important;
     }
+  }
 
+  & > img {
+    width: 6rem;
+    border-radius: 50%;
+  }
 
-    &>img {
-        width: 6rem;
-        border-radius: 50%;
+  h2 {
+    font-size: 1.6rem;
+    padding: 0.7rem 0.3rem 0.7rem 0;
+    color: #b8b8b8;
+
+    .badge-name {
+      width: 1.6rem !important;
+      height: 1.6rem !important;
+      margin: 0 !important;
     }
+  }
 
-    h2 {
-        font-size: 1.6rem;
-        padding: 0.7rem 0.3rem 0.7rem 0;
-        color: #b8b8b8;
-
-        .badge-name {
-            width: 1.6rem !important;
-            height: 1.6rem !important;
-            margin: 0 !important;
-
-        }
-    }
-
-    p {
-        font-size: 1.3rem;
-        color: rgb(160, 160, 160);
-        margin-bottom: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
+  p {
+    font-size: 1.3rem;
+    color: rgb(160, 160, 160);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (orientation: portrait) {
-    .menu-container {
-        display: none;
-    }
+  .menu-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1368px) {
+  .menu-container {
+    max-width: 200px;
+  }
 }

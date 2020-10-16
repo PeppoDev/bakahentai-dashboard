@@ -6,6 +6,10 @@ import * as ButtonHover from "../ButtonHover";
 import "./styles.scss";
 //assets
 import closeIcon from "../../assets/icons/close.svg";
+import EditIcon from "../../assets/icons/penw.svg";
+import TrashIcon from "../../assets/icons/trashw.svg";
+import EpisodeIcon from "../../assets/icons/plus.svg";
+import StarIcon from "../../assets/icons/star.svg";
 
 function DropZoneContainer({ title, limit = 100, poptext, files, setFiles }) {
   const [blob, setBlob] = React.useState([]);
@@ -144,19 +148,29 @@ function DropZoneContainer({ title, limit = 100, poptext, files, setFiles }) {
             </div>
             <ButtonHover.Container>
               <ButtonHover.Button
+                img={EditIcon}
                 text="Substituir"
                 onClick={handleClickInputReplace}
               />
 
               {starred === selectedChip ? (
                 <ButtonHover.Button
+                  img={closeIcon}
                   text="Desfavoritar"
                   onClick={handleUnStarred}
                 />
               ) : (
-                <ButtonHover.Button text="Favoritar" onClick={handleStarred} />
+                <ButtonHover.Button
+                  img={StarIcon}
+                  text="Favoritar"
+                  onClick={handleStarred}
+                />
               )}
-              <ButtonHover.Button text="Excluir" onClick={handleDelete} />
+              <ButtonHover.Button
+                img={TrashIcon}
+                text="Remover"
+                onClick={handleDelete}
+              />
             </ButtonHover.Container>
           </div>
         )}

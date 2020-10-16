@@ -13,7 +13,7 @@ function EpisodeItemList() {
       <article className="image-container">
         <ButtonHover.Container>
           <ButtonHover.Button text="Editar" img={EditIcon} />
-          <ButtonHover.Button text="Deletar" img={TrashIcon} />
+          <ButtonHover.Button text="Remover" img={TrashIcon} />
         </ButtonHover.Container>
       </article>
       <article className="info-group">

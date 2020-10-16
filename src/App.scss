@@ -1,60 +1,68 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-container {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
     height: 100%;
-    justify-content: center;
-    overflow-y: scroll;
+    padding-left: 12%;
+    padding-right: 12%;
 
-    &::-webkit-scrollbar {
+    .main-page {
+      min-height: calc(100% - 55px - 5rem);
+      width: 100% !important;
+
+      background-color: var(--color-boxes);
+      margin-top: calc(2rem + 55px);
+      margin-left: calc(230px + 2rem);
+      border-radius: 2px;
+      max-width: 1450px;
+      overflow: visible;
+
+      &::-webkit-scrollbar {
         display: none;
-    }
+      }
 
-    .main-container {
+      .page-container {
         display: flex;
-        flex-direction: row;
-        height: 100%;
-        padding-left: 12%;
-        padding-right: 12%;
-
-
-        .main-page {
-            min-height: calc(100% - 55px - 5rem);
-            width: 100% !important;
-
-            background-color: var(--color-boxes);
-            margin-top: calc(2rem + 55px);
-            margin-left: calc(230px + 2rem);
-            border-radius: 2px;
-            max-width: 1450px;
-            overflow: visible;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
-            .page-container {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                min-height: 100%;
-                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),
-                    0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                background-color: var(--color-boxes) !important;
-            }
-        }
-
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),
+          0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        background-color: var(--color-boxes) !important;
+      }
     }
+  }
 }
 
 @media screen and (orientation: portrait) {
-    .main-container {
-        padding: 0 !important;
-    }
+  .main-container {
+    padding: 0 !important;
+  }
 
+  .main-page {
+    margin: 0;
+    margin-top: calc(55px) !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1368px) {
+  .main-container {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
     .main-page {
-        margin: 0;
-        margin-top: calc(55px) !important;
-        margin-left: 0 !important;
+      margin-left: calc(200px + 2rem) !important;
     }
+  }
 }

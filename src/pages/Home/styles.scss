@@ -39,8 +39,10 @@
     height: 100%;
 
     .hentai-item {
+      .image-container {
+        height: 34rem !important;
+      }
       box-shadow: 0 5px 20px 0 #0c0c0c;
-      height: 34rem;
     }
   }
 
@@ -52,8 +54,10 @@
     height: 100%;
 
     .episode-item {
+      .image-container {
+        height: 22rem;  
+      }
       box-shadow: 0 5px 20px 0 #0c0c0c;
-      height: 22rem;
     }
   }
 

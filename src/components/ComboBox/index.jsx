@@ -51,59 +51,34 @@ function ComboSelect(props) {
             className="closer-select"
             onClick={() => setVisible(false)}
           ></div>
-          {props.data.map((data, index) => (
-            <ComboItem
-              style={
-                props.value.includes(data)
-                  ? {
-                      backgroundColor: "var(--color-primary-pink)",
-                      animationDelay: `${index * 0.01}s`,
-                    }
-                  : {
-                      backgroundColor: "rgba(11, 9, 12, .8)",
-                      animationDelay: `${index * 0.01}s`,
-                    }
-              }
-              key={data}
-              className="combo-item"
-              value={data}
-              text={data}
-              onClick={
-                props.value.includes(data)
-                  ? () => handleClick(data)
-                  : () => props.onChange(data)
-              }
-            />
-          ))}
+          <div className="options">
+            {props.data.map((data, index) => (
+              <ComboItem
+                style={
+                  props.value.includes(data)
+                    ? {
+                        backgroundColor: "var(--color-primary-pink)",
+                        animationDelay: `${index * 0.01}s`,
+                      }
+                    : {
+                        backgroundColor: "rgba(11, 9, 12, .8)",
+                        animationDelay: `${index * 0.01}s`,
+                      }
+                }
+                key={data}
+                className="combo-item"
+                value={data}
+                text={data}
+                onClick={
+                  props.value.includes(data)
+                    ? () => handleClick(data)
+                    : () => props.onChange(data)
+                }
+              />
+            ))}
+          </div>
         </div>
       )}
-
-      {/* <select
-        ref={selectRef}
-        className="combo-select"
-        name={props.htmlFor}
-        id={props.htmlFor}
-        mutiple={props.mutiple}
-        onChange={
-          props.mutiple
-            ? (event) => props.onChange(event.target.value)
-            : (event) => props.onChange(event.target.value)
-        }
-      >
-        {props.defaultValue ? (
-          <option
-            className="combo-item"
-            value={props.defaultValue}
-            defaultValue
-          >
-            {props.defaultValue}
-          </option>
-        ) : (
-          <option className="combo-item" value={null} defaultValue>
-            Selecionar
-          </option>
-        )}
-      </select> */}
     </article>
   );
 }
