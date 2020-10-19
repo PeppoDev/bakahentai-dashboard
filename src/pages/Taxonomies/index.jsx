@@ -11,7 +11,8 @@ import ModalSucess from "../../components/ModalSucess";
 import "./styles.scss";
 
 function Taxonomies() {
-  const [showallGenders, setShowallGenders] = React.useState(false);
+  const [type, setType] = React.useState("");
+  const [order, setOrder] = React.useState("");
 
   const genders_temp = [
     {
@@ -300,12 +301,12 @@ function Taxonomies() {
         <article className="filter-tag-container">
           <MainInput label="Cadastrar nova Taxonomia" />
           <article className="input-and-button">
-            <ComboBox.ComboSelect>
-              <ComboBox.ComboItem value="" text="Gêneros" />
-              <ComboBox.ComboItem value="" text="Qualidade" />
-              <ComboBox.ComboItem value="" text="Anos Lançados" />
-              <ComboBox.ComboItem value="" text="Estúdios" />
-            </ComboBox.ComboSelect>
+            <ComboBox.ComboSelect
+              onChange={setType}
+              value={type}
+              placeholder="Tipo"
+              data={["Anos Lançados", "Estúdios", "Gêneros", "Qualidade"]}
+            ></ComboBox.ComboSelect>
             <button>Adicionar</button>
           </article>
         </article>
@@ -319,7 +320,19 @@ function Taxonomies() {
             <p>
               Ordem <strong>*</strong>
             </p>
-            <ComboBox.ComboSelect></ComboBox.ComboSelect>
+            <ComboBox.ComboSelect
+              onChange={setOrder}
+              value={order}
+              placeholder="Ordem"
+              data={[
+                "Alfabética",
+                "Postagem",
+                "Lançamento",
+                "Maior nota",
+                "Mais fapados",
+              ]}
+              defaultValue="Alfabética"
+            ></ComboBox.ComboSelect>
           </div>
         </article>
         <article className="grid-gender">

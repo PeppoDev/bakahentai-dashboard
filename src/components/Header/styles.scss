@@ -1,81 +1,91 @@
 .header-container {
-    color: white;
+  color: white;
 
-    a {
-        text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+
+  .datenow {
+    color: rgb(163, 163, 163);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 2rem;
+  }
+
+  hr {
+    margin: 0 2rem 2rem 2rem;
+    border: 1px solid #424141;
+  }
+
+  .welcome-banner {
+    display: flex;
+    background: rgb(245, 55, 103);
+    background: linear-gradient(
+      90deg,
+      rgba(245, 55, 103, 1) 0%,
+      rgba(251, 134, 164, 1) 100%
+    );
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 9rem;
+
+    .welcome-banner-main {
+      display: flex;
+      align-items: center;
+      height: 9rem;
+
+      img {
+        width: 10rem;
+        align-self: flex-end !important;
+      }
     }
+    .banner-text {
+      margin-left: 7%;
+      width: 30rem;
 
-    .datenow {
-        color: rgb(163, 163, 163);
-        font-size: 1.2rem;
+      h2 {
+        font-size: 1.7rem;
         text-transform: uppercase;
-        margin: 2rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        margin-left: calc(7% + 3rem);
+      }
     }
 
-    hr {
-        margin: 0 2rem 2rem 2rem;
-        border: 1px solid #424141;
-    }
+    .group-button {
+      display: flex;
+      flex-direction: row;
+      margin-right: 2rem;
+      font-size: 1.2rem;
 
-    .welcome-banner {
+      button {
         display: flex;
-        background: rgb(245, 55, 103);
-        background: linear-gradient(90deg, rgba(245, 55, 103, 1) 0%, rgba(251, 134, 164, 1) 100%);
-        flex-direction: row;
-        justify-content: space-between;
+        width: 15rem;
+        height: 3rem;
+        cursor: pointer;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1a1a1c;
+        margin: 0 3px;
+        border: 0;
+        border-radius: 2px;
+        text-transform: uppercase;
+        transition: 0.2s ease;
         align-items: center;
-        height: 9rem;
+        justify-content: center;
 
-
-        .banner-text {
-            margin-left: 7%;
-            width: 30rem;
-
-            h2 {
-                font-size: 1.7rem;
-                text-transform: uppercase;
-            }
-
-            p {
-                font-size: 1.3rem;
-                margin-left: calc(7% + 3rem);
-            }
-
+        img {
+          width: 1.3rem;
+          margin-right: 1rem;
         }
 
-        .group-button {
-            display: flex;
-            flex-direction: row;
-            margin-right: 2rem;
-            font-size: 1.2rem;
-
-            button {
-                display: flex;
-                width: 15rem;
-                height: 3rem;
-                cursor: pointer;
-                font-size: 1.3rem;
-                font-weight: 600;
-                color: #1a1a1c;
-                margin: 0 3px;
-                border: 0;
-                border-radius: 2px;
-                text-transform: uppercase;
-                transition: .2s ease;
-                align-items: center;
-                justify-content: center;
-
-                img {
-                    width: 1.3rem;
-                    margin-right: 1rem;
-                }
-
-
-                &:hover {
-                    background-color: rgb(190, 190, 190);
-                }
-            }
+        &:hover {
+          background-color: rgb(190, 190, 190);
         }
-
+      }
     }
+  }
 }

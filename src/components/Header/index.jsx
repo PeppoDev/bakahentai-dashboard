@@ -14,10 +14,19 @@ function Header() {
       <hr />
 
       <div className="welcome-banner">
-        <span className="banner-text">
-          <h2>Bem vindo de volta senpai!</h2>
-          <p>Gostaria de adicionar algo novo hoje?</p>
-        </span>
+        <div className="welcome-banner-main">
+          <img
+            src={
+              "https://baka.s3.fr-par.scw.cloud/r/BAKAHENTAI_Rumi_Dashboard.png"
+            }
+            alt=""
+          />
+          <span className="banner-text">
+            <h2>Bem vindo de volta senpai!</h2>
+            <p>Gostaria de adicionar algo novo hoje?</p>
+          </span>
+        </div>
+
         <span className="group-button">
           <Link to="RegisterHentais">
             <button>

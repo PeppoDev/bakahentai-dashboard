@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 //components
 import InputSettings from "../../components/InputSettings";
 //css
@@ -6,18 +6,81 @@ import "./styles.scss";
 //assets
 import tick from "../../assets/icons/tick.png";
 import pen from "../../assets/icons/pen.svg";
+import prev from "../../assets/images/preview.jpg";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);
+  const [filePhoto, setFilePhoto] = React.useState([]);
+  const [fileBanner, setFileBanner] = React.useState(
+    "../../assets/images/preview.jpg"
+  );
+
+  const InputRef2 = useRef("");
+  const InputRef1 = useRef("");
+
+  const PhotoStyle =
+    filePhoto !== []
+      ? { background: `url(${filePhoto}) !important` }
+      : { color: "red" };
+
+  const BannerStyle = {
+    backgroundImage: `url(${fileBanner}) !important`,
+  };
+
+  function handleClickFileBanner() {
+    InputRef1.current.click();
+  }
+  function handleClickFilePhoto() {
+    InputRef2.current.click();
+  }
+
+  const fileSelectedBanner = () => {
+    if (InputRef1.current.files.length) {
+      if (InputRef1.current.files[0].type.includes("image")) {
+        const reader = new FileReader();
+        reader.readAsDataURL(InputRef1.current.files[0]);
+        reader.onload = function (e) {
+          setFileBanner(reader.result);
+        };
+      } else {
+        console.log("Erro: formato não suportado");
+      }
+    }
+  };
+
+  const fileSelectedPhoto = () => {
+    if (InputRef2.current.files.length) {
+      if (InputRef2.current.files[0].type.includes("image")) {
+        const reader = new FileReader();
+        reader.readAsDataURL(InputRef2.current.files[0]);
+        reader.onload = function (e) {
+          setFilePhoto(reader.result);
+        };
+      } else {
+        console.log("Erro: formato não suportado");
+      }
+    }
+  };
+
   return (
     <section className="page-container settings">
-      <article className="image-banner">
-        <img src={pen} alt="" />
+      <input
+        type="file"
+        ref={InputRef1}
+        style={{ display: "none" }}
+        onChange={fileSelectedBanner}
+      />
+      <input type="file" ref={InputRef2} style={{ display: "none" }} />
+      <article
+        className="image-banner"
+        style={{ background: `url(${filePhoto}) !important` }}
+      >
+        <img src={pen} alt="" onClick={handleClickFileBanner} />
       </article>
       <article className="account-banner">
         <div className="account-photo">
-          <article className="profile-photo" alt="">
-            <img src={pen} alt="" />
+          <article className="profile-photo" alt="" style={PhotoStyle}>
+            <img src={pen} alt="" onClick={handleClickFilePhoto} />
           </article>
           <img src="" alt="" />
           <span className="profile-container">

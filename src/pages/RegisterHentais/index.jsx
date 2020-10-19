@@ -395,14 +395,14 @@ function RegisterHentais() {
   }
 
   function handleSetTags(value) {
-    if (value !== "Selecionar" && typeof value === "string") {
+    if (typeof value === "string") {
       setPlacholderGender("Ex: Colegial, Escolar, Peitões");
       const newTags = [...Array.from(tags), value];
       const filteredTags = filter(newTags);
       const sortedTags = sort(filteredTags);
       setTags(sortedTags);
-    } else if (Array.isArray(value)) {
-      setStudios(value);
+    } else {
+      setTags(value);
     }
   }
 
@@ -419,9 +419,24 @@ function RegisterHentais() {
     return newTags;
   }
 
+  function handleStartSort(a, b) {
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
   React.useEffect(() => {
-    tags_arr.map((tag) => setGenders((prev) => [...prev, tag.name]));
-    studio_arr.map((tag) => setStudioDB((prev) => [...prev, tag.name]));
+    tags_arr
+      .sort(handleStartSort)
+      .map((tag) => setGenders((prev) => [...prev, tag.name]));
+    studio_arr
+      .sort(handleStartSort)
+      .map((tag) => setStudioDB((prev) => [...prev, tag.name]));
   }, []);
 
   return (

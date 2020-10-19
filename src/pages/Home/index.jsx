@@ -26,7 +26,6 @@ function Home() {
   return (
     <section className="page-container home">
       <Header />
-
       <article className="second-container">
         <LastRegisters>
           {page === "hentais" ? <LastRegistersHentai /> : null}
@@ -52,10 +51,17 @@ function Home() {
         <h2 className="title-component opacity">Comentários</h2>
         <RegistredComments />
       </article> */}
-
+      <div className="activity-banner">
+        <img
+          src={
+            "https://baka.s3.fr-par.scw.cloud/r/BAKAHENTAI_Miya_Dashboard.png"
+          }
+          alt=""
+        />
+        <h2>Aqui estão as suas últimas atividades...</h2>
+      </div>
       <h2 className="container-title">Comentários</h2>
       <RegistredComments />
-
       <h2 className="container-title">Hentais Cadastrados</h2>
       <article className="hentai-container">
         <HentaItem name="Algum anime" studios={[{ name: "Algum nome" }]} />

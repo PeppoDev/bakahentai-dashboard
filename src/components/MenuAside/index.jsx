@@ -1,4 +1,9 @@
 import React from "react";
+//components
+import MenuButton from "../MenuButton";
+import DropDownMenu from "../DropDownMenu";
+import DropDownButton from "../DropDownButton";
+import { Link } from "react-router-dom";
 //assets
 import photo from "../../assets/images/ditto.png";
 import settingsIcon from "../../assets/icons/config.svg";
@@ -13,10 +18,6 @@ import hentaiIcon from "../../assets/icons/play.svg";
 import tick from "../../assets/icons/tick.png";
 //css
 import "./styles.scss";
-//components
-import MenuButton from "../MenuButton";
-import DropDownMenu from "../DropDownMenu";
-import DropDownButton from "../DropDownButton";
 
 function MenuAside() {
   return (
@@ -24,7 +25,9 @@ function MenuAside() {
       <img src={photo} alt="" />
 
       <span className="profile-container">
-        <h2>Astolfo</h2>
+        <Link to="Settings" style={{ textDecoration: "none" }}>
+          <h2>Astolfo</h2>
+        </Link>
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />
         <img className="badge-name" src={tick} alt="" />
@@ -33,7 +36,7 @@ function MenuAside() {
 
       <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
       <MenuButton to="faplist" icon={fappedIcon} text="Lista de Fap" />
-      <MenuButton to="status" initial icon={statusIcon} text="Status Geral" />
+      <MenuButton to="status" initial icon={statusIcon} text="Dashboard" />
       <MenuButton
         to="notifications"
         icon={notificationsIcon}
