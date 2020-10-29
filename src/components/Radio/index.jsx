@@ -7,10 +7,13 @@ function RadioForm(props) {
       className={`radio-form ${props.className}`}
       onChange={(event) => props.onChange(event.target.value)}
     >
-      <p>
-        {props.text}
-        <span>*</span>:
-      </p>
+      {!props.disablePlaceHolder && (
+        <p>
+          {props.text}
+          <span>*</span>:
+        </p>
+      )}
+
       {props.children}
     </section>
   );

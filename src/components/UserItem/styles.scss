@@ -1,0 +1,35 @@
+.user-item {
+  background-color: var(--color-boxes);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 6rem;
+  }
+  h2 {
+    font-weight: 600;
+    color: white !important;
+    font-size: 1.6rem;
+  }
+  p:first-child {
+  }
+  p:last-child {
+    color: rgb(167, 167, 167);
+  }
+
+  .edit-button {
+    width: 100%;
+    height: 4rem;
+    border: 0;
+    background-color: var(--color-menu);
+    color: rgb(212, 209, 209);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}

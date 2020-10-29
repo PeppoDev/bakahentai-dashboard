@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 //components
 import InputSettings from "../../components/InputSettings";
+import FapList from "../FapList";
+import ModalPunish from "../../components/ModalPunish";
 //css
 import "./styles.scss";
 //assets
@@ -10,6 +12,7 @@ import prev from "../../assets/images/preview.jpg";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);
+  const [isPunishing, setisPunishing] = React.useState(false);
   const [filePhoto, setFilePhoto] = React.useState([]);
   const [fileBanner, setFileBanner] = React.useState(
     "../../assets/images/preview.jpg"
@@ -63,80 +66,95 @@ function Settings() {
   };
 
   return (
-    <section className="page-container settings">
-      <input
-        type="file"
-        ref={InputRef1}
-        style={{ display: "none" }}
-        onChange={fileSelectedBanner}
-      />
-      <input type="file" ref={InputRef2} style={{ display: "none" }} />
-      <article
-        className="image-banner"
-        style={{ background: `url(${filePhoto}) !important` }}
-      >
-        <img src={pen} alt="" onClick={handleClickFileBanner} />
-      </article>
-      <article className="account-banner">
-        <div className="account-photo">
-          <article className="profile-photo" alt="" style={PhotoStyle}>
-            <img src={pen} alt="" onClick={handleClickFilePhoto} />
-          </article>
-          <img src="" alt="" />
-          <span className="profile-container">
-            <p>Astolfo</p>
-            <img className="badge-name" src={tick} alt="" />
-            <img className="badge-name" src={tick} alt="" />
-            <img className="badge-name" src={tick} alt="" />
-          </span>
-        </div>
-        <p className="date">Membro desde: 01/05/2020</p>
-      </article>
-
-      <section>
-        <article className="input-box">
-          <button
-            className="edit-button"
-            onClick={() => setIsEditing(true)}
-            style={!isEditing ? null : { opacity: "0%", cursor: "auto" }}
-          >
-            Editar
-          </button>
-
-          <article>
-            <InputSettings
-              disable={isEditing ? false : true}
-              label="E-mail"
-              placeholder="Algum email"
-            />
-            <InputSettings
-              disable={isEditing ? false : true}
-              label="Senha"
-              placeholder="******"
-            />
-            <InputSettings
-              disable={isEditing ? false : true}
-              label="Seu Site"
-              placeholder="N/A"
-            />
-          </article>
-
-          <footer>
-            {isEditing ? (
-              <span>
-                <button onClick={() => setIsEditing(false)}>Cancelar</button>
-                <button onClick={() => setIsEditing(false)}>Salvar</button>
-              </span>
-            ) : (
-              <>
-                <h3>Tipo de Conta</h3>
-                <a href="#">Tornar Premium</a>
-              </>
-            )}
-          </footer>
+    <>
+      <section className="page-container settings">
+        <input
+          type="file"
+          ref={InputRef1}
+          style={{ display: "none" }}
+          onChange={fileSelectedBanner}
+        />
+        <input type="file" ref={InputRef2} style={{ display: "none" }} />
+        <article
+          className="image-banner"
+          style={{ background: `url(${filePhoto}) !important` }}
+        >
+          <img src={pen} alt="" onClick={handleClickFileBanner} />
         </article>
+        <article className="account-banner">
+          <div className="account-photo">
+            <article className="profile-photo" alt="" style={PhotoStyle}>
+              <img src={pen} alt="" onClick={handleClickFilePhoto} />
+            </article>
+            <img src="" alt="" />
+            <span className="profile-container">
+              <p>Astolfo</p>
+              <img className="badge-name" src={tick} alt="" />
+              <img className="badge-name" src={tick} alt="" />
+              <img className="badge-name" src={tick} alt="" />
+            </span>
+          </div>
+          <p className="date">Membro desde: 01/05/2020</p>
+        </article>
+
+        <section>
+          <article className="input-box">
+            <div className="button-group-settings">
+              <button
+                className="edit-button"
+                onClick={() => setIsEditing(true)}
+                style={!isEditing ? null : { opacity: "0%", cursor: "auto" }}
+              >
+                Editar
+              </button>
+              <button
+                className="edit-button"
+                onClick={() => setisPunishing(true)}
+                style={
+                  !isPunishing ? null : { opacity: "100%", cursor: "auto" }
+                }
+              >
+                Punir
+              </button>
+            </div>
+
+            <article>
+              <InputSettings
+                disable={isEditing ? false : true}
+                label="E-mail"
+                placeholder="Algum email"
+              />
+              <InputSettings
+                disable={isEditing ? false : true}
+                label="Senha"
+                placeholder="******"
+              />
+              <InputSettings
+                disable={isEditing ? false : true}
+                label="Seu Site"
+                placeholder="N/A"
+              />
+            </article>
+
+            <footer>
+              {isEditing ? (
+                <span>
+                  <button onClick={() => setIsEditing(false)}>Cancelar</button>
+                  <button onClick={() => setIsEditing(false)}>Salvar</button>
+                </span>
+              ) : (
+                <>
+                  <h3>Tipo de Conta</h3>
+                  <a href="#">Tornar Premium</a>
+                </>
+              )}
+            </footer>
+          </article>
+        </section>
       </section>
-    </section>
+      <FapList />
+      <ModalPunish open={isPunishing} setOpen={setisPunishing} />
+    </>
   );
 }
 

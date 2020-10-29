@@ -1,0 +1,73 @@
+.badge-punish-modal {
+  background-color: rgba(26, 26, 29, 1);
+  width: 45rem;
+  border-radius: 4px;
+  padding: 3rem;
+  display: flex;
+
+  flex-direction: column;
+  animation: appear-modal 0.2s ease forwards;
+
+  p {
+    display: flex;
+    color: rgb(172, 172, 172);
+    margin-bottom: 2rem;
+    span {
+      margin-left: 0.3rem;
+      font-weight: 600;
+      color: white;
+    }
+  }
+  p:last-child {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+  }
+  .send-punish {
+    width: 40%;
+    align-self: center;
+    height: 5rem;
+    background-color: var(--color-primary-pink);
+    border-radius: 2px;
+    color: white;
+    border: 0;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+
+  .radio-form {
+    margin-bottom: 2rem;
+    .radio-container {
+      justify-content: flex-start;
+      label {
+        text-transform: none;
+      }
+    }
+  }
+  hr {
+    margin: 0 0 2rem;
+    border: 0.5px solid #2f2e2e;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes appear-modal {
+  from {
+    transform: scale(0.5);
+    opacity: 50%;
+  }
+
+  to {
+    opacity: 100% !important;
+    transform: scale(1);
+  }
+}

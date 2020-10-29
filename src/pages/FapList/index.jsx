@@ -2,9 +2,7 @@ import React from "react";
 //services
 import api from "../../services/api/axios";
 //components
-import TitlePage from "../../components/TitlePage";
 import SearchInput from "../../components/SearchInput";
-import HentaiList from "../../components/HentaiList";
 import FapLister from "../../components/FapList";
 import * as ComboBox from "../../components/ComboBox";
 import ShowMore from "../../components/ShowMore";
@@ -35,7 +33,6 @@ function TitlePageFapList(props) {
         </article>
         <div className="select-container">{props.children}</div>
       </article>
-
       <hr />
     </section>
   );
@@ -1055,6 +1052,7 @@ function FapList() {
     }
     getHentais();
   }, []);
+
   const filter = (hentais, query) => {
     hentais_list = Array.from(
       hentais.filter((hentai) =>
@@ -1123,7 +1121,6 @@ function FapList() {
   ]);
 
   const currentHentais = hentais_list.slice(0, hentaisPerPage);
-  console.log(currentHentais);
 
   return (
     <section className="page-container all-hentais">
