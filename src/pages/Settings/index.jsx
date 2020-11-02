@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useParams } from "react-router-dom";
 //components
 import InputSettings from "../../components/InputSettings";
 import FapList from "../FapList";
@@ -17,6 +18,8 @@ function Settings() {
   const [fileBanner, setFileBanner] = React.useState(
     "../../assets/images/preview.jpg"
   );
+
+  const { id } = useParams();
 
   const InputRef2 = useRef("");
   const InputRef1 = useRef("");
@@ -107,15 +110,18 @@ function Settings() {
               >
                 Editar
               </button>
-              <button
-                className="edit-button"
-                onClick={() => setisPunishing(true)}
-                style={
-                  !isPunishing ? null : { opacity: "100%", cursor: "auto" }
-                }
-              >
-                Punir
-              </button>
+
+              {id ? (
+                <button
+                  className="edit-button"
+                  onClick={() => setisPunishing(true)}
+                  style={
+                    !isPunishing ? null : { opacity: "100%", cursor: "auto" }
+                  }
+                >
+                  Punir
+                </button>
+              ) : null}
             </div>
 
             <article>

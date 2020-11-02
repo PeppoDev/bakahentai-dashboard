@@ -1,6 +1,7 @@
 import React from "react";
 //components
 import { Popover } from "@material-ui/core";
+import ModalPunish from "../ModalPunish";
 //css
 import "./styles.scss";
 //assets
@@ -9,6 +10,8 @@ import more from "../../assets/icons/more-alt.svg";
 
 function LastRegistersUserItem() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [openModal, setOpenModal] = React.useState(false);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -51,9 +54,14 @@ function LastRegistersUserItem() {
       >
         <span className="popover status">
           <button>Editar</button>
-          <button>Punir</button>
+          <button onClick={() => setOpenModal(true)}>Punir</button>
         </span>
       </Popover>
+      <ModalPunish
+        open={openModal}
+        setOpen={setOpenModal}
+        onClick={() => setOpenModal(false)}
+      />
     </div>
   );
 }

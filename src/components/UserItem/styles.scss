@@ -32,4 +32,18 @@
     font-size: 1.3rem;
     cursor: pointer;
   }
+  a {
+    width: 100%;
+  }
+
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .badge-name {
+      width: 1.5rem !important;
+      margin: 0 0 0 2px !important;
+    }
+  }
 }
