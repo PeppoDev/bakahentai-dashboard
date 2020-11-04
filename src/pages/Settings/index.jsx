@@ -9,7 +9,8 @@ import "./styles.scss";
 //assets
 import tick from "../../assets/icons/tick.png";
 import pen from "../../assets/icons/pen.svg";
-import prev from "../../assets/images/preview.jpg";
+// import prev from "../../assets/images/preview.jpg";
+// import dtto from "../../assets/images/ditto.png";
 
 function Settings() {
   const [isEditing, setIsEditing] = React.useState(false);
@@ -158,7 +159,7 @@ function Settings() {
           </article>
         </section>
       </section>
-      <FapList />
+      {(isEditing || id) && <FapList />}
       <ModalPunish open={isPunishing} setOpen={setisPunishing} />
     </>
   );
