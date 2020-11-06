@@ -25,7 +25,7 @@ function MenuAside() {
       <img src={photo} alt="" />
 
       <span className="profile-container">
-        <Link to="Settings" style={{ textDecoration: "none" }}>
+        <Link to="Configuracoes" style={{ textDecoration: "none" }}>
           <h2>Astolfo</h2>
         </Link>
         <img className="badge-name" src={tick} alt="" />
@@ -34,30 +34,30 @@ function MenuAside() {
       </span>
       <p>Membro desde 17/08/2020</p>
 
-      <MenuButton to="settings" icon={settingsIcon} text="Configurações" />
-      <MenuButton to="faplist" icon={fappedIcon} text="Lista de Fap" />
+      <MenuButton to="Configuracoes" icon={settingsIcon} text="Configurações" />
+      <MenuButton to="ListaDeFap" icon={fappedIcon} text="Lista de Fap" />
       <MenuButton to="status" initial icon={statusIcon} text="Dashboard" />
       <MenuButton
-        to="notifications"
+        to="Notificacoes"
         icon={notificationsIcon}
         text="Notificações"
       />
 
       <DropDownMenu text="Hentais" icon={hentaiIcon}>
-        <DropDownButton text="Todos Hentais" to="allhentais" />
-        <DropDownButton text="Cadastrar Hentais" to="registerhentais" />
+        <DropDownButton text="Todos Hentais" to="TodosHentais" />
+        <DropDownButton text="Cadastrar Hentais" to="HentaisRegistrados" />
       </DropDownMenu>
 
       <DropDownMenu text="Episódios" icon={episodesIcon}>
-        <DropDownButton text="Todos Episódios" to="allepisodes" />
-        <DropDownButton text="Cadastrar Episódios" to="registerepisodes" />
+        <DropDownButton text="Todos Episódios" to="TodosEpisodios" />
+        <DropDownButton text="Cadastrar Episódios" to="EpisodiosRegistrados" />
       </DropDownMenu>
 
-      <MenuButton to="taxonomies" icon={taxonomiesIcon} text="Taxonomias" />
+      <MenuButton to="Taxonomias" icon={taxonomiesIcon} text="Taxonomias" />
 
-      <MenuButton to="users" icon={usersIcon} text="Usuários" />
+      <MenuButton to="Usuario" icon={usersIcon} text="Usuários" />
 
-      <MenuButton to="comments" icon={commentsIcon} text="Comentários" />
+      <MenuButton to="Comentarios" icon={commentsIcon} text="Comentários" />
     </aside>
   );
 }

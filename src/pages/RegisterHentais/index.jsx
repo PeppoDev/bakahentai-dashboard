@@ -591,7 +591,7 @@ function RegisterHentais() {
           />
           <Button
             className="button-dragndrop"
-            to={"RegisterEpisodes/" + title}
+            to={"EpisodiosRegistrados/" + title}
             text="Cadastrar Episódios"
           />
         </article>

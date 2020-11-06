@@ -19,7 +19,7 @@ export default function UserItem() {
         </span>
         <p>17/08/2020</p>
       </div>
-      <Link to={`settings/${1}`}>
+      <Link to={`Configuracoes/${1}`}>
         <button className="edit-button">Editar</button>
       </Link>
     </article>
