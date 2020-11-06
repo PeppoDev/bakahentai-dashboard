@@ -32,6 +32,11 @@ function App() {
                   <Switch>
                     <Route path="/" exact component={pages.Home} />
                     <Route path="/Settings" exact component={pages.Settings} />
+                    <Route
+                      path="/Settings/:id"
+                      exact
+                      component={pages.Settings}
+                    />
                     <Route path="/Comments" exact component={pages.Comments} />
                     <Route path="/FapList" exact component={pages.FapList} />
                     <Route
