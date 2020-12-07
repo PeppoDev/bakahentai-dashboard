@@ -31,56 +31,64 @@ function App() {
                 <main className="main-page">
                   <Switch>
                     <Route path="/" exact component={pages.Home} />
-                    <Route path="/Settings" exact component={pages.Settings} />
                     <Route
-                      path="/Settings/:id"
+                      path="/Configuracoes"
                       exact
                       component={pages.Settings}
                     />
-                    <Route path="/Comments" exact component={pages.Comments} />
-                    <Route path="/FapList" exact component={pages.FapList} />
                     <Route
-                      path="/RegisterEpisodes"
+                      path="/Configuracoes/:id"
+                      exact
+                      component={pages.Settings}
+                    />
+                    <Route
+                      path="/Comentarios"
+                      exact
+                      component={pages.Comments}
+                    />
+                    <Route path="/ListaDeFap" exact component={pages.FapList} />
+                    <Route
+                      path="/EpisodiosRegistrados"
                       exact
                       component={pages.RegisterEpisodes}
                     />
                     <Route
-                      path="/AllEpisodes"
+                      path="/EpisodiosRegistrados/:id"
+                      exact
+                      component={pages.RegisterEpisodes}
+                    />
+                    <Route
+                      path="/TodosEpisodios"
                       exact
                       component={pages.AllEpisodes}
                     />
                     <Route
-                      path="/RegisterEpisodes/:id"
-                      exact
-                      component={pages.RegisterEpisodes}
-                    />
-                    <Route
-                      path="/AllHentais"
+                      path="/TodosHentais"
                       exact
                       component={pages.AllHentais}
                     />
                     <Route
-                      path="/RegisterHentais"
+                      path="/HentaisRegistrados"
                       exact
                       component={pages.RegisterHentais}
                     />
                     <Route
-                      path="/RegisterHentais/:id"
+                      path="/HentaisRegistrados/:id"
                       exact
                       component={pages.RegisterHentais}
                     />
                     <Route
-                      path="/Notifications"
+                      path="/Notificacoes"
                       exact
                       component={pages.Notifications}
                     />
                     <Route path="/Status" exact component={pages.Status} />
                     <Route
-                      path="/Taxonomies"
+                      path="/Taxonomias"
                       exact
                       component={pages.Taxonomies}
                     />
-                    <Route path="/Users" exact component={pages.Users} />}
+                    <Route path="/Usuario" exact component={pages.Users} />}
                   </Switch>
                 </main>
               </>
